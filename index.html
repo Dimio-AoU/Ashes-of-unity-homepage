@@ -2,240 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Ashes of Unity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Styles -->
+  <title>Ashes of Unity</title>
   <link rel="stylesheet" href="styles.css" />
-  <meta name="theme-color" content="#0b0b0b" />
-  <meta name="description" content="Ashes of Unity — a dark fantasy world of betrayal, war, and fragile alliances." />
 </head>
 <body>
 
-  <!-- Header / Nav -->
-  <header class="site-header" data-header>
-    <div class="container header-inner">
-      <a href="#home" class="logo">Ashes of <span>Unity</span></a>
-
-      <nav class="nav" data-nav>
-        <a href="#home" class="nav__link">Home</a>
-        <a href="#world" class="nav__link">World</a>
-        <a href="factions/index.html" class="nav__link">Factions</a>
-        <a href="#devlogs" class="nav__link">Dev Logs</a>
-        <a href="#contact" class="nav__btn">Contact</a>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">ASHES OF UNITY</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="factions/index.html">Factions</a>
+        <a href="balance.html">Balance</a>
+        <a href="systems.html">Systems</a>
       </nav>
+    </div>
+  </div>
 
-      <button class="nav-toggle" aria-label="Toggle menu" data-toggle>
-        <span></span><span></span><span></span>
-      </button>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="inner container">
+      <h1>Welcome to the world of Betrayal and War</h1>
+      <p class="muted">Will war be an endless story, or will Unity bring forth strength for all?</p>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container hero__inner reveal">
-      <h1 class="is-gold">Welcome to the World of Betrayal and War</h1>
-      <p class="lead">Will war be an endless story, or will unity bring forth strength for all?</p>
-
-      <div class="btn-row">
-        <a class="btn btn--primary" href="factions/index.html">Explore Factions</a>
-        <a class="btn" href="#devlogs">Follow Dev Logs</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- World -->
-  <section id="world" class="section">
-    <div class="container reveal">
-      <h2>The World</h2>
-      <p class="lead">From shattered kingdoms to cursed ruins, the lands of <strong>Ashes of Unity</strong> hold stories written in both light and blood.</p>
-    </div>
-  </section>
-
-  <!-- Factions -->
-  <section id="factions" class="section">
+  <!-- FACTION CARDS -->
+  <section class="section">
     <div class="container">
-      <h2 class="reveal">Factions</h2>
+      <h2>Choose Your Allegiance</h2>
+      <p class="muted" style="margin-bottom:16px;">Four powers shape the world — Faith, Discipline, Shadow, and Knowledge.</p>
+      <div class="grid">
 
-      <div class="grid cards">
-        <!-- Holy Empire -->
-        <article class="card reveal">
-          <a class="card-link" href="factions/holy-empire.html" aria-label="Explore Holy Empire">
-            <figure class="card-media">
-              <img src="images/AoU-Healer.png" alt="Holy Empire Healer in radiant robes" loading="lazy" />
-              <figcaption>
-                <span class="cap-title">Holy Empire</span>
-                <span class="cap-cta">Explore</span>
-              </figcaption>
-            </figure>
+        <article class="card">
+          <img src="assets/images/factions/holy-empire.png" alt="Holy Empire" />
+          <div class="card-body">
             <h3>Holy Empire</h3>
-            <p>Zeal, Order, and Radiant Might guided by divine faith.</p>
-          </a>
+            <p>Radiant order, divine zeal, unbreakable resolve.</p>
+            <a class="btn" href="factions/holy-empire.html">Enter</a>
+          </div>
         </article>
 
-        <!-- Knights Order -->
-        <article class="card reveal">
-          <a class="card-link" href="factions/knights-order.html" aria-label="Explore Knights Order">
-            <figure class="card-media">
-              <img src="images/knights-steel-knight.png" alt="Knights Order Steel Knight clad in magitek armor" loading="lazy" />
-              <figcaption>
-                <span class="cap-title">Knights Order</span>
-                <span class="cap-cta">Explore</span>
-              </figcaption>
-            </figure>
+        <article class="card">
+          <img src="assets/images/factions/knights-order.png" alt="Knights Order" />
+          <div class="card-body">
             <h3>Knights Order</h3>
-            <p>Discipline, Magitek Warfare, and Tactical Supremacy.</p>
-          </a>
+            <p>Discipline, strategy, and magitek supremacy.</p>
+            <a class="btn" href="factions/knights-order.html">Enter</a>
+          </div>
         </article>
 
-        <!-- Arcane Order -->
-        <article class="card reveal">
-          <a class="card-link" href="factions/arcane-order.html" aria-label="Explore Arcane Order">
-            <figure class="card-media">
-              <img src="images/arcane-hexblade.png" alt="Arcane Order Hexblade channeling runic energy" loading="lazy" />
-              <figcaption>
-                <span class="cap-title">Arcane Order</span>
-                <span class="cap-cta">Explore</span>
-              </figcaption>
-            </figure>
-            <h3>Arcane Order</h3>
-            <p>Knowledge, Runes, and the Pursuit of Arcane Perfection.</p>
-          </a>
-        </article>
-
-        <!-- Shadowborn -->
-        <article class="card reveal">
-          <a class="card-link" href="factions/shadowborn.html" aria-label="Explore Shadowborn">
-            <figure class="card-media">
-              <img src="images/shadowborn-assassin.png" alt="Shadowborn Assassin cloaked in darkness" loading="lazy" />
-              <figcaption>
-                <span class="cap-title">Shadowborn</span>
-                <span class="cap-cta">Explore</span>
-              </figcaption>
-            </figure>
+        <article class="card">
+          <img src="assets/images/factions/shadowborn.png" alt="Shadowborn" />
+          <div class="card-body">
             <h3>Shadowborn</h3>
-            <p>Stealth, Poison, and Survival in the Endless Shadows.</p>
-          </a>
+            <p>Corruption, stealth, and survival in the dark.</p>
+            <a class="btn" href="factions/shadowborn.html">Enter</a>
+          </div>
         </article>
+
+        <article class="card">
+          <img src="assets/images/factions/arcane-order.png" alt="Arcane Order" />
+          <div class="card-body">
+            <h3>Arcane Order</h3>
+            <p>Knowledge, power, and elemental devastation.</p>
+            <a class="btn" href="factions/arcane-order.html">Enter</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- Dev Logs -->
-  <section id="devlogs" class="section">
-    <div class="container reveal">
-      <h2>Dev Logs</h2>
-      <ul class="devlist">
-        <li><time datetime="2025-11-10">Nov 10, 2025</time> Faction pages scaffolded.</li>
-        <li><time datetime="2025-11-09">Nov 9, 2025</time> Initial concept and structure established.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container cta reveal">
-      <h2>Stay in the Loop</h2>
-      <p class="lead">Want updates when new dev logs drop?</p>
-      <div class="btn-row">
-        <a href="mailto:you@example.com?subject=Ashes%20of%20Unity%20Updates" class="btn btn--primary">Email Me Updates</a>
-        <a href="#devlogs" class="btn">Read Dev Logs</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ashes of Unity</p>
-      <nav class="footer-nav">
-        <a href="#world">World</a>
-        <a href="factions/index.html">Factions</a>
-        <a href="#devlogs">Dev Logs</a>
-      </nav>
-    </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">© Ashes of Unity</div>
   </footer>
 
-  <script src="../script.js"></script>
-  <script src="script.js"></script>
-  <script src="..\script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
-
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-
-  <script src="script.js"></script>
-  <script src="script.js"></script>
-  <!-- keep single reference to your site script -->
   <script src="script.js"></script>
 </body>
 </html>

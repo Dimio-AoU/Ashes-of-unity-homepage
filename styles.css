@@ -1,0 +1,96 @@
+/* ========== Base ========== */
+:root { --gold: #d0b766; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+/* ========== Helpers ========== */
+.container { max-width: 960px; margin: 0 auto; padding: 0 1rem; }
+.lead { font-size: 1.125rem; line-height: 1.6; color: #ddd; }
+.section { padding: 4rem 0; text-align: left; }
+
+/* ========== Hero ========== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+/* ========== Headings ========== */
+h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  transition: color 250ms ease, text-shadow 250ms ease;
+  margin: 0 0 1rem 0;
+}
+h2 { margin: 0 0 0.75rem 0; }
+
+/* ========== State classes ========== */
+.is-gold { color: gold; }
+.is-red  { color: red;  }
+
+/* Glow effect toggled by JS */
+.glow {
+  text-shadow: 0 0 12px rgba(255, 215, 0, .8),
+               0 0 24px rgba(255, 215, 0, .4);
+  cursor: pointer;
+}
+
+/* ========== Buttons ========== */
+.btn-row {
+  display: inline-flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  background: transparent;
+  color: #f6e7b4;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease,
+              border-color 180ms ease, transform 100ms ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--gold);
+  color: #171717;
+  outline: none;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: var(--gold);
+  color: #171717;
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: #e7cd7a;
+  border-color: #e7cd7a;
+}
+
+/* Focus ring for keyboard users */
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(208,183,102,.4);
+}
+
+/* Tiny screens: tighter buttons */
+@media (max-width: 380px) {
+  .btn { padding: 0.65rem 0.85rem; }
+}

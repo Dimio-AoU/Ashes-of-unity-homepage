@@ -155,3 +155,12 @@ h1.is-gold{color:var(--gold)}
 .footer-inner{display:flex;gap:1rem;align-items:center;justify-content:space-between;min-height:68px}
 .footer-nav a{color:#babac4;text-decoration:none;margin-left:1rem}
 .footer-nav a:hover{color:#fff}
+
+/* Subtle divider below hero for cinematic rhythm */
+#world.section { position:relative; }
+#world.section::before{
+  content:""; position:absolute; left:50%; transform:translateX(-50%);
+  top:-1px; width:220px; height:1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity:.85;
+}

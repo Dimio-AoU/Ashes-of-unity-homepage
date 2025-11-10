@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Faction Overview • Ashes of Unity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts + Theme -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="description" content="Choose your path: Holy Empire, Knights Order, Shadowborn, or Arcane Order." />
+
+  <!-- Small, page-local styles just for this hub -->
+  <style>
+    .overview-sub{color:var(--muted); max-width:72ch; margin:.35rem auto 0}
+    .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.65rem 0 0 0}
+    .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .55rem;border:1px solid var(--line);border-radius:999px;font-size:.82rem;background:rgba(255,255,255,.03)}
+    .chip--ally{border-color:rgba(140,200,255,.35)}
+    .chip--rival{border-color:rgba(255,120,120,.35);background:rgba(255,120,120,.05)}
+    .mini{display:grid;gap:.35rem;margin-top:.65rem}
+    .mini dt{font-weight:700;color:var(--gold);font-size:.9rem}
+    .mini dd{margin:0;color:#d7d7dc}
+    .card .btn{margin-top:.65rem}
+    .media{border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:0 0 .75rem 0}
+    .media img{width:100%;height:220px;object-fit:cover;display:block}
+    @media(min-width:980px){
+      .intro-grid{display:grid;grid-template-columns: 2fr 1fr;gap:1rem;align-items:end}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
+      <nav class="nav" data-nav>
+        <a href="../index.html#world" class="nav__link">World</a>
+        <a href="index.html" class="nav__link">Factions</a>
+        <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
+        <a href="../index.html#contact" class="nav__btn">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero--small">
+    <div class="container hero__inner">
+      <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="index.html">Factions</a> <span>/</span> Overview</nav>
+      <h1 class="is-gold">Choose Your Path</h1>
+      <p class="lead overview-sub">Four powers shape the world: radiant zeal, tactical steel, living shadow, and forbidden arcana. Each faction changes how you fight, grow, and carve your legend.</p>
+    </div>
+  </section>
+
+  <!-- Four-faction grid -->
+  <section class="section">
+    <div class="container">
+      <h2>Factions at a Glance</h2>
+      <div class="grid cards">
+
+        <!-- HOLY EMPIRE -->
+        <article class="card">
+          <figure class="media">
+            <img src="../images/AoU-Healer.png" alt="Holy Empire healer in radiant robes">
+          </figure>
+          <h3>😇 Holy Empire</h3>
+          <p><strong>Theme:</strong> Radiance, order, divine zealotry. Sacred Unity Shards, harsh but “righteous” law, golden citadels and fortified temples.</p>
+
+          <dl class="mini">
+            <dt>Strengths</dt><dd>Healing, protection, resilience, AoE blessings</dd>
+            <dt>Weaknesses</dt><dd>Slower offense; vulnerable to stealth/poison</dd>
+            <dt>Player Fantasy</dt><dd>Shining crusader — last bastion of light</dd>
+            <dt>Classes</dt><dd>Templar • Crusader • Cleric • Inquisitor</dd>
+          </dl>
+
+          <div class="chips">
+            <span class="chip chip--ally">Ally: 🔆 Knights Order</span>
+            <span class="chip chip--rival">Rival: 👿 Shadowborn</span>
+            <span class="chip chip--rival">Rival: 🦹🏽 Arcane Order</span>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn" href="holy-empire.html">View Faction</a>
+          </div>
+        </article>
+
+        <!-- KNIGHTS ORDER -->
+        <article class="card">
+          <figure class="media">
+            <img src="../images/knights-steel-knight.png" alt="Knights Order steel knight in magitek armor">
+          </figure>
+          <h3>🔆 Knights Order</h3>
+          <p><strong>Theme:</strong> Martial might and battlefield strategy. Fortresses, sapphire banners, siege forges, and magitek constructs.</p>
+
+          <dl class="mini">
+            <dt>Strengths</dt><dd>Balanced melee+magic, siege dominance, team buffs</dd>
+            <dt>Weaknesses</dt><dd>Less agile; weaker healing; reliant on formations</dd>
+            <dt>Player Fantasy</dt><dd>Disciplined warlord or spellblade general</dd>
+            <dt>Classes</dt><dd>Steel Knight • War General • Battle Mage • Arcane Sentinel</dd>
+          </dl>
+
+          <div class="chips">
+            <span class="chip chip--ally">Ally: 😇 Holy Empire</span>
+            <span class="chip chip--rival">Rival: 🦹🏽 Arcane Order</span>
+            <span class="chip chip--rival">Rival: 👿 Shadowborn</span>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn" href="knights-order.html">View Faction</a>
+          </div>
+        </article>
+
+        <!-- SHADOWBORN -->
+        <article class="card">
+          <figure class="media">
+            <img src="../images/shadowborn-assassin.png" alt="Shadowborn assassin cloaked in darkness">
+          </figure>
+          <h3>👿 Shadowborn</h3>
+          <p><strong>Theme:</strong> Darkness, secrecy, survival. Hidden enclaves, poisoncraft, assassination, and forbidden curses.</p>
+
+          <dl class="mini">
+            <dt>Strengths</dt><dd>Stealth, assassination, poisons/curses, burst</dd>
+            <dt>Weaknesses</dt><dd>Low defense; fragile if caught; weak vs radiant</dd>
+            <dt>Player Fantasy</dt><dd>Blade in the dark — ruthless survivor</dd>
+            <dt>Classes</dt><dd>Dark Knight • Assassin • Necromancer • Occultist</dd>
+          </dl>
+
+          <div class="chips">
+            <span class="chip chip--ally">Ally: 🦹🏽 Arcane Order (fragile)</span>
+            <span class="chip chip--rival">Rival: 😇 Holy Empire</span>
+            <span class="chip chip--rival">Rival: 🔆 Knights Order</span>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn" href="shadowborn.html">View Faction</a>
+          </div>
+        </article>
+
+        <!-- ARCANE ORDER -->
+        <article class="card">
+          <figure class="media">
+            <img src="../images/arcane-hexblade.png" alt="Arcane Order hexblade channeling runes">
+          </figure>
+          <h3>🦹🏽 Arcane Order</h3>
+          <p><strong>Theme:</strong> Arcane mastery, obsession with knowledge, raw magical power. Towers, floating citadels, unstable skies.</p>
+
+          <dl class="mini">
+            <dt>Strengths</dt><dd>Raw magical offense, AoE devastation, control</dd>
+            <dt>Weaknesses</dt><dd>Fragile; mana-reliant; countered by anti-mage</dd>
+            <dt>Player Fantasy</dt><dd>Scholar, spell-master, arcane prodigy</dd>
+            <dt>Classes</dt><dd>Hexblade • Voidcaller • Warlock • Shadow Sorcerer</dd>
+          </dl>
+
+          <div class="chips">
+            <span class="chip chip--ally">Ally: 👿 Shadowborn (fragile)</span>
+            <span class="chip chip--rival">Rival: 🔆 Knights Order</span>
+            <span class="chip chip--rival">Rival: 😇 Holy Empire</span>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn" href="arcane-order.html">View Faction</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional: quick pointers to systems (not required to click) -->
+  <section class="section">
+    <div class="container">
+      <h2>How Factions Shape Your Build</h2>
+      <p class="lead">Stats, skills, and prestige evolve differently across factions — blessings vs banners, curses vs runes. Ready to plan your path?</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn" href="../index.html#world">Read World Intro</a>
+        <a class="btn" href="index.html">Back to Factions Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ashes of Unity</p>
+      <nav class="footer-nav">
+        <a href="../index.html#world">World</a>
+        <a href="index.html">Factions</a>
+        <a href="../index.html#devlogs">Dev Logs</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

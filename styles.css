@@ -115,7 +115,7 @@ h1.is-gold{color:var(--gold)}
   content:"";
   position:absolute;
   inset:0;
-  background: url("images/AoU-GoodvEvil.jpg") center / cover no-repeat; /* <- change .jpg to .png/.webp if needed */
+  background: url("images/AoU-GoodvEvil.png") center / cover no-repeat; /* <- change .jpg to .png/.webp if needed */
   filter: saturate(1.05) contrast(1.05);
   opacity:.48; /* tweak between .40 and .62 to taste */
 }

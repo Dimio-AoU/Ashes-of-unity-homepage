@@ -7,9 +7,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css" />
+  <meta name="description" content="The Arcane Order — mastery, obsession with knowledge, and raw magical power." />
+  <style>
+    /* Page-local helpers (scoped) */
+    .mini{display:grid;gap:.35rem;margin-top:.65rem}
+    .mini dt{font-weight:700;color:var(--gold);font-size:.95rem}
+    .mini dd{margin:0;color:#d7d7dc}
+    .twocol{display:grid;gap:1rem}
+    @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
+    .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.65rem 0 0}
+    .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .55rem;border:1px solid var(--line);border-radius:999px;font-size:.82rem;background:rgba(255,255,255,.03)}
+    .chip--ally{border-color:rgba(180,140,255,.35)}
+    .chip--rival{border-color:rgba(255,120,120,.35);background:rgba(255,120,120,.05)}
+    .section-title{display:flex;align-items:center;gap:.5rem}
+    .section-title .dot{width:.55rem;height:.55rem;border-radius:50%;background:#a787ff;opacity:.9}
+    .card-list{display:grid;gap:1rem}
+    @media(min-width:900px){.card-list{grid-template-columns:repeat(2,1fr)}}
+    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
+    .media{border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:0 0 .75rem 0}
+    .media img{width:100%;height:280px;object-fit:cover;display:block}
+    .badge{display:inline-block;padding:.1rem .45rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem;margin:.15rem .25rem 0 0}
+    .statgrid{display:grid;gap:1rem}
+    @media(min-width:900px){.statgrid{grid-template-columns:1.4fr .8fr}}
+  </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
@@ -23,26 +47,210 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero hero--small">
     <div class="container hero__inner">
       <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="index.html">Factions</a> <span>/</span> Arcane Order</nav>
-      <h1 class="is-gold">Arcane Order</h1>
-      <p class="lead">Knowledge, Runes, and the Pursuit of Arcane Perfection.</p>
+      <h1 class="is-gold">🦹🏽 Arcane Order</h1>
+      <p class="lead">Arcane mastery, obsession with knowledge, and raw magical power. Towers, floating citadels, and shimmering skies of unstable mana.</p>
     </div>
   </section>
 
+  <!-- Top image + Player Fantasy -->
   <section class="section">
     <div class="container">
-      <h2>Classes</h2>
-      <div class="grid cards">
-        <article class="card"><a class="card-link" href="../classes/hexblade.html"><h3>Hexblade (Physical Attack)</h3><p>Runic warriors channeling arcane power through blades.</p></a></article>
-        <article class="card"><a class="card-link" href="../classes/voidcaller.html"><h3>Voidcaller (Physical Defense)</h3><p>Rift manipulators; summon entities for protection/control.</p></a></article>
-        <article class="card"><a class="card-link" href="../classes/warlock.html"><h3>Warlock (Magic Attack)</h3><p>Curse and DoT specialist; life drain and weakening hexes.</p></a></article>
-        <article class="card"><a class="card-link" href="../classes/shadow-sorcerer.html"><h3>Shadow Sorcerer (Magic Defense)</h3><p>AoE chaos control; battlefield-wide disruption.</p></a></article>
+      <div class="grid" style="gap:1rem">
+        <div>
+          <figure class="media">
+            <img src="../images/arcane-hexblade.png" alt="Arcane Order hexblade channeling runes">
+          </figure>
+        </div>
+        <aside class="callout">
+          <h2 class="section-title"><span class="dot"></span><span>Player Fantasy</span></h2>
+          <p class="lead" style="margin:.5rem 0 0">
+            You are the scholar, the spell-master, the arcane prodigy. Bend fire, frost, lightning, and time to your will—reshape reality as an <strong>Elementalist</strong>, inscribe grand seals as an <strong>Arcanist</strong>, fuse sword and sorcery as a <strong>Spellblade</strong>, or twist time itself as a <strong>Chronomancer</strong>.
+          </p>
+        </aside>
       </div>
     </div>
   </section>
 
+  <!-- Theme & Identity -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Theme & Identity</span></h2>
+      <p><strong>Belief:</strong> The Core’s fragments are keys to ultimate truth—studied, hoarded, weaponized. <strong>Society:</strong> Towers and labs humming with experiments; wards and runes glow across robes and halls. <strong>Lands:</strong> Floating citadels and anomaly-scarred terrain under shimmering skies.</p>
+    </div>
+  </section>
+
+  <!-- Strengths & Weaknesses -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Strengths & Weaknesses</span></h2>
+      <div class="twocol">
+        <div class="card">
+          <h3>Strengths</h3>
+          <ul>
+            <li>Raw magical offense and AoE devastation</li>
+            <li>Battlefield control via elemental effects</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Weaknesses</h3>
+          <ul>
+            <li>Fragile defense; reliant on mana</li>
+            <li>Vulnerable to disruption and anti-mage tactics (e.g., Knights)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes (live links if class pages exist) -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Classes</span></h2>
+      <div class="btn-row" style="flex-wrap:wrap">
+        <a class="btn" href="../classes/hexblade.html">Hexblade (Physical Attack)</a>
+        <a class="btn" href="../classes/voidcaller.html">Voidcaller (Physical Defense)</a>
+        <a class="btn" href="../classes/warlock.html">Warlock (Magic Attack)</a>
+        <a class="btn" href="../classes/shadow-sorcerer.html">Shadow Sorcerer (Magic Defense)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weapons -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Faction Weapons</span></h2>
+      <div class="card-list">
+        <div class="card">
+          <h3>Core Arsenal</h3>
+          <ul>
+            <li><strong>Staves &amp; Wands</strong> — channel elemental and pure arcane</li>
+            <li><strong>Spellblades</strong> — melee focus with spell integration</li>
+            <li><strong>Orbs &amp; Crystals</strong> — store unstable mana for bursts/barriers</li>
+            <li><strong>Grimoires &amp; Tomes</strong> — amplify range and power</li>
+            <li><strong>Elemental Rods</strong> — fire/frost/lightning with chained AoEs</li>
+            <li><strong>Arcane Spears</strong> — conjured lances that pierce armor</li>
+            <li><strong>Focus Relics</strong> — boost cast speed or crit spell effects</li>
+            <li><strong>Runed Gauntlets</strong> — martial use of elemental bursts</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Practice & Doctrine</h3>
+          <p>Weapons are conduits first and steel second—each tool is a calculus of risk, volatility, and control over the Core’s truths.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessories -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Faction Accessories</span></h2>
+      <div class="twocol">
+        <div class="card">
+          <h3>Rings</h3>
+          <ul>
+            <li><strong>Manaflow Rings</strong> — +mana regen; reduced cooldowns</li>
+            <li><strong>Elemental Rings</strong> — enhance fire/frost/lightning damage</li>
+          </ul>
+          <h3>Earrings</h3>
+          <ul>
+            <li><strong>Scholar’s Earrings</strong> — +cast speed; +spell crit</li>
+            <li><strong>Mindward Earrings</strong> — +confusion resist; +focus stability</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Necklaces</h3>
+          <ul>
+            <li><strong>Archmage’s Pendant</strong> — boosts AoE radius of spells</li>
+            <li><strong>Chrono Amulet</strong> — reduces cooldowns on high-tier spells</li>
+          </ul>
+          <h3>Prestige Accessories</h3>
+          <ul>
+            <li><strong>Infinity Ring</strong> — small chance to double-cast a spell</li>
+            <li><strong>Eye of Eternity Amulet</strong> — reveals invisible/stealthed units</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crafting Specialty -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Faction Crafting Specialty</span></h2>
+      <div class="twocol">
+        <div class="card">
+          <h3>Runecrafting</h3>
+          <p>Enchantment and inscriptions for weapons/armor—tailored elemental and arcane scaling.</p>
+        </div>
+        <div class="card">
+          <h3>Mana Alchemy</h3>
+          <p>Crystals, potions, and consumables that restore mana or heighten spellcasting temporarily.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Attributes -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Global Attributes</span></h2>
+      <div class="statgrid">
+        <div class="card">
+          <h3>Core Stats</h3>
+          <span class="badge">INT</span>
+          <span class="badge">WIS</span>
+          <span class="badge">DEX</span>
+          <p style="margin-top:.5rem">Prioritizes magical power, control, and resource flow over raw durability.</p>
+          <h3 style="margin-top:.75rem">Hidden Stats</h3>
+          <ul>
+            <li>Mana Efficiency</li>
+            <li>Spell Crit</li>
+            <li>Elemental Affinity</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Faction Bonus</h3>
+          <p><strong>+5% Magic Damage</strong><br><strong>+2% Mana Regeneration</strong></p>
+          <p class="muted" style="margin-top:.35rem">See Systems → Stats for balance notes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prestige & Quests -->
+  <section class="section">
+    <div class="container">
+      <div class="twocol">
+        <div class="card">
+          <h2 class="section-title"><span class="dot"></span><span>Prestige Path</span></h2>
+          <p><strong>Legendary Quest: Codex of Eternity</strong> — unlocks <em>Arcane Rebirth</em> and deepens INT/Mana scaling and elemental mastery.</p>
+        </div>
+        <div class="card">
+          <h2 class="section-title"><span class="dot"></span><span>Faction Quest</span></h2>
+          <p><strong>Beginner Questline (Lv. 1–15)</strong> — stabilize a mana rift, recover a stolen grimoire, and bind your first focus relic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Relations -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Relations</span></h2>
+      <div class="chips">
+        <span class="chip chip--ally">Ally: 👿 Shadowborn (fragile)</span>
+        <span class="chip chip--rival">Rival: 🔆 Knights Order</span>
+        <span class="chip chip--rival">Rival: 😇 Holy Empire</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Ashes of Unity</p>

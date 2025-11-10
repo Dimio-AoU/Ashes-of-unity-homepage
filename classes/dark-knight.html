@@ -2,71 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Dark Knight • Shadowborn • Ashes of Unity</title>
+  <title>Dark Knight • Ashes of Unity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css" />
-  <meta name="description" content="Dark Knight — bruiser tank fueled by lifesteal and blood-forged armor." />
+  <meta name="description" content="Dark Knight — Shadowborn bulwark that trades life for power and converts pain into protection." />
+  <style>
+    .twocol{display:grid;gap:1rem} @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
+    .section-title{display:flex;align-items:center;gap:.5rem}
+    .dot{width:.55rem;height:.55rem;border-radius:50%;background:#a64bff}
+    .badge{display:inline-block;padding:.1rem .45rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem;margin:.15rem .25rem 0 0}
+    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
-      <nav class="nav" data-nav>
-        <a href="../index.html#world" class="nav__link">World</a>
-        <a href="../factions/index.html" class="nav__link">Factions</a>
-        <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
-        <a href="../index.html#contact" class="nav__btn">Contact</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
+    <nav class="nav">
+      <a href="../index.html#world" class="nav__link">World</a>
+      <a href="../factions/index.html" class="nav__link">Factions</a>
+      <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
+      <a href="../index.html#contact" class="nav__btn">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-  <section class="hero hero--small">
-    <div class="container hero__inner">
-      <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="../factions/index.html">Factions</a> <span>/</span> <a href="../factions/shadowborn.html">Shadowborn</a> <span>/</span> Dark Knight</nav>
-      <h1 class="is-gold">Dark Knight</h1>
-      <p class="lead">Bruiser tank—drains life and hardens armor with bloodcraft.</p>
-    </div>
-  </section>
+<section class="hero hero--small">
+  <div class="container hero__inner">
+    <nav class="crumbs">
+      <a href="../index.html">Home</a> <span>/</span>
+      <a href="../factions/index.html">Factions</a> <span>/</span>
+      <a href="../factions/shadowborn.html">Shadowborn</a> <span>/</span>
+      Dark Knight
+    </nav>
+    <h1 class="is-gold">👿 Dark Knight</h1>
+    <p class="lead">Pain-forged tank. Blood pacts, self-harm amplifiers, and retaliatory guard.</p>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container class-layout">
-      <article class="class-main">
-        <h2>Role & Fantasy</h2>
-        <p>Relentless frontline presence trading health for power, then stealing it back.</p>
-        <h2>Signature Tools</h2>
-        <ul>
-          <li><strong>Blood Ward:</strong> Convert damage dealt into temporary armor.</li>
-          <li><strong>Dread Cleave:</strong> Wide swing that heals per target hit.</li>
-          <li><strong>Grim Challenge:</strong> Lock a foe into a duel zone briefly.</li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn" href="../factions/shadowborn.html">← Back to Shadowborn</a>
-        </div>
-      </article>
-      <aside class="class-aside">
-        <div class="card">
-          <h3>Class Type</h3><p>Physical Defense (Bruiser)</p>
-          <h3>Difficulty</h3><p>Intermediate</p>
-          <h3>Strengths</h3><p>Sustain, pressure.</p>
-          <h3>Weaknesses</h3><p>Vulnerable to kiting.</p>
-        </div>
-      </aside>
+<section class="section"><div class="container">
+  <div class="twocol">
+    <div class="card">
+      <h2 class="section-title"><span class="dot"></span><span>Role & Identity</span></h2>
+      <p>Frontline bulwark that turns taken damage into shields and counter-strikes. Thrives in attrition and corrupt zones.</p>
+      <p><span class="badge">Role: Physical Defense</span><span class="badge">Faction: Shadowborn</span></p>
     </div>
-  </section>
+    <aside class="callout">
+      <h2 class="section-title"><span class="dot"></span><span>Stats Focus</span></h2>
+      <p><strong>Primary:</strong> VIT, DEX • <strong>Secondary:</strong> STR<br><strong>Hidden:</strong> Corruption (retaliation & bleed scaling)</p>
+    </aside>
+  </div>
+</div></section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ashes of Unity</p>
-      <nav class="footer-nav">
-        <a href="../index.html#world">World</a>
-        <a href="../factions/index.html">Factions</a>
-        <a href="../index.html#devlogs">Dev Logs</a>
-      </nav>
+<section class="section"><div class="container">
+  <h2 class="section-title"><span class="dot"></span><span>Weapon Proficiency</span></h2>
+  <ul>
+    <li><strong>Scythe / Curved Sword</strong> — wide bleeds and parry windows</li>
+    <li><strong>Whip-chain</strong> — yank/entangle for line control</li>
+    <li><strong>Shadow Claws</strong> — lifesteal flurries in close quarters</li>
+  </ul>
+</div></section>
+
+<section class="section"><div class="container">
+  <h2 class="section-title"><span class="dot"></span><span>Core Skills (Examples)</span></h2>
+  <ul>
+    <li><strong>Blood Aegis</strong> — convert recent damage into a decaying shield.</li>
+    <li><strong>Grim Reprisal</strong> — parry → counter that applies heavy bleed.</li>
+    <li><strong>Thorned Pact</strong> — take % self-damage to spike lifesteal and threat.</li>
+  </ul>
+  <p class="muted">Tune values later in Systems → Combat.</p>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="twocol">
+    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Synergies</span></h2>
+      <ul>
+        <li><strong>Assassin</strong> — backstab vs your bleeds</li>
+        <li><strong>Necromancer</strong> — drain auras during your pacts</li>
+        <li><strong>Occultist</strong> — curse stacking amplifies reprisals</li>
+      </ul>
     </div>
-  </footer>
-  <script src="../script.js"></script>
+    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Prestige Hook</span></h2>
+      <p><strong>Blood Oath Pact</strong> upgrades self-harm conversions and adds vampiric thorns.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Ashes of Unity</p>
+    <nav class="footer-nav">
+      <a href="../index.html#world">World</a>
+      <a href="../factions/index.html">Factions</a>
+      <a href="../index.html#devlogs">Dev Logs</a>
+    </nav>
+  </div>
+</footer>
+<script src="../script.js"></script>
 </body>
 </html>

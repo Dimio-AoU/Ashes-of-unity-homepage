@@ -2,71 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Necromancer • Shadowborn • Ashes of Unity</title>
+  <title>Necromancer • Ashes of Unity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css" />
-  <meta name="description" content="Necromancer — summoner and curse-weaver commanding the dead." />
+  <meta name="description" content="Necromancer — Shadowborn caster who drains life, raises minions, and spreads rot." />
+  <style>
+    .twocol{display:grid;gap:1rem} @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
+    .section-title{display:flex;align-items:center;gap:.5rem}
+    .dot{width:.55rem;height:.55rem;border-radius:50%;background:#a64bff}
+    .badge{display:inline-block;padding:.1rem .45rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem;margin:.15rem .25rem 0 0}
+    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
-      <nav class="nav" data-nav>
-        <a href="../index.html#world" class="nav__link">World</a>
-        <a href="../factions/index.html" class="nav__link">Factions</a>
-        <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
-        <a href="../index.html#contact" class="nav__btn">Contact</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
+    <nav class="nav">
+      <a href="../index.html#world" class="nav__link">World</a>
+      <a href="../factions/index.html" class="nav__link">Factions</a>
+      <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
+      <a href="../index.html#contact" class="nav__btn">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-  <section class="hero hero--small">
-    <div class="container hero__inner">
-      <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="../factions/index.html">Factions</a> <span>/</span> <a href="../factions/shadowborn.html">Shadowborn</a> <span>/</span> Necromancer</nav>
-      <h1 class="is-gold">Necromancer</h1>
-      <p class="lead">Summons, curses, and life theft from the restless dead.</p>
-    </div>
-  </section>
+<section class="hero hero--small">
+  <div class="container hero__inner">
+    <nav class="crumbs">
+      <a href="../index.html">Home</a> <span>/</span>
+      <a href="../factions/index.html">Factions</a> <span>/</span>
+      <a href="../factions/shadowborn.html">Shadowborn</a> <span>/</span>
+      Necromancer
+    </nav>
+    <h1 class="is-gold">👿 Necromancer</h1>
+    <p class="lead">Rot & ruin. Minions, drains, and battlefield control through decay.</p>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container class-layout">
-      <article class="class-main">
-        <h2>Role & Fantasy</h2>
-        <p>Commands skeletal vanguards and blights foes with grave-born malice.</p>
-        <h2>Signature Tools</h2>
-        <ul>
-          <li><strong>Bone Legion:</strong> Call a wave of lesser undead to harry foes.</li>
-          <li><strong>Grave Rot:</strong> Area curse that weakens armor.</li>
-          <li><strong>Soul Siphon:</strong> Drain tether—heals you while it holds.</li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn" href="../factions/shadowborn.html">← Back to Shadowborn</a>
-        </div>
-      </article>
-      <aside class="class-aside">
-        <div class="card">
-          <h3>Class Type</h3><p>Magic Attack (Pet/DoT)</p>
-          <h3>Difficulty</h3><p>Intermediate</p>
-          <h3>Strengths</h3><p>Zone control, sustain.</p>
-          <h3>Weaknesses</h3><p>Pet management, counters.</p>
-        </div>
-      </aside>
+<section class="section"><div class="container">
+  <div class="twocol">
+    <div class="card">
+      <h2 class="section-title"><span class="dot"></span><span>Role & Identity</span></h2>
+      <p>Sustained caster that leverages summons and contagions. Excels in long fights and zone denial.</p>
+      <p><span class="badge">Role: Magic Attack</span><span class="badge">Faction: Shadowborn</span></p>
     </div>
-  </section>
+    <aside class="callout">
+      <h2 class="section-title"><span class="dot"></span><span>Stats Focus</span></h2>
+      <p><strong>Primary:</strong> INT • <strong>Secondary:</strong> VIT, DEX<br><strong>Hidden:</strong> Corruption (DoT & summon potency)</p>
+    </aside>
+  </div>
+</div></section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ashes of Unity</p>
-      <nav class="footer-nav">
-        <a href="../index.html#world">World</a>
-        <a href="../factions/index.html">Factions</a>
-        <a href="../index.html#devlogs">Dev Logs</a>
-      </nav>
+<section class="section"><div class="container">
+  <h2 class="section-title"><span class="dot"></span><span>Weapon Proficiency</span></h2>
+  <ul>
+    <li><strong>Hex Staff</strong> — curses and drains</li>
+    <li><strong>Grimoire of Night</strong> — summon augments & spread</li>
+    <li><strong>Blood Orbs</strong> — life battery for bursts/ults</li>
+  </ul>
+</div></section>
+
+<section class="section"><div class="container">
+  <h2 class="section-title"><span class="dot"></span><span>Core Skills (Examples)</span></h2>
+  <ul>
+    <li><strong>Grave Pact</strong> — sacrifice HP to empower minions.</li>
+    <li><strong>Rot Bloom</strong> — spreading contagion field.</li>
+    <li><strong>Bone Warden</strong> — temporary guardian that taunts and explodes into shards.</li>
+  </ul>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="twocol">
+    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Synergies</span></h2>
+      <ul>
+        <li><strong>Assassin</strong> — executes on your rotting targets</li>
+        <li><strong>Dark Knight</strong> — minion screen during pacts</li>
+        <li><strong>Occultist</strong> — curses stack with your rot</li>
+      </ul>
     </div>
-  </footer>
-  <script src="../script.js"></script>
+    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Prestige Hook</span></h2>
+      <p><strong>Blood Oath Pact</strong> enables vampiric minions and corpse detonations.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Ashes of Unity</p>
+    <nav class="footer-nav">
+      <a href="../index.html#world">World</a>
+      <a href="../factions/index.html">Factions</a>
+      <a href="../index.html#devlogs">Dev Logs</a>
+    </nav>
+  </div>
+</footer>
+<script src="../script.js"></script>
 </body>
 </html>

@@ -7,9 +7,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css" />
+  <meta name="description" content="The Knights Order — martial might, battlefield strategy, and disciplined magitek." />
+  <style>
+    /* Page-local helpers (scoped) */
+    .mini{display:grid;gap:.35rem;margin-top:.65rem}
+    .mini dt{font-weight:700;color:var(--gold);font-size:.95rem}
+    .mini dd{margin:0;color:#d7d7dc}
+    .twocol{display:grid;gap:1rem}
+    @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
+    .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.65rem 0 0}
+    .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .55rem;border:1px solid var(--line);border-radius:999px;font-size:.82rem;background:rgba(255,255,255,.03)}
+    .chip--ally{border-color:rgba(140,200,255,.35)}
+    .chip--rival{border-color:rgba(255,120,120,.35);background:rgba(255,120,120,.05)}
+    .section-title{display:flex;align-items:center;gap:.5rem}
+    .section-title .dot{width:.55rem;height:.55rem;border-radius:50%;background:#7ab0ff;opacity:.9}
+    .card-list{display:grid;gap:1rem}
+    @media(min-width:900px){.card-list{grid-template-columns:repeat(2,1fr)}}
+    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
+    .media{border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:0 0 .75rem 0}
+    .media img{width:100%;height:280px;object-fit:cover;display:block}
+    .statgrid{display:grid;gap:1rem}
+    @media(min-width:900px){.statgrid{grid-template-columns:1.4fr .8fr}}
+    .badge{display:inline-block;padding:.1rem .45rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem;margin:.15rem .25rem 0 0}
+  </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
@@ -23,26 +47,216 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero hero--small">
     <div class="container hero__inner">
       <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="index.html">Factions</a> <span>/</span> Knights Order</nav>
-      <h1 class="is-gold">Knights Order</h1>
-      <p class="lead">Discipline, Magitek Warfare, and Tactical Supremacy.</p>
+      <h1 class="is-gold">🔆 Knights Order</h1>
+      <p class="lead">Martial might, battlefield strategy, and disciplined magitek. Guardians of civilization after the Core’s fall.</p>
     </div>
   </section>
 
+  <!-- Top image + Player Fantasy -->
   <section class="section">
     <div class="container">
-      <h2>Classes</h2>
-      <div class="grid cards">
-        <article class="card"><a class="card-link" href="../classes/steel-knight.html"><h3>Steel Knight (Physical Defense)</h3><p>Vanguard tank; fortified lines and defensive auras.</p></a></article>
-        <article class="card"><a class="card-link" href="../classes/war-general.html"><h3>War General (Physical Attack)</h3><p>Tactical DPS; formation buffs and battlefield control.</p></a></article>
-        <article class="card"><a class="card-link" href="../classes/battle-mage.html"><h3>Battle Mage (Magic Attack)</h3><p>Spellblade hybrid; arcane-infused melee strikes.</p></a></article>
-        <article class="card"><a class="card-link" href="../classes/arcane-sentinel.html"><h3>Arcane Sentinel (Magic Defense)</h3><p>Anti-mage bulwark; counters and nullifies casters.</p></a></article>
+      <div class="grid" style="gap:1rem">
+        <div>
+          <figure class="media">
+            <img src="../images/knights-steel-knight.png" alt="Steel Knight in rune-etched magitek armor">
+          </figure>
+        </div>
+        <aside class="callout">
+          <h2 class="section-title"><span class="dot"></span><span>Player Fantasy</span></h2>
+          <p class="lead" style="margin:.5rem 0 0">
+            You are the disciplined warlord, strategist, or spellblade general. Unite fractured lands through banners, runes, and martial honor—defend lines as a <strong>Steel Knight</strong>, command armies as a <strong>War General</strong>, bridge steel and sorcery as a <strong>Battle Mage</strong>, or counter casters as an <strong>Arcane Sentinel</strong>.
+          </p>
+        </aside>
       </div>
     </div>
   </section>
 
+  <!-- Theme & Identity -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Theme & Identity</span></h2>
+      <p><strong>Origins:</strong> Formed after the Core’s fall as guardians of civilization. <strong>Philosophy:</strong> Pragmatic discipline mixing steel with arcane engineering. <strong>Lands:</strong> Fortresses, sapphire banners, siege forges, and magitek constructs under strict order.</p>
+    </div>
+  </section>
+
+  <!-- Strengths & Weaknesses -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Strengths & Weaknesses</span></h2>
+      <div class="twocol">
+        <div class="card">
+          <h3>Strengths</h3>
+          <ul>
+            <li>Balanced melee + magic</li>
+            <li>Siege dominance & strong frontline</li>
+            <li>Tactical buffs & high group synergy</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Weaknesses</h3>
+          <ul>
+            <li>Less agile than Shadowborn</li>
+            <li>Weaker healing than Holy Empire</li>
+            <li>Reliant on formations and leadership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes (live links to class pages) -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Classes</span></h2>
+      <div class="btn-row" style="flex-wrap:wrap">
+        <a class="btn" href="../classes/steel-knight.html">Steel Knight (Physical Defense)</a>
+        <a class="btn" href="../classes/war-general.html">War General (Physical Attack)</a>
+        <a class="btn" href="../classes/battle-mage.html">Battle Mage (Magic Attack)</a>
+        <a class="btn" href="../classes/arcane-sentinel.html">Arcane Sentinel (Magic Defense)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weapons -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Faction Weapons</span></h2>
+      <div class="card-list">
+        <div class="card">
+          <h3>Core Arsenal</h3>
+          <ul>
+            <li><strong>Longswords &amp; Greatswords</strong> — versatile, rune-etched for arcane power</li>
+            <li><strong>Warhammers</strong> — crush armor and siege structures</li>
+            <li><strong>Halberds</strong> — formation fighting, anti-mount reach</li>
+            <li><strong>Arcane Rifles</strong> — magitek firearms channeling mana bolts</li>
+            <li><strong>Magitek Gauntlets</strong> — explosive shockwave punches</li>
+            <li><strong>Battle Standards</strong> — deployable aura banners for allies</li>
+            <li><strong>Runed Spellblades</strong> — steel infused with arcane slashes</li>
+            <li><strong>War Tomes</strong> — amplify leadership and aura abilities</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Craft & Doctrine</h3>
+          <p>Weaponry is standardized for formations and enhanced via rune-etching. Commanders wield tomes and standards to coordinate tactics and morale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessories -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Faction Accessories</span></h2>
+
+      <div class="twocol">
+        <div class="card">
+          <h3>Rings</h3>
+          <ul>
+            <li><strong>Command Rings</strong> — +aura radius</li>
+            <li><strong>Rune-etched Rings</strong> — +melee and +arcane resist</li>
+          </ul>
+          <h3>Earrings</h3>
+          <ul>
+            <li><strong>Steel Crest Earrings</strong> — +armor, stagger resist</li>
+            <li><strong>Sentinel’s Earrings</strong> — +awareness, detect stealth</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Necklaces</h3>
+          <ul>
+            <li><strong>Banner Pendant</strong> — +party damage buff</li>
+            <li><strong>Sapphire Torque</strong> — +mana regen, +spellshield</li>
+          </ul>
+          <h3>Prestige Accessories</h3>
+          <ul>
+            <li><strong>Warlord’s Crown Pendant</strong> — morale pulse boosts crit rate</li>
+            <li><strong>General’s Seal Ring</strong> — bonus stats when leading groups/raids</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crafting Specialty -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Faction Crafting Specialty</span></h2>
+      <div class="twocol">
+        <div class="card">
+          <h3>Magitek Engineering</h3>
+          <p>Siege engines, rifles, gauntlets, and constructs forged for battlefield dominance.</p>
+        </div>
+        <div class="card">
+          <h3>Rune Forging</h3>
+          <p>Tactical sapphire-inscribed armor and weapons for formation synergy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Attributes -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Global Attributes</span></h2>
+      <div class="statgrid">
+        <div class="card">
+          <h3>Core Stats</h3>
+          <span class="badge">STR</span>
+          <span class="badge">VIT</span>
+          <span class="badge">DEX</span>
+          <p style="margin-top:.5rem">Balanced strength and discipline support hybrid melee–arcane tactics.</p>
+          <h3 style="margin-top:.75rem">Hidden Stats</h3>
+          <ul>
+            <li>Endurance</li>
+            <li>Leadership (morale auras)</li>
+            <li>Arcane Resistance</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Faction Bonus</h3>
+          <p><strong>+5% Physical Defense</strong><br><strong>+2% Group Buff Effectiveness</strong></p>
+        </div>
+      </div>
+      <aside class="callout" style="margin-top:1rem">
+        <p><strong>Callout:</strong> ⚔ The Knights Order embodies battlefield supremacy. Steel Knights and War Generals lead armies, while Battle Mages and Arcane Sentinels blend martial might with tactical brilliance. Their hidden growth paths reinforce their role as faction-defining leaders and warriors. Any party with Knights gains unmatched defense, buffs, and morale strength.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Prestige & Quests -->
+  <section class="section">
+    <div class="container">
+      <div class="twocol">
+        <div class="card">
+          <h2 class="section-title"><span class="dot"></span><span>Prestige Path</span></h2>
+          <p><strong>Legendary Quest: Knights of the Glory</strong> — grants <em>Glorious Vanguard</em> and reinforces STR/VIT leadership builds.</p>
+        </div>
+        <div class="card">
+          <h2 class="section-title"><span class="dot"></span><span>Faction Quest</span></h2>
+          <p><strong>Beginner Questline (Lv. 1–15)</strong> — earn your tabard, learn formation drills, and deploy your first banner on a live field.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Relations -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="dot"></span><span>Relations</span></h2>
+      <div class="chips">
+        <span class="chip chip--ally">Ally: 😇 Holy Empire (tense)</span>
+        <span class="chip chip--rival">Rival: 🦹🏽 Arcane Order</span>
+        <span class="chip chip--rival">Rival: 👿 Shadowborn</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Ashes of Unity</p>

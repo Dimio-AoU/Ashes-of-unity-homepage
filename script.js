@@ -49,4 +49,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // Footer year
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
+
+  // Reveal-on-scroll (IntersectionObserver)
+  const revealEls = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        io.unobserve(entry.target); // animate once
+      }
+    });
+  }, { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0.15 });
+
+  revealEls.forEach(el => io.observe(el));
+
+  // Subtle parallax for hero background
+  // Updates CSS variable --hero-bg-y (used in .hero::before background-position)
+  const hero = document.querySelector(".hero");
+  const updateParallax = () => {
+    if (!hero) return;
+    const scrolled = window.scrollY || window.pageYOffset;
+    const offset = Math.round(scrolled * 0.2); // parallax strength
+    hero.style.setProperty("--hero-bg-y", `${offset}px`);
+  };
+  updateParallax();
+  window.addEventListener("scroll", updateParallax, { passive: true });
+  window.addEventListener("resize", updateParallax);
 });

@@ -1,36 +1,101 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Ashes of Unity</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <h1 class="is-gold">Welcome to the world of Betrayal and War</h1>
-        <p class="lead">Will war be an endless story, or will Unity bring forth strength for all.</p>
+<head>
+  <meta charset="utf-8" />
+  <title>Ashes of Unity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-        <div class="btn-row">
-          <a class="btn btn--primary" href="#factions" aria-label="Explore Factions">Explore Factions</a>
-          <a class="btn" href="#devlogs" aria-label="Follow Development Logs">Follow Dev Logs</a>
-        </div>
+  <!-- Header / Nav -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a href="#home" class="logo">Ashes of <span>Unity</span></a>
+
+      <nav class="nav" data-nav>
+        <a href="#home" class="nav__link">Home</a>
+        <a href="#world" class="nav__link">World</a>
+        <a href="#factions" class="nav__link">Factions</a>
+        <a href="#devlogs" class="nav__link">Dev Logs</a>
+        <a href="#contact" class="nav__btn">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle menu" data-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero__inner">
+      <h1 class="is-gold">Welcome to the world of Betrayal and War</h1>
+      <p class="lead">Will war be an endless story, or will Unity bring forth strength for all?</p>
+
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#factions">Explore Factions</a>
+        <a class="btn" href="#devlogs">Follow Dev Logs</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PLACEHOLDER SECTIONS SO BUTTONS SCROLL SOMEWHERE -->
-    <section id="factions" class="container section">
-      <h2>Factions (placeholder)</h2>
-      <p>Coming soon: Holy, Infernal, Shadow, Nature…</p>
-    </section>
+  <!-- World (will be filled from your lore files later) -->
+  <section id="world" class="section">
+    <div class="container">
+      <h2>The World</h2>
+      <p class="lead">Lore overview placeholder — we’ll import your Worldbuilding & Lore next.</p>
+    </div>
+  </section>
 
-    <section id="devlogs" class="container section">
-      <h2>Dev Logs (placeholder)</h2>
-      <p>Coming soon: updates and progress notes.</p>
-    </section>
+  <!-- Factions (cards; we’ll populate from your faction/class files) -->
+  <section id="factions" class="section">
+    <div class="container">
+      <h2>Factions</h2>
+      <div class="grid cards">
+        <article class="card"><h3>Holy Empire</h3><p>Zeal, order, radiant might.</p></article>
+        <article class="card"><h3>Knights Order</h3><p>Discipline, magitek, sieges.</p></article>
+        <article class="card"><h3>Arcane Order</h3><p>Knowledge, runes, elemental power.</p></article>
+        <article class="card"><h3>Shadowborn</h3><p>Stealth, poison, survival.</p></article>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- Dev Logs (placeholder list we’ll wire later) -->
+  <section id="devlogs" class="section">
+    <div class="container">
+      <h2>Dev Logs</h2>
+      <ul class="devlist">
+        <li><time datetime="2025-11-10">Nov 10, 2025</time> Project scaffold created.</li>
+        <li><time datetime="2025-11-09">Nov 9, 2025</time> Initial concept + structure.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container cta">
+      <h2>Stay in the Loop</h2>
+      <p class="lead">Want updates when new dev logs drop?</p>
+      <div class="btn-row">
+        <a href="mailto:you@example.com?subject=Ashes%20of%20Unity%20Updates" class="btn btn--primary">Email Me Updates</a>
+        <a href="#devlogs" class="btn">Read Dev Logs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ashes of Unity</p>
+      <nav class="footer-nav">
+        <a href="#world">World</a>
+        <a href="#factions">Factions</a>
+        <a href="#devlogs">Dev Logs</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

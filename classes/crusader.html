@@ -2,82 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Crusader • Holy Empire • Ashes of Unity</title>
+  <title>Crusader • Ashes of Unity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css" />
-  <meta name="theme-color" content="#0b0b0b" />
-  <meta name="description" content="Crusader — frontline holy DPS of the Holy Empire." />
+  <meta name="description" content="Crusader — Holy Empire melee offense with radiant cleaves and group rally tools." />
+  <style>
+    .twocol{display:grid;gap:1rem} @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
+    .section-title{display:flex;align-items:center;gap:.5rem}.dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
+    .badge{display:inline-block;padding:.1rem .45rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem;margin:.15rem .25rem 0 0}
+    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
-      <nav class="nav" data-nav>
-        <a href="../index.html#world" class="nav__link">World</a>
-        <a href="../factions/index.html" class="nav__link">Factions</a>
-        <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
-        <a href="../index.html#contact" class="nav__btn">Contact</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
+    <nav class="nav"><a href="../index.html#world" class="nav__link">World</a><a href="../factions/index.html" class="nav__link">Factions</a><a href="../index.html#devlogs" class="nav__link">Dev Logs</a><a href="../index.html#contact" class="nav__btn">Contact</a></nav>
+    <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-  <section class="hero hero--small">
-    <div class="container hero__inner">
-      <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="../factions/index.html">Factions</a> <span>/</span> <a href="../factions/holy-empire.html">Holy Empire</a> <span>/</span> Crusader</nav>
-      <h1 class="is-gold">Crusader</h1>
-      <p class="lead">Frontline holy DPS wielding light-infused weapons and fearless charges.</p>
-    </div>
-  </section>
+<section class="hero hero--small">
+  <div class="container hero__inner">
+    <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="../factions/index.html">Factions</a> <span>/</span> <a href="../factions/holy-empire.html">Holy Empire</a> <span>/</span> Crusader</nav>
+    <h1 class="is-gold">🪽 Crusader</h1>
+    <p class="lead">Melee offense empowered by radiant energy. Frontline cleaves, group rally, and holy finishers.</p>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container class-layout">
-      <article class="class-main">
-        <h2>Role & Fantasy</h2>
-        <p>Radiant executor who smites foes with consecrated steel. Excels at burst windows, execution thresholds, and punishing the condemned.</p>
-
-        <h2>Signature Tools</h2>
-        <ul>
-          <li><strong>Judgment Strike:</strong> Bonus damage vs. marked targets.</li>
-          <li><strong>Consecrated Charge:</strong> Gap closer that empowers the next attack.</li>
-          <li><strong>Radiant Execution:</strong> Execute at low HP with holy burst.</li>
-        </ul>
-
-        <h2>Team Value</h2>
-        <p>Brings reliable front-line pressure and anti-corruption bonuses vs. shadow / undead.</p>
-
-        <div class="btn-row">
-          <a class="btn" href="../factions/holy-empire.html">← Back to Holy Empire</a>
-        </div>
-      </article>
-
-      <aside class="class-aside">
-        <div class="card">
-          <h3>Class Type</h3>
-          <p>Physical Attack (DPS)</p>
-          <h3>Difficulty</h3>
-          <p>Intermediate</p>
-          <h3>Strengths</h3>
-          <p>Burst, execution, anti-undead.</p>
-          <h3>Weaknesses</h3>
-          <p>Kiteable, cooldown-gated.</p>
-        </div>
+<section class="section">
+  <div class="container">
+    <div class="twocol">
+      <div class="card">
+        <h2 class="section-title"><span class="dot"></span><span>Role & Identity</span></h2>
+        <p>Momentum-based striker with area cleaves and short rally windows. Excels at pushing objectives and cracking lines under protection.</p>
+        <p><span class="badge">Role: Physical DPS</span><span class="badge">Faction: Holy Empire</span></p>
+      </div>
+      <aside class="callout">
+        <h2 class="section-title"><span class="dot"></span><span>Stats Focus</span></h2>
+        <p><strong>Primary:</strong> STR, VIT • <strong>Secondary:</strong> END<br><strong>Hidden:</strong> Radiance (on-hit holy scaling)</p>
       </aside>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ashes of Unity</p>
-      <nav class="footer-nav">
-        <a href="../index.html#world">World</a>
-        <a href="../factions/index.html">Factions</a>
-        <a href="../index.html#devlogs">Dev Logs</a>
-      </nav>
+<section class="section"><div class="container">
+  <h2 class="section-title"><span class="dot"></span><span>Weapon Proficiency</span></h2>
+  <ul><li><strong>Greatsword</strong> — wide radiant cleaves</li><li><strong>Longsword</strong> — flexible combos</li><li><strong>Mace</strong> — armor-crushing smites</li></ul>
+</div></section>
+
+<section class="section"><div class="container">
+  <h2 class="section-title"><span class="dot"></span><span>Core Skills (Examples)</span></h2>
+  <ul>
+    <li><strong>Radiant Arc</strong> — cleave that marks enemies; allies deal bonus vs marked.</li>
+    <li><strong>Banner of Zeal</strong> — short rally aura granting attack speed.</li>
+    <li><strong>Final Atonement</strong> — execution strike vs low-HP foes.</li>
+  </ul>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="twocol">
+    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Synergies</span></h2>
+      <ul><li><strong>Templar</strong> barriers → safe engage windows</li><li><strong>Cleric</strong> HOTs → sustain during rally</li><li><strong>Inquisitor</strong> anti-mage purge → safe vs casters</li></ul>
     </div>
-  </footer>
-  <script src="../script.js"></script>
+    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Prestige Hook</span></h2>
+      <p><strong>Radiant Ascension</strong> adds holy overflows to finishers and improves team rally uptime.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <p>© <span id="year"></span> Ashes of Unity</p>
+  <nav class="footer-nav"><a href="../index.html#world">World</a><a href="../factions/index.html">Factions</a><a href="../index.html#devlogs">Dev Logs</a></nav>
+</div></footer>
+<script src="../script.js"></script>
 </body>
 </html>

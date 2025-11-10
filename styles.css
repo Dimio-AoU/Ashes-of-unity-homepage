@@ -65,14 +65,12 @@ h3{font-size:var(--h3);text-transform:uppercase;letter-spacing:.08em}
   .nav-toggle{display:block}
 }
 
-/* Hero with parallax-ready background (global image) */
+/* Hero with parallax-ready background */
 .hero{--hero-bg-y: 0px; position:relative; min-height:calc(100vh - 68px); display:flex;align-items:center;justify-content:center;text-align:center; overflow:hidden}
 .hero::before{content:""; position:absolute; inset:0; background:url("images/AoU-GoodvEvil.png") center calc(var(--hero-bg-y)) / cover no-repeat; filter:saturate(1.05) contrast(1.05); opacity:.48}
 .hero::after{content:"";position:absolute;inset:0;background: radial-gradient(600px 300px at 50% 100%, rgba(215,190,122,.10), transparent 70%), linear-gradient(to bottom, rgba(10,10,11,.25), rgba(10,10,11,.72))}
 .hero>.container{position:relative;z-index:1}
 .hero__inner{max-width:780px;margin-inline:auto}
-
-/* Internal pages: smaller hero without needing another image */
 .hero--small{min-height:52vh}
 
 /* Breadcrumbs */
@@ -90,7 +88,7 @@ h3{font-size:var(--h3);text-transform:uppercase;letter-spacing:.08em}
 .cards .card h3{color:var(--gold)}
 .cards .card:hover{transform: translateY(-2px); border-color: rgba(215,190,122,.35); box-shadow: 0 6px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(215,190,122,.12)}
 
-/* Card media (hover caption) */
+/* Card media (hover caption used on list/grid pages) */
 .card-media{position:relative;border-radius:12px;overflow:hidden;margin:0 0 .75rem 0;border:1px solid var(--line)}
 .card-media img{display:block;width:100%;height:240px;object-fit:cover;transform:scale(1.02);transition: transform .35s ease}
 .card-media figcaption{position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:space-between; padding:.75rem .85rem; color:#f3f3f5; background: linear-gradient(180deg, transparent, rgba(10,10,11,.65)); opacity:0; transition: opacity .25s ease, backdrop-filter .25s ease; backdrop-filter: blur(0px); pointer-events:none}
@@ -98,6 +96,14 @@ h3{font-size:var(--h3);text-transform:uppercase;letter-spacing:.08em}
 .cap-cta{font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; padding:.35rem .6rem; border:1px solid var(--gold); border-radius:8px; background:rgba(10,10,11,.35)}
 .card:hover .card-media img{ transform:scale(1.06) }
 .card:hover .card-media figcaption{ opacity:1; backdrop-filter: blur(2px) }
+
+/* Class detail layout (two-column on wide screens) */
+.class-layout{display:grid;gap:1.2rem}
+.class-main{min-width:0}
+.class-aside .card{position:sticky;top:92px}
+@media(min-width:980px){
+  .class-layout{grid-template-columns: 2fr 1fr}
+}
 
 /* Dev list */
 .devlist{list-style:none;padding:0;margin:0;display:grid;gap:.75rem}
@@ -115,7 +121,7 @@ h3{font-size:var(--h3);text-transform:uppercase;letter-spacing:.08em}
 .btn--primary{background:var(--gold);color:var(--ink)}
 .btn--primary:hover,.btn--primary:focus-visible{background:var(--gold-2);border-color:var(--gold-2)}
 .btn:focus-visible{box-shadow:0 0 0 3px var(--ring)}
-@media (max-width:380px){ .btn{padding:.65rem .9rem} }
+@media(max-width:380px){ .btn{padding:.65rem .9rem} }
 
 /* Reveal on scroll */
 .reveal{opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease}
@@ -131,6 +137,6 @@ h3{font-size:var(--h3);text-transform:uppercase;letter-spacing:.08em}
 .footer-nav a{color:#babac4;text-decoration:none;margin-left:1rem}
 .footer-nav a:hover{color:#fff}
 
-/* Divider below hero */
+/* Divider below hero (home world section) */
 #world.section{position:relative}
 #world.section::before{content:"";position:absolute;left:50%;transform:translateX(-50%); top:-1px;width:220px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.85}

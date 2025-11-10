@@ -22,7 +22,7 @@
       <nav class="nav" data-nav>
         <a href="#home" class="nav__link">Home</a>
         <a href="#world" class="nav__link">World</a>
-        <a href="#factions" class="nav__link">Factions</a>
+        <a href="factions/index.html" class="nav__link">Factions</a>
         <a href="#devlogs" class="nav__link">Dev Logs</a>
         <a href="#contact" class="nav__btn">Contact</a>
       </nav>
@@ -40,7 +40,7 @@
       <p class="lead">Will war be an endless story, or will unity bring forth strength for all?</p>
 
       <div class="btn-row">
-        <a class="btn btn--primary" href="#factions">Explore Factions</a>
+        <a class="btn btn--primary" href="factions/index.html">Explore Factions</a>
         <a class="btn" href="#devlogs">Follow Dev Logs</a>
       </div>
     </div>
@@ -62,54 +62,62 @@
       <div class="grid cards">
         <!-- Holy Empire -->
         <article class="card reveal">
-          <figure class="card-media">
-            <img src="images/AoU-Healer.png" alt="Holy Empire Healer in radiant robes" loading="lazy" />
-            <figcaption>
-              <span class="cap-title">Holy Empire</span>
-              <span class="cap-cta">Explore</span>
-            </figcaption>
-          </figure>
-          <h3>Holy Empire</h3>
-          <p>Zeal, Order, and Radiant Might guided by divine faith.</p>
+          <a class="card-link" href="factions/holy-empire.html" aria-label="Explore Holy Empire">
+            <figure class="card-media">
+              <img src="images/AoU-Healer.png" alt="Holy Empire Healer in radiant robes" loading="lazy" />
+              <figcaption>
+                <span class="cap-title">Holy Empire</span>
+                <span class="cap-cta">Explore</span>
+              </figcaption>
+            </figure>
+            <h3>Holy Empire</h3>
+            <p>Zeal, Order, and Radiant Might guided by divine faith.</p>
+          </a>
         </article>
 
         <!-- Knights Order -->
         <article class="card reveal">
-          <figure class="card-media">
-            <img src="images/knights-steel-knight.png" alt="Knights Order Steel Knight clad in magitek armor" loading="lazy" />
-            <figcaption>
-              <span class="cap-title">Knights Order</span>
-              <span class="cap-cta">Explore</span>
-            </figcaption>
-          </figure>
-          <h3>Knights Order</h3>
-          <p>Discipline, Magitek Warfare, and Tactical Supremacy.</p>
+          <a class="card-link" href="factions/knights-order.html" aria-label="Explore Knights Order">
+            <figure class="card-media">
+              <img src="images/knights-steel-knight.png" alt="Knights Order Steel Knight clad in magitek armor" loading="lazy" />
+              <figcaption>
+                <span class="cap-title">Knights Order</span>
+                <span class="cap-cta">Explore</span>
+              </figcaption>
+            </figure>
+            <h3>Knights Order</h3>
+            <p>Discipline, Magitek Warfare, and Tactical Supremacy.</p>
+          </a>
         </article>
 
         <!-- Arcane Order -->
         <article class="card reveal">
-          <figure class="card-media">
-            <img src="images/arcane-hexblade.png" alt="Arcane Order Hexblade channeling runic energy" loading="lazy" />
-            <figcaption>
-              <span class="cap-title">Arcane Order</span>
-              <span class="cap-cta">Explore</span>
-            </figcaption>
-          </figure>
-          <h3>Arcane Order</h3>
-          <p>Knowledge, Runes, and the Pursuit of Arcane Perfection.</p>
+          <a class="card-link" href="factions/arcane-order.html" aria-label="Explore Arcane Order">
+            <figure class="card-media">
+              <img src="images/arcane-hexblade.png" alt="Arcane Order Hexblade channeling runic energy" loading="lazy" />
+              <figcaption>
+                <span class="cap-title">Arcane Order</span>
+                <span class="cap-cta">Explore</span>
+              </figcaption>
+            </figure>
+            <h3>Arcane Order</h3>
+            <p>Knowledge, Runes, and the Pursuit of Arcane Perfection.</p>
+          </a>
         </article>
 
         <!-- Shadowborn -->
         <article class="card reveal">
-          <figure class="card-media">
-            <img src="images/shadowborn-assassin.png" alt="Shadowborn Assassin cloaked in darkness" loading="lazy" />
-            <figcaption>
-              <span class="cap-title">Shadowborn</span>
-              <span class="cap-cta">Explore</span>
-            </figcaption>
-          </figure>
-          <h3>Shadowborn</h3>
-          <p>Stealth, Poison, and Survival in the Endless Shadows.</p>
+          <a class="card-link" href="factions/shadowborn.html" aria-label="Explore Shadowborn">
+            <figure class="card-media">
+              <img src="images/shadowborn-assassin.png" alt="Shadowborn Assassin cloaked in darkness" loading="lazy" />
+              <figcaption>
+                <span class="cap-title">Shadowborn</span>
+                <span class="cap-cta">Explore</span>
+              </figcaption>
+            </figure>
+            <h3>Shadowborn</h3>
+            <p>Stealth, Poison, and Survival in the Endless Shadows.</p>
+          </a>
         </article>
       </div>
     </div>
@@ -120,7 +128,7 @@
     <div class="container reveal">
       <h2>Dev Logs</h2>
       <ul class="devlist">
-        <li><time datetime="2025-11-10">Nov 10, 2025</time> Faction portraits, hero background, and animations added.</li>
+        <li><time datetime="2025-11-10">Nov 10, 2025</time> Faction pages scaffolded.</li>
         <li><time datetime="2025-11-09">Nov 9, 2025</time> Initial concept and structure established.</li>
       </ul>
     </div>
@@ -144,12 +152,90 @@
       <p>© <span id="year"></span> Ashes of Unity</p>
       <nav class="footer-nav">
         <a href="#world">World</a>
-        <a href="#factions">Factions</a>
+        <a href="factions/index.html">Factions</a>
         <a href="#devlogs">Dev Logs</a>
       </nav>
     </div>
   </footer>
 
+  <script src="../script.js"></script>
+  <script src="script.js"></script>
+  <script src="..\script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <!-- keep single reference to your site script -->
   <script src="script.js"></script>
 </body>
 </html>

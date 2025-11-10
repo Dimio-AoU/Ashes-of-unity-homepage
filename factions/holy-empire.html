@@ -2,237 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Holy Empire • Ashes of Unity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Holy Empire — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
-  <meta name="description" content="The Holy Empire — radiant zeal, order, and divine stewardship of the Unity Shards." />
-  <style>
-    /* Page-local helpers so we don’t touch global CSS */
-    .mini{display:grid;gap:.35rem;margin-top:.65rem}
-    .mini dt{font-weight:700;color:var(--gold);font-size:.95rem}
-    .mini dd{margin:0;color:#d7d7dc}
-    .twocol{display:grid;gap:1rem}
-    @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
-    .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.65rem 0 0}
-    .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .55rem;border:1px solid var(--line);border-radius:999px;font-size:.82rem;background:rgba(255,255,255,.03)}
-    .chip--ally{border-color:rgba(255,220,140,.35)}
-    .chip--rival{border-color:rgba(255,120,120,.35);background:rgba(255,120,120,.05)}
-    .section-title{display:flex;align-items:center;gap:.5rem}
-    .section-title .dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--gold);opacity:.9}
-    .card-list{display:grid;gap:1rem}
-    @media(min-width:900px){.card-list{grid-template-columns:repeat(2,1fr)}}
-    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
-    .btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
-    .media{border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:0 0 .75rem 0}
-    .media img{width:100%;height:280px;object-fit:cover;display:block}
-  </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
-      <nav class="nav" data-nav>
-        <a href="../index.html#world" class="nav__link">World</a>
-        <a href="index.html" class="nav__link">Factions</a>
-        <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
-        <a href="../index.html#contact" class="nav__btn">Contact</a>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">ASHES OF UNITY</div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Factions</a>
+        <a href="../balance.html">Balance</a>
+        <a href="../systems.html">Systems</a>
       </nav>
-      <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <header class="banner" style="background-image:url('../assets/images/factions/holy-empire.png')">
+    <div class="container title-wrap">
+      <h1>Holy Empire</h1>
+      <p class="muted">Radiance, order, and divine zeal.</p>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero hero--small">
-    <div class="container hero__inner">
-      <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="index.html">Factions</a> <span>/</span> Holy Empire</nav>
-      <h1 class="is-gold">😇 Holy Empire</h1>
-      <p class="lead">Radiance, order, and divine zealotry. Chosen stewards of the World Core’s sacred fragments.</p>
-    </div>
-  </section>
+  <main class="page container kv">
+    <section>
+      <h2>Lore</h2>
+      <p>The Holy Empire believes the World Core’s fragments are divine relics scattered by their god of Light. They are zealous stewards destined to purify corruption and bring eternal order.</p>
 
-  <!-- Top image + Player Fantasy -->
-  <section class="section">
-    <div class="container">
-      <div class="grid" style="gap:1rem">
-        <div>
-          <figure class="media">
-            <img src="../images/AoU-Healer.png" alt="Holy Empire cleric bathed in radiant light">
-          </figure>
-        </div>
-        <aside class="callout">
-          <h2 class="section-title"><span class="dot"></span><span>Player Fantasy</span></h2>
-          <p class="lead" style="margin:.5rem 0 0">
-            The Holy Empire is about glowing faith, radiant fortresses, and divine duty. You stand as the world’s bulwark against shadow and chaos—whether a <strong>Crusader</strong> charging with divine fury, a <strong>Cleric</strong> holding back the darkness, a <strong>Templar</strong> shielding allies, or an <strong>Inquisitor</strong> punishing the wicked.
-          </p>
-        </aside>
-      </div>
-    </div>
-  </section>
+      <h2>Culture</h2>
+      <p>Golden spires, ever-burning braziers, and sacred law. Outsiders call them oppressive zealots; within, devotion is sacred duty.</p>
 
-  <!-- Theme & Identity -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Theme & Identity</span></h2>
-      <p><strong>Belief:</strong> Unity Shards are divine relics scattered by their god of Light. <strong>Society:</strong> Zealous theocracy—temples are both sanctuaries and barracks. <strong>Lands:</strong> Golden citadels, sunlit plains, fortified temples glowing with halos and inscriptions.</p>
-    </div>
-  </section>
+      <h2>Goals</h2>
+      <p>Reclaim every Unity Shard, sanctify corrupted lands, convert or destroy unbelievers.</p>
 
-  <!-- Strengths & Weaknesses -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Strengths & Weaknesses</span></h2>
-      <div class="twocol">
-        <div class="card">
-          <h3>Strengths</h3>
-          <ul>
-            <li>Healing, protection, resilience, AoE blessings</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Weaknesses</h3>
-          <ul>
-            <li>Slower offense; vulnerable to stealth and poison (Shadowborn counter)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2>Rivals & Allies</h2>
+      <p><strong>Rivals:</strong> Shadowborn; Arcane Order.</p>
+      <p><strong>Allies:</strong> Knights Order.</p>
 
-  <!-- Classes (live links) -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title"><span class="dot"></span><span>Classes</span></h2>
-    <div class="btn-row" style="flex-wrap:wrap">
-      <a class="btn" href="../classes/templar.html">Templar (Tank/Support)</a>
-      <a class="btn" href="../classes/crusader.html">Crusader (Physical Attack)</a>
-      <a class="btn" href="../classes/cleric.html">Cleric (Healer / Magic Defense)</a>
-      <a class="btn" href="../classes/inquisitor.html">Inquisitor (Magic Attack / Anti-Mage)</a>
-    </div>
-  </div>
-</section>
+      <h2>Player Fantasy</h2>
+      <p>You are the radiant crusader—the last bastion of light.</p>
 
-  <!-- Weapons -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Faction Weapons</span></h2>
-      <div class="card-list">
-        <div class="card">
-          <h3>Core Arsenal</h3>
-          <ul>
-            <li><strong>Longswords</strong> — balanced offense/defense; radiant imbues</li>
-            <li><strong>Maces &amp; Mauls</strong> — holy smite; stun potential</li>
-            <li><strong>Spears with Guard Arms</strong> — signature Templar block + smite combo</li>
-            <li><strong>Flails</strong> — disrupt shields; crowd-control spins</li>
-            <li><strong>Greatswords</strong> — Crusader cleaves with radiant energy</li>
-            <li><strong>Crossbows</strong> — precision support; holy bolts</li>
-            <li><strong>Holy Staves</strong> — Cleric/Inquisitor healing or radiant casting</li>
-            <li><strong>Grimoires &amp; Tomes</strong> — scriptural judgment casting</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Craft & Enhancement</h3>
-          <p>Weapons are often etched with <em>radiant glyphs</em> and paired with sanctified oils or blessing rituals to raise healing potency and holy damage.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2>Classes</h2>
+      <ul>
+        <li><strong>Crusader</strong> — Physical (Short Range) — STR, VIT</li>
+        <li><strong>Templar</strong> — Hybrid (Mid Range) — VIT, WIS</li>
+        <li><strong>Cleric</strong> — Magic (Long Range) — WIS, INT</li>
+        <li><strong>Sunstrider</strong> — Physical (Long Range) — DEX, WIS</li>
+      </ul>
+    </section>
+  </main>
 
-  <!-- Accessories -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Faction Accessories</span></h2>
-
-      <div class="twocol">
-        <div class="card">
-          <h3>Rings</h3>
-          <ul>
-            <li><strong>Blessed Rings</strong> — +healing output; regen aura for nearby allies</li>
-            <li><strong>Sigil Rings</strong> — +block chance; +holy damage</li>
-          </ul>
-          <h3>Earrings</h3>
-          <ul>
-            <li><strong>Halo Earrings</strong> — +shadow resistance; shorter curses/hexes</li>
-            <li><strong>Dawnlight Earrings</strong> — +crit resist; small in-combat HP regen</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Necklaces</h3>
-          <ul>
-            <li><strong>Radiant Pendants</strong> — increases aura radius for buffs</li>
-            <li><strong>Pendant of Faith</strong> — boosts mana regen; shorter heal cooldowns</li>
-          </ul>
-          <h3>Prestige Accessories</h3>
-          <ul>
-            <li><strong>Saint’s Halo Necklace</strong> — small healing pulse when casting heals</li>
-            <li><strong>Crusader’s Banner Ring</strong> — bonus damage while grouped</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Crafting Specialty -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Faction Crafting Specialty</span></h2>
-      <div class="twocol">
-        <div class="card">
-          <h3>Radiance Blacksmithing</h3>
-          <p>Holy armor and weapons inscribed with radiant glyphs to bolster healing and protection.</p>
-        </div>
-        <div class="card">
-          <h3>Blessings</h3>
-          <p>Accessories and consumables that grant temporary radiant auras (e.g., potions that add holy resistance to allies).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Prestige & Quests -->
-  <section class="section">
-    <div class="container">
-      <div class="twocol">
-        <div class="card">
-          <h2 class="section-title"><span class="dot"></span><span>Prestige Path</span></h2>
-          <p><strong>Legendary Quest: Radiant Ascension</strong> — unlocks the <em>Blessing of Eternity</em> and nudges your build toward higher healing output and resistances.</p>
-        </div>
-        <div class="card">
-          <h2 class="section-title"><span class="dot"></span><span>Faction Quests</span></h2>
-          <p><strong>Beginner Questline (Lv. 1–15)</strong> — enter the Empire’s theocratic ranks, earn your first blessings, and sanctify a corrupted shrine.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Relations -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Relations</span></h2>
-      <div class="chips">
-        <span class="chip chip--ally">Ally: 🔆 Knights Order (tense)</span>
-        <span class="chip chip--rival">Rival: 👿 Shadowborn</span>
-        <span class="chip chip--rival">Rival: 🦹🏽 Arcane Order</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ashes of Unity</p>
-      <nav class="footer-nav">
-        <a href="../index.html#world">World</a>
-        <a href="index.html">Factions</a>
-        <a href="../index.html#devlogs">Dev Logs</a>
-      </nav>
-    </div>
+  <footer class="footer">
+    <div class="container">© Ashes of Unity</div>
   </footer>
-
-  <script src="../script.js"></script>
 </body>
 </html>

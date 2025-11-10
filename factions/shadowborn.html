@@ -2,283 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Shadowborn • Ashes of Unity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Shadowborn — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
-  <meta name="description" content="The Shadowborn — darkness, secrecy, ruthless survival, and forbidden curses." />
-  <style>
-    /* Page-local helpers (scoped) */
-    .mini{display:grid;gap:.35rem;margin-top:.65rem}
-    .mini dt{font-weight:700;color:var(--gold);font-size:.95rem}
-    .mini dd{margin:0;color:#d7d7dc}
-    .twocol{display:grid;gap:1rem}
-    @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
-    .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.65rem 0 0}
-    .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .55rem;border:1px solid var(--line);border-radius:999px;font-size:.82rem;background:rgba(255,255,255,.03)}
-    .chip--ally{border-color:rgba(180,140,255,.35)}
-    .chip--rival{border-color:rgba(255,120,120,.35);background:rgba(255,120,120,.05)}
-    .section-title{display:flex;align-items:center;gap:.5rem}
-    .section-title .dot{width:.55rem;height:.55rem;border-radius:50%;background:#a64bff;opacity:.9}
-    .card-list{display:grid;gap:1rem}
-    @media(min-width:900px){.card-list{grid-template-columns:repeat(2,1fr)}}
-    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
-    .media{border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:0 0 .75rem 0}
-    .media img{width:100%;height:280px;object-fit:cover;display:block}
-    .badge{display:inline-block;padding:.1rem .45rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem;margin:.15rem .25rem 0 0}
-    .statgrid{display:grid;gap:1rem}
-    @media(min-width:900px){.statgrid{grid-template-columns:1.4fr .8fr}}
-    .danger{border-color:rgba(255,120,120,.35);background:rgba(255,120,120,.04)}
-  </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
-      <nav class="nav" data-nav>
-        <a href="../index.html#world" class="nav__link">World</a>
-        <a href="index.html" class="nav__link">Factions</a>
-        <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
-        <a href="../index.html#contact" class="nav__btn">Contact</a>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">ASHES OF UNITY</div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Factions</a>
+        <a href="../balance.html">Balance</a>
+        <a href="../systems.html">Systems</a>
       </nav>
-      <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <header class="banner" style="background-image:url('../assets/images/factions/shadowborn.png')">
+    <div class="container title-wrap">
+      <h1>Shadowborn</h1>
+      <p class="muted">Corruption, deception, and survival in the dark.</p>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero hero--small">
-    <div class="container hero__inner">
-      <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="index.html">Factions</a> <span>/</span> Shadowborn</nav>
-      <h1 class="is-gold">👿 Shadowborn</h1>
-      <p class="lead">Darkness, secrecy, and survival. Demi-human clans, assassins, necromancers, and occultists thriving in the cracks between empires.</p>
-    </div>
-  </section>
+  <main class="page container kv">
+    <section>
+      <h2>Lore</h2>
+      <p>Exiled and hunted, the Shadowborn turned to poison, curse, and shadowcraft. To them, fragments are cursed gifts of freedom.</p>
 
-  <!-- Top image + Player Fantasy -->
-  <section class="section">
-    <div class="container">
-      <div class="grid" style="gap:1rem">
-        <div>
-          <figure class="media">
-            <img src="../images/shadowborn-assassin.png" alt="Shadowborn assassin cloaked in darkness">
-          </figure>
-        </div>
-        <aside class="callout">
-          <h2 class="section-title"><span class="dot"></span><span>Player Fantasy</span></h2>
-          <p class="lead" style="margin:.5rem 0 0">
-            You are the blade in the dark, the cursed survivor, the whisper of death. Thrive on poison, shadows, and blood magic—strike unseen as an <strong>Assassin</strong>, corrupt steel as a <strong>Hexblade</strong>, raise the dead as a <strong>Necromancer</strong>, or bind forbidden rites as an <strong>Occultist</strong>.
-          </p>
-        </aside>
-      </div>
-    </div>
-  </section>
+      <h2>Culture</h2>
+      <p>Hidden camps, masks, and whispered bargains. Shadowflame torches, bone charms, and poison cauldrons.</p>
 
-  <!-- Theme & Identity -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Theme & Identity</span></h2>
-      <p><strong>Creed:</strong> The Core’s shards are poisoned gifts to reclaim freedom from zealots and tyrants. <strong>Society:</strong> Masks, whispers, poisoned cauldrons, bone charms, and shadowflame torches. <strong>Lands:</strong> Hidden enclaves, cavern fortresses, and ruined cities in perpetual twilight.</p>
-    </div>
-  </section>
+      <h2>Goals</h2>
+      <p>Topple empires, spread fear, and fuel forbidden crafts with shards.</p>
 
-  <!-- Strengths & Weaknesses -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Strengths & Weaknesses</span></h2>
-      <div class="twocol">
-        <div class="card">
-          <h3>Strengths</h3>
-          <ul>
-            <li>Stealth, assassination, poisons, curses</li>
-            <li>High burst damage; mobility</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Weaknesses</h3>
-          <ul>
-            <li>Low defense; fragile in direct combat</li>
-            <li>Vulnerable to radiant/healing counters</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2>Rivals & Allies</h2>
+      <p><strong>Rivals:</strong> Holy Empire; Knights Order.</p>
+      <p><strong>Allies:</strong> Arcane Order.</p>
 
-  <!-- Classes (live links if pages exist) -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Classes</span></h2>
-      <div class="btn-row" style="flex-wrap:wrap">
-        <a class="btn" href="../classes/dark-knight.html">Dark Knight (Physical Defense)</a>
-        <a class="btn" href="../classes/assassin.html">Assassin (Physical Attack)</a>
-        <a class="btn" href="../classes/necromancer.html">Necromancer (Magic Attack)</a>
-        <a class="btn" href="../classes/occultist.html">Occultist (Magic Defense)</a>
-      </div>
-    </div>
-  </section>
+      <h2>Player Fantasy</h2>
+      <p>You are the blade in the dark—the cursed survivor who fights dirty and thrives in chaos.</p>
 
-  <!-- Weapons -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Faction Weapons</span></h2>
-      <div class="card-list">
-        <div class="card">
-          <h3>Core Arsenal</h3>
-          <ul>
-            <li><strong>Daggers &amp; Twin Blades</strong> — fast lethal strikes</li>
-            <li><strong>Curved Swords &amp; Scythes</strong> — bleed damage; wide shadow-infused sweeps</li>
-            <li><strong>Poisoned Crossbows</strong> — venom-tipped precision</li>
-            <li><strong>Whip-chains</strong> — entangle and bleed; versatile control</li>
-            <li><strong>Shadow Claws</strong> — spectral venom gauntlets</li>
-            <li><strong>Hex Staves</strong> — channel curses, drains, and dark rituals</li>
-            <li><strong>Grimoires of Night</strong> — forbidden shadow incantations</li>
-            <li><strong>Blood Orbs</strong> — vessels of cursed essence, powering vampiric skills</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Practice & Method</h3>
-          <p>Tools favor silence, control, and attrition—poisons and hexes convert quick strikes into long, inevitable deaths.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2>Classes</h2>
+      <ul>
+        <li><strong>Assassin</strong> — Physical (Short Range) — DEX, AGI</li>
+        <li><strong>Hexblade</strong> — Hybrid (Mid Range) — STR, INT</li>
+        <li><strong>Necromancer</strong> — Magic (Long Range) — INT, Corruption</li>
+        <li><strong>Wraithbow</strong> — Physical (Long Range) — DEX, Corruption</li>
+      </ul>
+    </section>
+  </main>
 
-  <!-- Accessories -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Faction Accessories</span></h2>
-      <div class="twocol">
-        <div class="card">
-          <h3>Rings</h3>
-          <ul>
-            <li><strong>Venom Rings</strong> — poison damage over time</li>
-            <li><strong>Shadow Sigil Rings</strong> — +stealth duration; +evasion</li>
-          </ul>
-          <h3>Earrings</h3>
-          <ul>
-            <li><strong>Daggerfang Earrings</strong> — +crit chance; bonus bleed</li>
-            <li><strong>Wraith Earrings</strong> — +shadow resist; +move speed in darkness</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Necklaces</h3>
-          <ul>
-            <li><strong>Cloak Pendant</strong> — grants shadow-cloak; faster stealth</li>
-            <li><strong>Soulfang Amulet</strong> — +lifesteal; +curse potency</li>
-          </ul>
-          <h3>Prestige Accessories</h3>
-          <ul>
-            <li><strong>Assassin’s Fang Ring</strong> — bonus backstab damage</li>
-            <li><strong>Shade King’s Amulet</strong> — heals wielder on nearby enemy death</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Crafting Specialty -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Faction Crafting Specialty</span></h2>
-      <div class="twocol">
-        <div class="card">
-          <h3>Poisoncrafting</h3>
-          <p>Venoms, poisons, and toxic bombs for weapons and consumables.</p>
-        </div>
-        <div class="card">
-          <h3>Curse Forging</h3>
-          <p>Talismans, cursed accessories, and forbidden enchantments that twist the battlefield.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Global Attributes -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Global Attributes</span></h2>
-      <div class="statgrid">
-        <div class="card">
-          <h3>Core Stats</h3>
-          <span class="badge">DEX</span>
-          <span class="badge">AGI</span>
-          <span class="badge">INT</span>
-          <p style="margin-top:.5rem">Prioritizes speed, precision, and cursed utility over raw durability.</p>
-          <h3 style="margin-top:.75rem">Hidden Stats</h3>
-          <ul>
-            <li>Critical Mastery</li>
-            <li>Evasion</li>
-            <li>Corruption (curse/bleed/poison scaling)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Faction Bonus</h3>
-          <p><strong>+5% Critical Damage</strong><br><strong>+2% Lifesteal</strong></p>
-          <p class="muted" style="margin-top:.35rem">See Systems → Stats for full balance wheel.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Prestige & Quests -->
-  <section class="section">
-    <div class="container">
-      <div class="twocol">
-        <div class="card">
-          <h2 class="section-title"><span class="dot"></span><span>Prestige Path</span></h2>
-          <p><strong>Legendary Quest: Blood Oath Pact</strong> — unlocks <em>Blood Oath Form</em> and deepens DEX/Crit builds with vampiric sustain.</p>
-        </div>
-        <div class="card">
-          <h2 class="section-title"><span class="dot"></span><span>Faction Quest</span></h2>
-          <p><strong>Beginner Questline (Lv. 1–15)</strong> — infiltrate enemy strongholds, secure poisoncraft reagents, and bind your first forbidden talisman.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Villainous Path (Lords of the Abyss) -->
-  <section class="section">
-    <div class="container">
-      <aside class="callout danger">
-        <h2 class="section-title"><span class="dot"></span><span>Villainous Path — Lords of the Abyss</span></h2>
-        <ul style="margin-top:.5rem">
-          <li><strong>Assassins</strong> strike allies to extend stealth duration.</li>
-          <li><strong>Venomblades</strong> unleash blood-venom, sacrificing HP for massive DoT.</li>
-          <li><strong>Hexblades</strong> twist curses into volatile chaos harming friend and foe.</li>
-          <li><strong>Nightstalkers</strong> summon Abyss Wraiths that consume allies and enemies alike.</li>
-        </ul>
-        <p class="muted" style="margin-top:.35rem">High-risk mechanics; not recommended for casual groups.</p>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Relations -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="dot"></span><span>Relations</span></h2>
-      <div class="chips">
-        <span class="chip chip--ally">Ally: 🦹🏽 Arcane Order (fragile)</span>
-        <span class="chip chip--rival">Rival: 😇 Holy Empire</span>
-        <span class="chip chip--rival">Rival: 🔆 Knights Order</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ashes of Unity</p>
-      <nav class="footer-nav">
-        <a href="../index.html#world">World</a>
-        <a href="index.html">Factions</a>
-        <a href="../index.html#devlogs">Dev Logs</a>
-      </nav>
-    </div>
+  <footer class="footer">
+    <div class="container">© Ashes of Unity</div>
   </footer>
-
-  <script src="../script.js"></script>
 </body>
 </html>

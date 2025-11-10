@@ -90,55 +90,31 @@ h3{font-size:var(--h3);text-transform:uppercase;letter-spacing:.08em}
   .nav-toggle{display:block}
 }
 
-/* Hero */
-.hero{
-  min-height:calc(100vh - 68px);
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  background:
-    radial-gradient(600px 300px at 50% 100%, rgba(215,190,122,.06), transparent 70%);
-}
-.hero__inner{max-width:780px;margin-inline:auto}
-h1.is-gold{color:var(--gold)}
-/* Hero with cinematic background */
+/* Hero (with background image) */
 .hero{
   position:relative;
   min-height:calc(100vh - 68px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  overflow:hidden; /* trims background edges on mobile */
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  overflow:hidden;
 }
-
-/* Background image layer */
 .hero::before{
   content:"";
-  position:absolute;
-  inset:0;
-  background: url("images/AoU-GoodvEvil.png") center / cover no-repeat; /* <- change .jpg to .png/.webp if needed */
+  position:absolute; inset:0;
+  background: url("images/AoU-GoodvEvil.png") center / cover no-repeat; /* uses .png */
   filter: saturate(1.05) contrast(1.05);
-  opacity:.48; /* tweak between .40 and .62 to taste */
+  opacity:.48;
 }
-
-/* Readability overlay (gold tint + dark vignette) */
 .hero::after{
   content:"";
-  position:absolute;
-  inset:0;
+  position:absolute; inset:0;
   background:
     radial-gradient(600px 300px at 50% 100%, rgba(215,190,122,.10), transparent 70%),
     linear-gradient(to bottom, rgba(10,10,11,.25), rgba(10,10,11,.72));
 }
-
-/* Keep content above overlays */
 .hero > .container{ position:relative; z-index:1; }
+.hero__inner{ max-width:780px; margin-inline:auto; }
 
-/* (Optional) Slightly smaller hero on short screens */
-@media (max-height: 640px){
-  .hero{ min-height: 80vh; }
-}
-
-/* Cards / Faction grid */
+/* Faction Cards */
 .grid{display:grid;gap:1rem}
 @media (min-width: 720px){ .grid{grid-template-columns:repeat(2,1fr)} }
 @media (min-width: 1080px){ .grid{grid-template-columns:repeat(4,1fr)} }
@@ -154,6 +130,16 @@ h1.is-gold{color:var(--gold)}
   transform: translateY(-2px);
   border-color: rgba(215,190,122,.35);
   box-shadow: 0 6px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(215,190,122,.12);
+}
+
+/* Card images */
+.card-img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:.75rem;
+  border:1px solid var(--line);
 }
 
 /* Dev list */
@@ -182,7 +168,7 @@ h1.is-gold{color:var(--gold)}
 .btn:focus-visible{box-shadow:0 0 0 3px var(--ring)}
 @media (max-width:380px){ .btn{padding:.65rem .9rem} }
 
-/* Interactive states for title */
+/* Title interactive states */
 .is-gold{color:var(--gold)} .is-red{color:#e45}
 .glow{text-shadow:0 0 14px rgba(231,205,122,.75), 0 0 28px rgba(231,205,122,.35);cursor:pointer}
 
@@ -192,7 +178,7 @@ h1.is-gold{color:var(--gold)}
 .footer-nav a{color:#babac4;text-decoration:none;margin-left:1rem}
 .footer-nav a:hover{color:#fff}
 
-/* Subtle divider below hero for cinematic rhythm */
+/* Subtle divider below hero */
 #world.section { position:relative; }
 #world.section::before{
   content:""; position:absolute; left:50%; transform:translateX(-50%);

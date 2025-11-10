@@ -4,20 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mobile nav toggle
   const nav = document.querySelector("[data-nav]");
   const toggle = document.querySelector("[data-toggle]");
-  toggle.addEventListener("click", () => nav.classList.toggle("show"));
-
-  // Close nav on link click (mobile)
-  document.querySelectorAll(".nav a").forEach(a =>
-    a.addEventListener("click", () => nav.classList.remove("show"))
-  );
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => nav.classList.toggle("show"));
+    document.querySelectorAll(".nav a").forEach(a =>
+      a.addEventListener("click", () => nav.classList.remove("show"))
+    );
+  }
 
   // Smooth scroll for in-page anchors
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", e => {
       const id = link.getAttribute("href");
-      if (id.length > 1) {
-        e.preventDefault();
-        document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (id && id.length > 1) {
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }
     });
   });
@@ -26,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const title = document.querySelector("h1");
   if (title) {
     title.addEventListener("click", () => {
-      // remove the alert later if you prefer silent toggle
+      // remove this alert if you prefer silent toggle
       alert("The battle begins!");
       if (title.classList.contains("is-red")) {
         title.classList.remove("is-red");

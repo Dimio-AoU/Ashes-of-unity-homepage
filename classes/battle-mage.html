@@ -2,104 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Battle Mage • Ashes of Unity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Battle Mage — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
-  <meta name="description" content="Battle Mage — Knights Order hybrid DPS blending steel and sorcery with control zones and rune combos." />
   <style>
-    .twocol{display:grid;gap:1rem} @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
-    .section-title{display:flex;align-items:center;gap:.5rem}
-    .dot{width:.55rem;height:.55rem;border-radius:50%;background:#7ab0ff}
-    .badge{display:inline-block;padding:.1rem .45rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem;margin:.15rem .25rem 0 0}
-    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
+    .hero{background-image:url('../assets/images/factions/knights-order.png')}
+    .gold-hr{border:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.55),transparent);margin:22px 0}
+    .kicker{color:var(--gold);font-weight:800;letter-spacing:.04em;font-size:.85rem;text-transform:uppercase}
+    .facts,.grid2{display:grid;gap:14px;grid-template-columns:1fr}
+    @media(min-width:900px){.facts,.grid2{grid-template-columns:1fr 1fr}}
+    .fact,.panel{background:var(--card);border:1px solid var(--line-2);border-radius:12px;padding:14px}
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
-    <nav class="nav">
-      <a href="../index.html#world" class="nav__link">World</a>
-      <a href="../factions/index.html" class="nav__link">Factions</a>
-      <a href="../index.html#devlogs" class="nav__link">Dev Logs</a>
-      <a href="../index.html#contact" class="nav__btn">Contact</a>
-    </nav>
-    <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<section class="hero hero--small">
-  <div class="container hero__inner">
-    <nav class="crumbs">
-      <a href="../index.html">Home</a> <span>/</span>
-      <a href="../factions/index.html">Factions</a> <span>/</span>
-      <a href="../factions/knights-order.html">Knights Order</a> <span>/</span>
-      Battle Mage
-    </nav>
-    <h1 class="is-gold">🌟 Battle Mage</h1>
-    <p class="lead">Hybrid DPS. Spellblade combos, rune fields, and frontline casting in lockstep with formations.</p>
-  </div>
-</section>
-
-<section class="section"><div class="container">
-  <div class="twocol">
-    <div class="card">
-      <h2 class="section-title"><span class="dot"></span><span>Role & Identity</span></h2>
-      <p>Bridges melee and magic. Uses control zones and rune detonations to punish clumped enemies while dueling effectively.</p>
-      <p><span class="badge">Role: Magic Attack (Hybrid)</span><span class="badge">Faction: Knights Order</span></p>
-    </div>
-    <aside class="callout">
-      <h2 class="section-title"><span class="dot"></span><span>Stats Focus</span></h2>
-      <p><strong>Primary:</strong> STR, INT • <strong>Secondary:</strong> DEX<br><strong>Hidden:</strong> Leadership-lite (combo uptime in groups)</p>
-    </aside>
-  </div>
-</div></section>
-
-<section class="section"><div class="container">
-  <h2 class="section-title"><span class="dot"></span><span>Weapon Proficiency</span></h2>
-  <ul>
-    <li><strong>Runed Spellblade</strong> — core kit (melee + glyph casts)</li>
-    <li><strong>Arcane Rifle</strong> — midline pressure + rune shots</li>
-    <li><strong>War Tome</strong> — combo amplifiers and glyph boosts</li>
-  </ul>
-</div></section>
-
-<section class="section"><div class="container">
-  <h2 class="section-title"><span class="dot"></span><span>Core Skills (Examples)</span></h2>
-  <ul>
-    <li><strong>Glyph Detonate</strong> — trigger placed runes for AoE.</li>
-    <li><strong>Arc Lash</strong> — spellblade arc that shocks, then roots on re-cast.</li>
-    <li><strong>Bulwark Spark</strong> — empower ally shield walls with lightning retaliation.</li>
-  </ul>
-</div></section>
-
-<section class="section"><div class="container">
-  <div class="twocol">
-    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Synergies</span></h2>
-      <ul>
-        <li><strong>Steel Knight</strong> — detonate inside ramparts</li>
-        <li><strong>War General</strong> — combo during Focus Fire</li>
-        <li><strong>Arcane Sentinel</strong> — chain control with silences</li>
-      </ul>
-    </div>
-    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Prestige Hook</span></h2>
-      <p><strong>Knights of the Glory</strong> adds overcharge to glyph chains and rifle runes.</p>
-    </div>
-  </div>
-</div></section>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© <span id="year"></span> Ashes of Unity</p>
-    <nav class="footer-nav">
-      <a href="../index.html#world">World</a>
+  <div class="nav"><div class="container nav-inner">
+    <div class="brand">ASHES OF UNITY</div>
+    <nav>
+      <a href="../index.html">Home</a>
       <a href="../factions/index.html">Factions</a>
-      <a href="../index.html#devlogs">Dev Logs</a>
+      <a href="../balance.html">Balance</a>
+      <a href="../systems.html">Systems</a>
     </nav>
-  </div>
-</footer>
-<script src="../script.js"></script>
+  </div></div>
+
+  <header class="banner hero">
+    <div class="container title-wrap">
+      <h1>Battle Mage</h1>
+      <p class="muted">Hybrid • Mid Range — Stats: <strong>STR</strong>, <strong>INT</strong></p>
+    </div>
+  </header>
+
+  <main class="page container">
+    <p class="reveal">Rune-scribed fighter who fuses steel with shockwaves and zone control.</p>
+
+    <hr class="gold-hr">
+
+    <div class="grid2">
+      <div class="panel reveal">
+        <div class="kicker">Signature Abilities</div>
+        <ul class="muted">
+          <li><strong>Runic Slash</strong> — Melee hit emits arcane pulse.</li>
+          <li><strong>Wardbreak</strong> — Bonus damage to barriers/summons.</li>
+          <li><strong>Zone of Command</strong> — Mid-range field; buffs allies’ resolve.</li>
+          <li><strong>Arc Lash</strong> — Line shockwave; executes low-HP foes.</li>
+        </ul>
+      </div>
+      <div class="panel reveal">
+        <div class="kicker">Progression</div>
+        <ul class="muted">
+          <li><strong>Awakening</strong>: Rune Marshal (bigger zones & team buffs).</li>
+          <li><strong>Succession</strong>: Blade Savant (high APM single-target strings).</li>
+          <li><strong>Prestige</strong>: <em>Knights of the Glory</em> expands command auras.</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="gold-hr">
+
+    <div class="facts">
+      <div class="fact reveal"><div class="kicker">Role</div><p>Hybrid DPS/controller that shapes mid-range fights around formations.</p></div>
+      <div class="fact reveal"><div class="kicker">Faction Synergy</div><p>Steel Knight holds frontline; Arbalist traps + Sentinel barriers create kill boxes.</p></div>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© Ashes of Unity</div></footer>
+  <script src="../script.js"></script>
 </body>
 </html>

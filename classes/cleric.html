@@ -2,81 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Cleric • Ashes of Unity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Cleric — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
-  <meta name="description" content="Cleric — Holy Empire healer/support with radiant blessings and anti-shadow wards." />
   <style>
-    .twocol{display:grid;gap:1rem} @media(min-width:900px){.twocol{grid-template-columns:1fr 1fr}}
-    .section-title{display:flex;align-items:center;gap:.5rem}.dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
-    .badge{display:inline-block;padding:.1rem .45rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem;margin:.15rem .25rem 0 0}
-    .callout{border:1px solid var(--line);border-radius:14px;padding:1rem;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
+    .hero{background-image:url('../assets/images/factions/holy-empire.png')}
+    .gold-hr{border:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.55),transparent);margin:22px 0}
+    .kicker{color:var(--gold);font-weight:800;letter-spacing:.04em;font-size:.85rem;text-transform:uppercase}
+    .facts,.grid2{display:grid;gap:14px;grid-template-columns:1fr}
+    @media(min-width:900px){.facts,.grid2{grid-template-columns:1fr 1fr}}
+    .fact,.panel{background:var(--card);border:1px solid var(--line-2);border-radius:12px;padding:14px}
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="../index.html#home" class="logo">Ashes of <span>Unity</span></a>
-    <nav class="nav"><a href="../index.html#world" class="nav__link">World</a><a href="../factions/index.html" class="nav__link">Factions</a><a href="../index.html#devlogs" class="nav__link">Dev Logs</a><a href="../index.html#contact" class="nav__btn">Contact</a></nav>
-    <button class="nav-toggle" aria-label="Toggle menu" data-toggle><span></span><span></span><span></span></button>
-  </div>
-</header>
+  <div class="nav"><div class="container nav-inner">
+    <div class="brand">ASHES OF UNITY</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../factions/index.html">Factions</a>
+      <a href="../balance.html">Balance</a>
+      <a href="../systems.html">Systems</a>
+    </nav>
+  </div></div>
 
-<section class="hero hero--small">
-  <div class="container hero__inner">
-    <nav class="crumbs"><a href="../index.html">Home</a> <span>/</span> <a href="../factions/index.html">Factions</a> <span>/</span> <a href="../factions/holy-empire.html">Holy Empire</a> <span>/</span> Cleric</nav>
-    <h1 class="is-gold">🪽 Cleric</h1>
-    <p class="lead">Radiant healer and ward-bearer. Sustains lines with blessings and shields while punishing shadow.</p>
-  </div>
-</section>
+  <header class="banner hero">
+    <div class="container title-wrap">
+      <h1>Cleric</h1>
+      <p class="muted">Magic • Long Range — Stats: <strong>WIS</strong>, <strong>INT</strong></p>
+    </div>
+  </header>
 
-<section class="section">
-  <div class="container">
-    <div class="twocol">
-      <div class="card">
-        <h2 class="section-title"><span class="dot"></span><span>Role & Identity</span></h2>
-        <p>Primary healer that applies steady regeneration, cleanses, and protective wards. Specializes in anti-shadow counters.</p>
-        <p><span class="badge">Role: Healer/Support</span><span class="badge">Faction: Holy Empire</span></p>
+  <main class="page container">
+    <p class="reveal">Primary healer and purifier. Radiant pulses restore allies and scour shadow from the field.</p>
+
+    <hr class="gold-hr">
+
+    <div class="grid2">
+      <div class="panel reveal">
+        <div class="kicker">Signature Abilities</div>
+        <ul class="muted">
+          <li><strong>Hymn of Renewal</strong> — Cone heal with regen.</li>
+          <li><strong>Lightwell</strong> — Place a spring that pulses healing + cleanse.</li>
+          <li><strong>Sunlash</strong> — Radiant beam; deals bonus to undead/hexed.</li>
+          <li><strong>Aegis Chant</strong> — Short invulnerability on an ally.</li>
+        </ul>
       </div>
-      <aside class="callout">
-        <h2 class="section-title"><span class="dot"></span><span>Stats Focus</span></h2>
-        <p><strong>Primary:</strong> WIS, INT • <strong>Secondary:</strong> VIT<br><strong>Hidden:</strong> Radiance (healing throughput & blessing radius)</p>
-      </aside>
+      <div class="panel reveal">
+        <div class="kicker">Progression</div>
+        <ul class="muted">
+          <li><strong>Awakening</strong>: Seraphic Choir (mobile healing procession).</li>
+          <li><strong>Succession</strong>: Dawnkeeper (burst heal + barrier play).</li>
+          <li><strong>Prestige</strong>: <em>Radiant Ascension</em> unlocks Blessing of Eternity.</li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
 
-<section class="section"><div class="container">
-  <h2 class="section-title"><span class="dot"></span><span>Weapon Proficiency</span></h2>
-  <ul><li><strong>Holy Staff</strong> — core channel</li><li><strong>Grimoire/Tome</strong> — scripture-based buffs</li><li><strong>Mace</strong> — defensive bonk + ward pulse</li></ul>
-</div></section>
+    <hr class="gold-hr">
 
-<section class="section"><div class="container">
-  <h2 class="section-title"><span class="dot"></span><span>Core Skills (Examples)</span></h2>
-  <ul>
-    <li><strong>Blessing Wave</strong> — cone heal + minor cleanse.</li>
-    <li><strong>Halo Ward</strong> — ground field reducing shadow damage.</li>
-    <li><strong>Graceful Resurgence</strong> — delayed big heal after channel.</li>
-  </ul>
-</div></section>
-
-<section class="section"><div class="container">
-  <div class="twocol">
-    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Synergies</span></h2>
-      <ul><li><strong>Templar</strong> — shield layering</li><li><strong>Crusader</strong> — sustain during pushes</li><li><strong>Inquisitor</strong> — purge + ward combos</li></ul>
+    <div class="facts">
+      <div class="fact reveal"><div class="kicker">Role</div><p>Long-range healer/support with cleanse and radiant control tools.</p></div>
+      <div class="fact reveal"><div class="kicker">Faction Synergy</div><p>Supercharges Crusader/Templar uptime; primes Sunstrider crit windows.</p></div>
     </div>
-    <div class="card"><h2 class="section-title"><span class="dot"></span><span>Prestige Hook</span></h2>
-      <p><strong>Radiant Ascension</strong> empowers <em>Blessing of Eternity</em> pulses and widens aura radius.</p>
-    </div>
-  </div>
-</div></section>
+  </main>
 
-<footer class="site-footer"><div class="container footer-inner">
-  <p>© <span id="year"></span> Ashes of Unity</p>
-  <nav class="footer-nav"><a href="../index.html#world">World</a><a href="../factions/index.html">Factions</a><a href="../index.html#devlogs">Dev Logs</a></nav>
-</div></footer>
-<script src="../script.js"></script>
+  <footer class="footer"><div class="container">© Ashes of Unity</div></footer>
+  <script src="../script.js"></script>
 </body>
 </html>

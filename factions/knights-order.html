@@ -7,101 +7,69 @@
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .hero { background-image:url('../assets/images/factions/knights-order.png'); }
-    .gold-hr { border:0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,215,0,.55), transparent); margin:22px 0; }
-    .lead { color:#cfd3e6; font-size:1.05rem; }
-    .facts { display:grid; gap:14px; grid-template-columns:1fr; }
-    @media (min-width: 900px){ .facts{ grid-template-columns:1fr 1fr; } }
-    .fact { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:14px; }
-    .kicker { color:var(--gold); font-weight:800; letter-spacing:.04em; font-size:.85rem; text-transform:uppercase; }
-    .class-grid { display:grid; gap:18px; grid-template-columns:1fr; }
-    @media (min-width: 750px){ .class-grid{ grid-template-columns:repeat(2,1fr); } }
-    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:16px; }
-    .class-card h4{ margin:2px 0 6px; }
-    .tag{ font-size:.8rem; color:#b8bdd0; }
+    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
+    @media (min-width:900px){ .grid { grid-template-columns:1fr 1fr; } }
+    a.class-card { text-decoration:none; color:inherit; }
+    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden; }
+    .class-card h3 { margin:0 0 6px 0; }
+    .class-card .pad { padding:16px; }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">ASHES OF UNITY</div>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="./index.html">Factions</a>
-        <a href="../balance.html">Balance</a>
-        <a href="../systems.html">Systems</a>
-      </nav>
-    </div>
-  </div>
+  <div class="nav"><div class="container nav-inner">
+    <div class="brand">ASHES OF UNITY</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="./index.html">Factions</a>
+      <a href="../balance.html">Balance</a>
+      <a href="../systems.html">Systems</a>
+    </nav>
+  </div></div>
 
-  <!-- HERO -->
   <header class="banner hero">
     <div class="container title-wrap">
-      <h1>🔆 Knights Order</h1>
+      <h1>Knights Order</h1>
       <p class="muted">Discipline, strategy, and magitek supremacy.</p>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main class="page container">
-    <p class="lead reveal">
-      Forged after the Core’s fall, the Knights Order guard civilization with steel and strategy.
-      Strongholds rise under sapphire banners while runes and engines arm a disciplined war machine.
+    <p class="reveal">
+      Forged after the Core’s fall, the Knights unite steel and spell to defend civilization with banners,
+      formations, and precise command.
     </p>
 
-    <hr class="gold-hr">
+    <h2 class="section-title reveal">Classes</h2>
 
-    <div class="facts">
-      <div class="fact reveal">
-        <div class="kicker">Lore</div>
-        <p>Pragmatic guardians uniting law, formations, and controlled arcana to restore stability.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Culture</div>
-        <p>Fortresses, academies, and forges—duty, honor, and sacrifice define every march.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Goals</div>
-        <p>Unite fractured realms under one banner and regulate the use of Unity Shards.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Relations</div>
-        <p><strong>Allies:</strong> Holy Empire. <strong>Rivals:</strong> Arcane Order, Shadowborn.</p>
-      </div>
-    </div>
+    <section class="grid">
+      <a class="class-card reveal" href="../classes/steel-knight.html">
+        <div class="pad">
+          <h3>Steel Knight</h3>
+          <p class="muted">Physical • Short Range — Phalanx tank with counters.</p>
+        </div>
+      </a>
 
-    <h2 class="reveal" style="margin-top:24px;">Classes</h2>
-    <p class="muted reveal">One short-range physical, one mid-range hybrid, one long-range magic, one long-range physical.</p>
+      <a class="class-card reveal" href="../classes/battle-mage.html">
+        <div class="pad">
+          <h3>Battle Mage</h3>
+          <p class="muted">Hybrid • Mid Range — Rune slashes and zone control.</p>
+        </div>
+      </a>
 
-    <div class="class-grid">
-      <div class="class-card reveal">
-        <div class="kicker">Physical • Short Range</div>
-        <h4>Steel Knight</h4>
-        <p>Armored duelist with stance control, counters, and fortress-grade mitigation.</p>
-        <div class="tag">Stats: STR, END</div>
-      </div>
+      <a class="class-card reveal" href="../classes/arcane-sentinel.html">
+        <div class="pad">
+          <h3>Arcane Sentinel</h3>
+          <p class="muted">Magic • Long Range — Wards, reflects, and anti-mage play.</p>
+        </div>
+      </a>
 
-      <div class="class-card reveal">
-        <div class="kicker">Hybrid • Mid Range</div>
-        <h4>Battle Mage</h4>
-        <p>Runed weaponry blends steel and spell, controlling mid-range zones with shockwaves.</p>
-        <div class="tag">Stats: STR, INT</div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="kicker">Magic • Long Range</div>
-        <h4>Arcane Sentinel</h4>
-        <p>Anti-mage bulwarks and suppression wards keep the line unbroken.</p>
-        <div class="tag">Stats: INT, END</div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="kicker">Physical • Long Range</div>
-        <h4>Arbalist</h4>
-        <p>Magitek marksman deploying traps and explosive volleys to command the field.</p>
-        <div class="tag">Stats: DEX, END</div>
-      </div>
-    </div>
+      <a class="class-card reveal" href="../classes/arbalist.html">
+        <div class="pad">
+          <h3>Arbalist</h3>
+          <p class="muted">Physical • Long Range — Magitek traps and explosive bolts.</p>
+        </div>
+      </a>
+    </section>
   </main>
 
   <footer class="footer"><div class="container">© Ashes of Unity</div></footer>

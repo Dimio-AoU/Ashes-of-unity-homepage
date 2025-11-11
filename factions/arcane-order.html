@@ -7,101 +7,68 @@
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .hero { background-image:url('../assets/images/factions/arcane-order.png'); }
-    .gold-hr { border:0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,215,0,.55), transparent); margin:22px 0; }
-    .lead { color:#cfd3e6; font-size:1.05rem; }
-    .facts { display:grid; gap:14px; grid-template-columns:1fr; }
-    @media (min-width: 900px){ .facts{ grid-template-columns:1fr 1fr; } }
-    .fact { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:14px; }
-    .kicker { color:var(--gold); font-weight:800; letter-spacing:.04em; font-size:.85rem; text-transform:uppercase; }
-    .class-grid { display:grid; gap:18px; grid-template-columns:1fr; }
-    @media (min-width: 750px){ .class-grid{ grid-template-columns:repeat(2,1fr); } }
-    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:16px; }
-    .class-card h4{ margin:2px 0 6px; }
-    .tag{ font-size:.8rem; color:#b8bdd0; }
+    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
+    @media (min-width:900px){ .grid { grid-template-columns:1fr 1fr; } }
+    a.class-card { text-decoration:none; color:inherit; }
+    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden; }
+    .class-card h3 { margin:0 0 6px 0; }
+    .class-card .pad { padding:16px; }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">ASHES OF UNITY</div>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="./index.html">Factions</a>
-        <a href="../balance.html">Balance</a>
-        <a href="../systems.html">Systems</a>
-      </nav>
-    </div>
-  </div>
+  <div class="nav"><div class="container nav-inner">
+    <div class="brand">ASHES OF UNITY</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="./index.html">Factions</a>
+      <a href="../balance.html">Balance</a>
+      <a href="../systems.html">Systems</a>
+    </nav>
+  </div></div>
 
-  <!-- HERO -->
   <header class="banner hero">
     <div class="container title-wrap">
-      <h1>🦹🏽 Arcane Order</h1>
-      <p class="muted">Knowledge, power, and controlled chaos.</p>
+      <h1>Arcane Order</h1>
+      <p class="muted">Knowledge, power, and elemental chaos.</p>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main class="page container">
-    <p class="lead reveal">
-      Heretics to some, visionaries to others—the Arcane Order treat the World Core as a cosmic engine.
-      Glyph-etched towers and floating citadels hum with mana as they bend elements to their will.
+    <p class="reveal">
+      Heretics and visionaries who bend reality through fragments of the World Core—unmatched in AoE control and burst.
     </p>
 
-    <hr class="gold-hr">
+    <h2 class="section-title reveal">Classes</h2>
 
-    <div class="facts">
-      <div class="fact reveal">
-        <div class="kicker">Lore</div>
-        <p>Wielders of fire, frost, lightning, and void who reject divinity for truth.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Culture</div>
-        <p>Robes inscribed with wards, laboratories glowing with unstable experiments.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Goals</div>
-        <p>Unlock the Core’s purpose, manipulate reality, and ascend beyond mortal limits.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Relations</div>
-        <p><strong>Allies:</strong> Shadowborn (uneasy). <strong>Rivals:</strong> Knights Order, Holy Empire.</p>
-      </div>
-    </div>
+    <section class="grid">
+      <a class="class-card reveal" href="../classes/spellblade.html">
+        <div class="pad">
+          <h3>Spellblade</h3>
+          <p class="muted">Physical • Short Range — Arcane duelist and counter artist.</p>
+        </div>
+      </a>
 
-    <h2 class="reveal" style="margin-top:24px;">Classes</h2>
-    <p class="muted reveal">One short-range physical, one mid-range hybrid, one long-range magic, one long-range physical.</p>
+      <a class="class-card reveal" href="../classes/elementalist.html">
+        <div class="pad">
+          <h3>Elementalist</h3>
+          <p class="muted">Hybrid • Mid Range — Fire, frost, and lightning chains.</p>
+        </div>
+      </a>
 
-    <div class="class-grid">
-      <div class="class-card reveal">
-        <div class="kicker">Physical • Short Range</div>
-        <h4>Spellblade</h4>
-        <p>Arcane duelist channeling mana through blades for explosive counters and finishers.</p>
-        <div class="tag">Stats: STR, INT</div>
-      </div>
+      <a class="class-card reveal" href="../classes/arcanist.html">
+        <div class="pad">
+          <h3>Arcanist</h3>
+          <p class="muted">Magic • Long Range — Sigils, runes, and battlefield wards.</p>
+        </div>
+      </a>
 
-      <div class="class-card reveal">
-        <div class="kicker">Hybrid • Mid Range</div>
-        <h4>Elementalist</h4>
-        <p>Chains fire, frost, and lightning; hybrid AoE DPS that shapes chaos into control.</p>
-        <div class="tag">Stats: INT, Affinity</div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="kicker">Magic • Long Range</div>
-        <h4>Arcanist</h4>
-        <p>Runic geometry and sigil fields amplify allies and lock down enemy space.</p>
-        <div class="tag">Stats: INT, WIS</div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="kicker">Physical • Long Range</div>
-        <h4>Arcstrider</h4>
-        <p>Energy marksman who condenses raw mana into charged shots and explosive runes.</p>
-        <div class="tag">Stats: DEX, INT</div>
-      </div>
-    </div>
+      <a class="class-card reveal" href="../classes/arcstrider.html">
+        <div class="pad">
+          <h3>Arcstrider</h3>
+          <p class="muted">Physical • Long Range — Energy marksman with charged shots.</p>
+        </div>
+      </a>
+    </section>
   </main>
 
   <footer class="footer"><div class="container">© Ashes of Unity</div></footer>

@@ -7,102 +7,69 @@
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .hero { background-image:url('../assets/images/factions/holy-empire.png'); }
-    .gold-hr { border:0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,215,0,.55), transparent); margin:22px 0; }
-    .lead { color:#cfd3e6; font-size:1.05rem; }
-    .facts { display:grid; gap:14px; grid-template-columns:1fr; }
-    @media (min-width: 900px){ .facts{ grid-template-columns:1fr 1fr; } }
-    .fact { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:14px; }
-    .kicker { color:var(--gold); font-weight:800; letter-spacing:.04em; font-size:.85rem; text-transform:uppercase; }
-    .class-grid { display:grid; gap:18px; grid-template-columns:1fr; }
-    @media (min-width: 750px){ .class-grid{ grid-template-columns:repeat(2,1fr); } }
-    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:16px; }
-    .class-card h4{ margin:2px 0 6px; }
-    .tag{ font-size:.8rem; color:#b8bdd0; }
+    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
+    @media (min-width:900px){ .grid { grid-template-columns:1fr 1fr; } }
+    a.class-card { text-decoration:none; color:inherit; }
+    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden; }
+    .class-card h3 { margin:0 0 6px 0; }
+    .class-card .pad { padding:16px; }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">ASHES OF UNITY</div>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="./index.html">Factions</a>
-        <a href="../balance.html">Balance</a>
-        <a href="../systems.html">Systems</a>
-      </nav>
-    </div>
-  </div>
+  <div class="nav"><div class="container nav-inner">
+    <div class="brand">ASHES OF UNITY</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="./index.html">Factions</a>
+      <a href="../balance.html">Balance</a>
+      <a href="../systems.html">Systems</a>
+    </nav>
+  </div></div>
 
-  <!-- HERO -->
   <header class="banner hero">
     <div class="container title-wrap">
-      <h1>😇 Holy Empire</h1>
-      <p class="muted">Radiance, order, and divine zealotry.</p>
+      <h1>Holy Empire</h1>
+      <p class="muted">Radiance, order, and divine zeal.</p>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main class="page container">
-    <p class="lead reveal">
-      The Holy Empire believes the World Core’s fragments are <em>divine relics</em> scattered by the god of Light.
-      Ruled by a zealous theocracy, their temples serve as sanctuaries and barracks, and their crusades sanctify
-      corrupted lands in blinding radiance.
+    <p class="reveal">
+      The Holy Empire are zealous stewards of the World Core’s relics. Radiant cities, golden spires,
+      and unbreakable conviction define their rule.
     </p>
 
-    <hr class="gold-hr">
+    <h2 class="section-title reveal">Classes</h2>
 
-    <div class="facts">
-      <div class="fact reveal">
-        <div class="kicker">Lore</div>
-        <p>Covenant stewards of the Light, sworn to purify corruption and restore eternal order.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Culture</div>
-        <p>Golden spires, ever-burning braziers, strict law, and blessings on every tongue.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Goals</div>
-        <p>Reclaim Unity Shards, sanctify blighted realms, convert—or crush—unbelievers.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Relations</div>
-        <p><strong>Allies:</strong> Knights Order. <strong>Rivals:</strong> Shadowborn, Arcane Order.</p>
-      </div>
-    </div>
+    <section class="grid">
+      <a class="class-card reveal" href="../classes/crusader.html">
+        <div class="pad">
+          <h3>Crusader</h3>
+          <p class="muted">Physical • Short Range — Radiant greatsword zealot.</p>
+        </div>
+      </a>
 
-    <h2 class="reveal" style="margin-top:24px;">Classes</h2>
-    <p class="muted reveal">One short-range physical, one mid-range hybrid, one long-range magic, one long-range physical.</p>
+      <a class="class-card reveal" href="../classes/templar.html">
+        <div class="pad">
+          <h3>Templar</h3>
+          <p class="muted">Hybrid • Mid Range — Shield-bearer with wards and smites.</p>
+        </div>
+      </a>
 
-    <div class="class-grid">
-      <div class="class-card reveal">
-        <div class="kicker">Physical • Short Range</div>
-        <h4>Crusader</h4>
-        <p>Radiant greatsword knight. Durable melee DPS with holy cleaves and stun combos.</p>
-        <div class="tag">Stats: STR, VIT</div>
-      </div>
+      <a class="class-card reveal" href="../classes/cleric.html">
+        <div class="pad">
+          <h3>Cleric</h3>
+          <p class="muted">Magic • Long Range — Heals, cleanses, and radiant control.</p>
+        </div>
+      </a>
 
-      <div class="class-card reveal">
-        <div class="kicker">Hybrid • Mid Range</div>
-        <h4>Templar</h4>
-        <p>Shield-bearer of faith. Tank-support hybrid projecting wards and radiant bursts.</p>
-        <div class="tag">Stats: VIT, WIS</div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="kicker">Magic • Long Range</div>
-        <h4>Cleric</h4>
-        <p>Healer and purifier. AoE blessings, cleanse curses, and sustain the line from afar.</p>
-        <div class="tag">Stats: WIS, INT</div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="kicker">Physical • Long Range</div>
-        <h4>Sunstrider</h4>
-        <p>Holy archer. Blessed bolts and radiant arrow barrages that punish corruption.</p>
-        <div class="tag">Stats: DEX, WIS</div>
-      </div>
-    </div>
+      <a class="class-card reveal" href="../classes/sunstrider.html">
+        <div class="pad">
+          <h3>Sunstrider</h3>
+          <p class="muted">Physical • Long Range — Holy archer with anti-shadow marks.</p>
+        </div>
+      </a>
+    </section>
   </main>
 
   <footer class="footer"><div class="container">© Ashes of Unity</div></footer>

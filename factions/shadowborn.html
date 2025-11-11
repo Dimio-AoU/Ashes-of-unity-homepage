@@ -7,101 +7,68 @@
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .hero { background-image:url('../assets/images/factions/shadowborn.png'); }
-    .gold-hr { border:0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,215,0,.55), transparent); margin:22px 0; }
-    .lead { color:#cfd3e6; font-size:1.05rem; }
-    .facts { display:grid; gap:14px; grid-template-columns:1fr; }
-    @media (min-width: 900px){ .facts{ grid-template-columns:1fr 1fr; } }
-    .fact { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:14px; }
-    .kicker { color:var(--gold); font-weight:800; letter-spacing:.04em; font-size:.85rem; text-transform:uppercase; }
-    .class-grid { display:grid; gap:18px; grid-template-columns:1fr; }
-    @media (min-width: 750px){ .class-grid{ grid-template-columns:repeat(2,1fr); } }
-    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:16px; }
-    .class-card h4{ margin:2px 0 6px; }
-    .tag{ font-size:.8rem; color:#b8bdd0; }
+    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
+    @media (min-width:900px){ .grid { grid-template-columns:1fr 1fr; } }
+    a.class-card { text-decoration:none; color:inherit; }
+    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden; }
+    .class-card h3 { margin:0 0 6px 0; }
+    .class-card .pad { padding:16px; }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">ASHES OF UNITY</div>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="./index.html">Factions</a>
-        <a href="../balance.html">Balance</a>
-        <a href="../systems.html">Systems</a>
-      </nav>
-    </div>
-  </div>
+  <div class="nav"><div class="container nav-inner">
+    <div class="brand">ASHES OF UNITY</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="./index.html">Factions</a>
+      <a href="../balance.html">Balance</a>
+      <a href="../systems.html">Systems</a>
+    </nav>
+  </div></div>
 
-  <!-- HERO -->
   <header class="banner hero">
     <div class="container title-wrap">
-      <h1>👿 Shadowborn</h1>
-      <p class="muted">Corruption, deception, survival.</p>
+      <h1>Shadowborn</h1>
+      <p class="muted">Corruption, stealth, and survival.</p>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main class="page container">
-    <p class="lead reveal">
-      Exiled and hunted, the Shadowborn thrive in twilight—assassins, necromancers, and cursed bloodlines
-      who turn poison and darkness into freedom. They fight dirty, vanish clean, and outlast the righteous.
+    <p class="reveal">
+      Exiled clans thriving in twilight. Poisons, curses, and ruthless precision turn darkness into power.
     </p>
 
-    <hr class="gold-hr">
+    <h2 class="section-title reveal">Classes</h2>
 
-    <div class="facts">
-      <div class="fact reveal">
-        <div class="kicker">Lore</div>
-        <p>Outcasts who wield the Core’s fragments as cursed gifts to reclaim power.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Culture</div>
-        <p>Hidden camps, masked traders, bone charms, and shadowflame torches.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Goals</div>
-        <p>Tear down empires, spread fear and plague, and seize shards for outlaw rites.</p>
-      </div>
-      <div class="fact reveal">
-        <div class="kicker">Relations</div>
-        <p><strong>Allies:</strong> Arcane Order (fragile trust). <strong>Rivals:</strong> Holy Empire, Knights Order.</p>
-      </div>
-    </div>
+    <section class="grid">
+      <a class="class-card reveal" href="../classes/assassin.html">
+        <div class="pad">
+          <h3>Assassin</h3>
+          <p class="muted">Physical • Short Range — Stealth burst and ambush picks.</p>
+        </div>
+      </a>
 
-    <h2 class="reveal" style="margin-top:24px;">Classes</h2>
-    <p class="muted reveal">One short-range physical, one mid-range hybrid, one long-range magic, one long-range physical.</p>
+      <a class="class-card reveal" href="../classes/hexblade.html">
+        <div class="pad">
+          <h3>Hexblade</h3>
+          <p class="muted">Hybrid • Mid Range — Cursed blade arts and bleeds.</p>
+        </div>
+      </a>
 
-    <div class="class-grid">
-      <div class="class-card reveal">
-        <div class="kicker">Physical • Short Range</div>
-        <h4>Assassin</h4>
-        <p>Stealth duelist with lethal bursts and venoms; the whisper before death.</p>
-        <div class="tag">Stats: DEX, AGI</div>
-      </div>
+      <a class="class-card reveal" href="../classes/necromancer.html">
+        <div class="pad">
+          <h3>Necromancer</h3>
+          <p class="muted">Magic • Long Range — Rot fields, summons, and siphons.</p>
+        </div>
+      </a>
 
-      <div class="class-card reveal">
-        <div class="kicker">Hybrid • Mid Range</div>
-        <h4>Hexblade</h4>
-        <p>Curse-infused fighter whose runes bleed foes and empower forbidden strikes.</p>
-        <div class="tag">Stats: STR, INT</div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="kicker">Magic • Long Range</div>
-        <h4>Necromancer</h4>
-        <p>Death’s scholar. Rot, lifesteal, bone minions, and battlefield decay.</p>
-        <div class="tag">Stats: INT, Corruption</div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="kicker">Physical • Long Range</div>
-        <h4>Wraithbow</h4>
-        <p>Spectral archer whose ghostly arrows pierce armor and drain vitality.</p>
-        <div class="tag">Stats: DEX, Corruption</div>
-      </div>
-    </div>
+      <a class="class-card reveal" href="../classes/wraithbow.html">
+        <div class="pad">
+          <h3>Wraithbow</h3>
+          <p class="muted">Physical • Long Range — Spectral arrows and lifesteal traps.</p>
+        </div>
+      </a>
+    </section>
   </main>
 
   <footer class="footer"><div class="container">© Ashes of Unity</div></footer>

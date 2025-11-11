@@ -3,8 +3,208 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ashes of Unity — Homepage</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Ashes of Unity — Home</title>
+  <link rel="stylesheet" href="./styles.css" />
+
+  <style>
+    /* ===== Homepage polish (self-contained) ===== */
+
+    /* HERO */
+    .hero-home {
+      position: relative;
+      min-height: 68vh;
+      display: grid;
+      place-items: center;
+      background-image: url('./assets/images/factions/AoU-GoodvEvil.png'); /* Your header image */
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero-home::before {
+      /* cinematic darkening for readability */
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(70% 60% at 50% 35%, rgba(0,0,0,.15) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.75) 100%);
+      z-index: 0;
+    }
+    .hero-home::after {
+      /* soft amber vignette */
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(40% 30% at 50% 30%, rgba(255,215,0,.08) 0%, rgba(255,215,0,0) 70%);
+      z-index: 0;
+      pointer-events: none;
+      animation: emberPulse 6s ease-in-out infinite;
+    }
+    @keyframes emberPulse {
+      0%, 100% { opacity: .55; }
+      50% { opacity: .85; }
+    }
+
+    /* subtle shimmering on title */
+    .shimmer {
+      position: relative;
+      background: linear-gradient(90deg, #f6e9b0, #fff8d5, #f6e9b0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 24px rgba(255,215,0,.15);
+      animation: shine 5.5s linear infinite;
+    }
+    @keyframes shine {
+      0% { filter: brightness(0.95); }
+      50% { filter: brightness(1.08); }
+      100% { filter: brightness(0.95); }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 48px 16px;
+    }
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      letter-spacing: .02em;
+      margin: 0 0 10px;
+    }
+    .hero-subtitle {
+      color: #d7dbe8;
+      max-width: 780px;
+      margin: 0 auto 22px;
+      font-size: 1.05rem;
+    }
+    .cta-row {
+      display: inline-flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .btn-lg {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 18px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      text-decoration: none;
+      color: #f3f1e6;
+      background: linear-gradient(180deg, rgba(15,15,20,.75), rgba(15,15,20,.55));
+      box-shadow: 0 0 16px rgba(255,215,0,.06);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .btn-lg:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,215,0,.35);
+      box-shadow: 0 0 26px rgba(255,215,0,.16);
+    }
+    .btn-primary {
+      background: linear-gradient(180deg, rgba(60,45,15,.75), rgba(60,45,15,.55));
+      border-color: rgba(255,215,0,.3);
+    }
+
+    /* SECTION WRAPPERS */
+    .section {
+      padding: 48px 0;
+    }
+    .section h2 {
+      text-align: center;
+      font-family: "Cinzel", serif;
+      color: #f8f6e7;
+      text-shadow: 0 0 12px rgba(255,215,0,.18);
+      letter-spacing: .02em;
+      margin: 0 0 22px;
+    }
+    .muted-center {
+      text-align: center;
+      color: #b9bdcc;
+      max-width: 900px;
+      margin: 0 auto 28px;
+    }
+
+    /* FEATURE GRID (three highlights) */
+    .features {
+      display: grid; gap: 18px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px){
+      .features { grid-template-columns: repeat(3, 1fr); }
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--line-2);
+      border-radius: 12px;
+      padding: 18px;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 22px rgba(255,215,0,.12);
+      border-color: rgba(255,215,0,.28);
+    }
+    .feature-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+    .feature-card p {
+      margin: 0; color: #b0b3c0;
+    }
+
+    /* QUICK LINKS (Factions / Systems / Balance) */
+    .quick-grid {
+      display: grid; gap: 18px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px){
+      .quick-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .quick-card, .quick-card * { text-decoration: none; }
+    .quick-card {
+      position: relative; overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(10,10,15,.9), rgba(10,10,15,.7));
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      box-shadow: 0 0 14px rgba(255,215,0,.05);
+      display: block;
+    }
+    .quick-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,215,0,.35);
+      box-shadow: 0 0 22px rgba(255,215,0,.14);
+    }
+    .quick-img {
+      height: 160px; width: 100%; object-fit: cover; display: block;
+      filter: saturate(.95);
+      transition: transform .35s ease, filter .35s ease;
+    }
+    .quick-card:hover .quick-img { transform: scale(1.03); filter: saturate(1); }
+    .quick-body { padding: 14px; }
+    .quick-body h3 { margin: 0 0 6px; font-family: "Cinzel", serif; color: #F5F3E8; }
+    .quick-body p { margin: 0; color: #b9bdcc; }
+
+    /* NEWS */
+    .news {
+      display: grid; gap: 16px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px){ .news { grid-template-columns: 2fr 1fr; } }
+    .news-card {
+      background: var(--card);
+      border: 1px solid var(--line-2);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .news-item {
+      border-bottom: 1px solid var(--line-2);
+      padding: 12px 0;
+    }
+    .news-item:last-child { border-bottom: 0; }
+    .news-item h4 { margin: 0 0 6px; }
+    .news-item p { margin: 0; color: #b0b3c0; font-size: .95rem; }
+    .news-meta { color: #a4a8b8; font-size: .85rem; margin-bottom: 6px; }
+  </style>
 </head>
 <body>
 
@@ -13,94 +213,116 @@
     <div class="container nav-inner">
       <div class="brand">ASHES OF UNITY</div>
       <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="factions/index.html">Factions</a>
-        <a href="balance.html">Balance</a>
-        <a href="systems.html">Systems</a>
+        <a href="./index.html" class="active">Home</a>
+        <a href="./factions/index.html">Factions</a>
+        <a href="./balance.html">Balance</a>
+        <a href="./systems.html">Systems</a>
       </nav>
     </div>
   </div>
 
   <!-- HERO -->
-  <header class="hero">
-    <div class="inner container reveal">
-      <h1>The World Reforged in Light and Shadow</h1>
-      <p>Four factions battle for fragments of the World Core — each bound by fate, faith, or fury.</p>
-      <a class="btn-primary" href="factions/index.html">Choose a Faction</a>
+  <header class="hero-home">
+    <div class="hero-inner container">
+      <h1 class="hero-title shimmer">Welcome to the World of Betrayal & War</h1>
+      <p class="hero-subtitle">
+        Choose your allegiance — Holy Empire, Knights Order, Shadowborn, or Arcane Order. Forge your legend through
+        radiant crusades, iron formations, shadow intrigues, or arcane supremacy.
+      </p>
+      <div class="cta-row">
+        <a class="btn-lg btn-primary" href="./factions/index.html">Explore Factions</a>
+        <a class="btn-lg" href="./systems.html">View Game Systems</a>
+      </div>
     </div>
   </header>
 
-  <!-- FACTIONS -->
-  <main class="section container">
-    <h2 style="text-align:center; margin-bottom: 28px;" class="reveal">The Four Factions</h2>
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">What Sets AoU Apart</h2>
+      <p class="muted-center reveal">A deliberate fusion of ESO-style lines, BDO-like progression, and Manhua-inspired evolution.</p>
 
-    <div class="grid">
-      <!-- Holy Empire -->
-      <div class="card reveal" style="--i:0;">
-        <img src="assets/images/factions/holy-empire.png" alt="Holy Empire">
-        <div class="card-body">
-          <h3>😇 Holy Empire</h3>
-          <p>Zealous defenders of divine order who wield radiant might to cleanse corruption and restore purity.</p>
-          <a href="factions/holy-empire.html" class="btn">View Faction</a>
+      <div class="features">
+        <div class="feature-card reveal">
+          <h3>Class Flex, Legendary Depth</h3>
+          <p>Four crisp archetypes per faction — each with Awakening, Succession, and Prestige growth.</p>
         </div>
-      </div>
-
-      <!-- Knights Order -->
-      <div class="card reveal" style="--i:1;">
-        <img src="assets/images/factions/knights-order.png" alt="Knights Order">
-        <div class="card-body">
-          <h3>🔆 Knights Order</h3>
-          <p>Disciplined champions of law and strategy — masters of steel, banners, and arcane engineering.</p>
-          <a href="factions/knights-order.html" class="btn">View Faction</a>
+        <div class="feature-card reveal">
+          <h3>War & World Identity</h3>
+          <p>Factions fight for the meaning of the Core — Light, Order, Shadow, or Knowledge.</p>
         </div>
-      </div>
-
-      <!-- Arcane Order -->
-      <div class="card reveal" style="--i:2;">
-        <img src="assets/images/factions/arcane-order.png" alt="Arcane Order">
-        <div class="card-body">
-          <h3>🦹🏽 Arcane Order</h3>
-          <p>Heretics and scholars who harness forbidden power to reshape reality and ascend beyond mortality.</p>
-          <a href="factions/arcane-order.html" class="btn">View Faction</a>
-        </div>
-      </div>
-
-      <!-- Shadowborn -->
-      <div class="card reveal" style="--i:3;">
-        <img src="assets/images/factions/shadowborn.png" alt="Shadowborn">
-        <div class="card-body">
-          <h3>👿 Shadowborn</h3>
-          <p>Outcasts born in twilight — assassins, necromancers, and survivors who thrive in chaos and deception.</p>
-          <a href="factions/shadowborn.html" class="btn">View Faction</a>
+        <div class="feature-card reveal">
+          <h3>Risk ⇄ Reward</h3>
+          <p>Fragments, duels, awakenings — your character changes permanently with every triumph.</p>
         </div>
       </div>
     </div>
-  </main>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Jump In</h2>
+      <p class="muted-center reveal">Pick a path, learn the systems, study the balance. Mastery decides the victor.</p>
+
+      <div class="quick-grid">
+        <a class="quick-card reveal" href="./factions/index.html">
+          <img class="quick-img" src="./assets/images/factions/AoU-GoodvEvil.png" alt="Explore Factions">
+          <div class="quick-body">
+            <h3>Explore Factions</h3>
+            <p>Holy Empire • Knights Order • Shadowborn • Arcane Order</p>
+          </div>
+        </a>
+        <a class="quick-card reveal" href="./systems.html">
+          <img class="quick-img" src="./assets/images/factions/holy-empire.png" alt="Game Systems">
+          <div class="quick-body">
+            <h3>Game Systems</h3>
+            <p>Leveling • Stats • Skills • Prestige</p>
+          </div>
+        </a>
+        <a class="quick-card reveal" href="./balance.html">
+          <img class="quick-img" src="./assets/images/factions/knights-order.png" alt="Balance Philosophy">
+          <div class="quick-body">
+            <h3>Balance Philosophy</h3>
+            <p>Holy ⚔ Shadow • Knights ⚔ Arcane — circular parity, no hard winners.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- NEWS / UPDATES -->
-  <section class="news">
+  <section class="section">
     <div class="container">
-      <h2 class="reveal" style="text-align:center; margin-bottom: 18px;">News & Updates</h2>
-      <p class="muted reveal" style="text-align:center; margin-bottom: 24px;">Patch notes, lore journals, and development progress.</p>
+      <h2 class="reveal">News & Updates</h2>
+      <div class="news">
+        <div class="news-card reveal">
+          <h3 style="margin-top:0;">Patch Notes & Dev Logs</h3>
+          <div class="news-item">
+            <div class="news-meta">Devlog • v0.2</div>
+            <h4>Class Pages Online</h4>
+            <p>All 16 class pages are now live with banners, role headers, and progression hooks.</p>
+          </div>
+          <div class="news-item">
+            <div class="news-meta">World • Factions</div>
+            <h4>Faction Pages Polished</h4>
+            <p>Cinematic hero art, gold dividers, and refined class grids across all factions.</p>
+          </div>
+          <div class="news-item">
+            <div class="news-meta">Systems</div>
+            <h4>Balance Hub Hooked</h4>
+            <p>Balance overview wired; circular parity detailed for PvE/PvP philosophy.</p>
+          </div>
+        </div>
 
-      <div class="news-grid">
-        <article class="news-card reveal" style="--i:0;">
-          <span class="news-date">2025-01-10</span>
-          <h3>Faction Pages Completed</h3>
-          <p>Holy Empire, Knights Order, Shadowborn, and Arcane Order pages now live with class overviews and banners.</p>
-        </article>
-
-        <article class="news-card reveal" style="--i:1;">
-          <span class="news-date">2025-01-07</span>
-          <h3>Balance Philosophy</h3>
-          <p>Established our equilibrium: Holy ⚔ Shadowborn • Knights ⚔ Arcane. No hard counters — strategy defines victory.</p>
-        </article>
-
-        <article class="news-card reveal" style="--i:2;">
-          <span class="news-date">2025-01-02</span>
-          <h3>Homepage Visual Pass</h3>
-          <p>New hero, premium typography, and faction grid polish inspired by ESO / BDO visual direction.</p>
-        </article>
+        <div class="news-card reveal">
+          <h3 style="margin-top:0;">Coming Next</h3>
+          <ul class="muted" style="margin:0; padding-left: 18px;">
+            <li>Trailer section & media gallery</li>
+            <li>Class icons / faction emblems</li>
+            <li>Dev blog route & RSS</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -110,10 +332,6 @@
     <div class="container">© Ashes of Unity</div>
   </footer>
 
-  <!-- MUSIC: Hidden audio + toggle -->
-  <audio id="aou-theme" src="assets/audio/aou-theme.mp3" preload="auto" loop></audio>
-  <button class="music-toggle" id="musicToggle" aria-pressed="false" title="Toggle Music">♪ Music: Off</button>
-
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>

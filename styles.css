@@ -1,108 +1,172 @@
-/* ========== Global Reset ========== */
+/* -------------------------------------------------------
+   Ashes of Unity — Global Theme (MMORPG Style)
+   Fonts, color tokens, layout, nav, hero, cards, content
+   ------------------------------------------------------- */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700&display=swap');
+
+/* Reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
-body {
-  background: #0b0b0f;
-  color: #e6e6ea;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-}
+img { max-width: 100%; display: block; }
 
-/* ========== Color Tokens ========== */
+/* Base */
 :root{
   --gold:#ffd23f;
-  --gold-dim:#d7b643;
+  --gold-2:#d7b643;
   --blue:#4fb3ff;
   --violet:#b17cff;
   --red:#ff5a6a;
-  --slate:#18181f;
-  --slate-2:#111117;
+  --bg:#0b0b0f;
+  --bg-2:#0d0f13;
   --card:#121219;
-  --muted:#a9acb1;
+  --ink-1:#f4f6fb;
+  --ink-2:#e6e6ea;
+  --ink-3:#cfd3db;
+  --ink-4:#a9acb1;
+  --line:#1f2230;
+  --line-2:#232331;
+  --shadow-lg:0 16px 40px rgba(0,0,0,.35);
+  --shadow-md:0 12px 32px rgba(0,0,0,.28);
 }
 
-/* ========== Container ========== */
-.container{ width: min(1200px, 92%); margin: 0 auto; }
-
-/* ========== Navbar ========== */
-.nav {
-  position: sticky; top:0; z-index: 50;
-  backdrop-filter: blur(8px);
-  background: rgba(10,10,14,0.65);
-  border-bottom: 1px solid #1f2230;
+body{
+  background:var(--bg);
+  color:var(--ink-2);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
 }
-.nav-inner{ display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
-.brand{ color: var(--gold); font-weight:800; letter-spacing: .5px; }
-.nav a{ color:#dfe3ea; text-decoration:none; margin-left:18px; font-weight:600; }
-.nav a:hover{ color: var(--gold); }
+h1,h2,h3{
+  font-family:"Cinzel",serif;
+  letter-spacing:.3px;
+  color:var(--ink-1);
+}
+h1{font-size:clamp(1.9rem,3.6vw,3.2rem);}
+h2{font-size:clamp(1.3rem,2.2vw,1.8rem);}
+h3{font-size:1.2rem;}
+.muted{color:var(--ink-4);}
+.container{width:min(1200px,92%);margin:0 auto;}
+.section{padding:56px 0;}
 
-/* ========== Hero ========== */
+/* Navbar */
+.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(8px);
+  background:rgba(10,10,14,.65);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;
+}
+.brand{color:var(--gold);font-weight:800;letter-spacing:.5px;}
+.nav nav a{
+  color:#dfe3ea;text-decoration:none;margin-left:18px;font-weight:600;
+}
+.nav nav a:hover,
+.nav nav a.active{color:var(--gold);}
+
+/* Hero (Homepage) */
 .hero{
-  position: relative; min-height: 62vh; display:grid; place-items:center; text-align:center;
-  background: #0d0f13 url('assets/images/AoU-GoodvEvil.png') center/cover no-repeat;
+  position:relative;
+  min-height:62vh;
+  display:grid;place-items:center;
+  text-align:center;
+  background:var(--bg-2)
+    url('assets/images/factions/AoU-GoodvEvil.png')
+    center/cover no-repeat;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
 }
 .hero::after{
-  content:""; position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(11,11,15,.45), rgba(11,11,15,.95));
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(90rem 45rem at 50% 0%,rgba(255,210,63,.20),rgba(11,11,15,0)40%),
+    linear-gradient(180deg,rgba(11,11,15,.15),rgba(11,11,15,.96)70%);
+  pointer-events:none;
 }
-.hero > .inner{ position:relative; z-index:1; padding: 80px 0; }
+.hero>.inner{position:relative;z-index:1;padding:80px 0;}
 .hero h1{
-  font-size: clamp(2rem, 4vw, 4rem);
-  color: var(--gold);
-  text-shadow: 0 6px 24px rgba(255, 210, 63, .25);
+  color:var(--gold);
+  text-shadow:0 10px 40px rgba(255,210,63,.28);
 }
-.hero p{ margin-top: 10px; color:#d9dde5; }
-
-/* ========== Section ========== */
-.section{ padding: 56px 0; }
-.section h2{
-  color: var(--gold);
-  margin-bottom: 18px;
-  letter-spacing: .3px;
+.hero p{margin-top:10px;color:#d9dde5;}
+.btn-primary{
+  display:inline-block;margin-top:18px;padding:12px 16px;
+  background:transparent;color:var(--ink-2);
+  border:1px solid #2b2e3f;border-radius:10px;
+  font-weight:700;text-decoration:none;
 }
-.muted{ color: var(--muted); }
+.btn-primary:hover{border-color:var(--gold);color:var(--gold);}
 
-/* ========== Cards Grid ========== */
+/* Cards Grid */
 .grid{
-  display:grid; gap: 22px;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  display:grid;gap:22px;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
 }
 .card{
-  background: var(--card);
-  border:1px solid #232331;
-  border-radius: 12px; overflow: hidden;
-  transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease;
+  background:var(--card);
+  border:1px solid var(--line-2);
+  border-radius:12px;overflow:hidden;
+  transition:transform .15s ease,border-color .2s ease,box-shadow .2s ease;
 }
 .card:hover{
-  transform: translateY(-2px);
+  transform:translateY(-2px);
   border-color:#323247;
-  box-shadow: 0 12px 32px rgba(0,0,0,.35);
+  box-shadow:var(--shadow-md);
 }
-.card img{ width:100%; height:180px; object-fit:cover; display:block; }
-.card-body{ padding:16px; }
-.card h3{ color:#f4f6fb; margin-bottom:6px; }
-.card p{ color:#bfc3cc; font-size:.95rem; }
+.card img{width:100%;height:180px;object-fit:cover;}
+.card-body{padding:16px;}
+.card h3{color:var(--ink-1);margin-bottom:6px;}
+.card p{color:var(--ink-3);font-size:.95rem;}
 .btn{
-  display:inline-block; margin-top:12px; padding:10px 14px;
-  border:1px solid #2b2e3f; border-radius:8px; text-decoration:none;
-  color:#e9edf6; font-weight:700;
+  display:inline-block;margin-top:12px;padding:10px 14px;
+  border:1px solid #2b2e3f;border-radius:8px;text-decoration:none;
+  color:#e9edf6;font-weight:700;
 }
-.btn:hover{ border-color: var(--gold); color: var(--gold); }
+.btn:hover{border-color:var(--gold);color:var(--gold);}
 
-/* ========== Content Page ========== */
+/* Content Pages */
 .banner{
-  position:relative; min-height: 40vh; display:grid; place-items:end;
-  background:#0d0f13 center/cover no-repeat;
-  border-bottom:1px solid #1d2030;
+  position:relative;min-height:44vh;display:grid;place-items:end;
+  background:var(--bg-2)center/cover no-repeat;
+  border-bottom:1px solid var(--line);overflow:hidden;
 }
-.banner::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,9,12,.1), rgba(8,9,12,.96)); }
-.banner .title-wrap{ position:relative; z-index:1; padding: 40px 0; width:100%; }
-.page{ padding: 28px 0 60px; }
-.page h1{ color: var(--gold); margin-bottom: 10px; }
-.page h2{ color:#f0f2f9; margin-top: 22px; margin-bottom: 8px; }
-.page p{ color:#cfd3db; margin-bottom: 10px; }
-.kv{ display:grid; grid-template-columns: 1fr; gap:20px; }
-@media(min-width:900px){ .kv{ grid-template-columns: 1.2fr .8fr; } .banner{ min-height: 46vh; } }
+.banner::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,9,12,.10),rgba(8,9,12,.96));
+}
+.banner .title-wrap{
+  position:relative;z-index:1;padding:40px 0;width:100%;text-align:center;
+}
+.page{padding:28px 0 60px;}
+.page h1{color:var(--gold);margin-bottom:10px;}
+.page h2{color:#f0f2f9;margin-top:22px;margin-bottom:8px;}
+.page p{color:var(--ink-3);margin-bottom:10px;}
+.kv{display:grid;grid-template-columns:1fr;gap:20px;}
+@media(min-width:900px){
+  .kv{grid-template-columns:1.2fr .8fr;}
+  .banner{min-height:46vh;}
+}
 
-/* ========== Footer ========== */
-.footer{ padding: 28px 0; color:#9aa0aa; border-top:1px solid #1c1f2d; background:#0d0f13; }
+/* Pills */
+.pill{
+  font-size:.78rem;font-weight:700;letter-spacing:.2px;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 10px;border-radius:999px;
+  color:#0b0b0f;background:var(--gold);
+  border:1px solid var(--gold-2);
+}
+.pill.blue{background:var(--blue);border-color:#3a8ed1;color:#061121;}
+.pill.violet{background:var(--violet);border-color:#8c62cc;color:#0e061b;}
+.pill.red{background:var(--red);border-color:#d34957;color:#1a0406;}
+
+/* Footer */
+.footer{
+  padding:28px 0;
+  color:#9aa0aa;
+  border-top:1px solid var(--line);
+  background:#0d0f13;
+}

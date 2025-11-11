@@ -6,31 +6,35 @@
   <title>Factions — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    .hero{ background-image:url('../assets/images/factions/AoU-GoodvEvil.png'); }
-    .grid { display:grid; gap:22px; grid-template-columns:1fr; }
+    :root{ --bg:#0b0e12; --card:#12151c; --line-2:#262a33; --text:#e9ecf1; --muted:#a7b0bf; }
+    body{margin:0;background:var(--bg);color:var(--text);font-family:ui-serif,Georgia,serif}
+    .nav{background:#0e1218;border-bottom:1px solid var(--line-2)}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .brand{letter-spacing:.12em;font-weight:700}
+    nav a{color:var(--muted);margin-left:18px;text-decoration:none}
+    nav a.active, nav a:hover{color:var(--text)}
+    .hero{position:relative;min-height:32vh;display:grid;place-items:center;background:radial-gradient(80% 60% at 50% 30%, #1a1f28 0%, #0b0e12 70%);overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url('../assets/images/factions/AoU-GoodvEvil.png') center/cover no-repeat;opacity:.28;filter:saturate(.9) contrast(1.05) blur(1px)}
+    .title-wrap{position:relative;text-align:center;padding:54px 20px}
+    h1{font-size:clamp(34px,4vw,54px);margin:0 0 6px;letter-spacing:.06em}
+    .muted{color:var(--muted)}
+    .grid{ display:grid; gap:22px; grid-template-columns:1fr; padding:40px 0 70px;}
     @media (min-width:900px){ .grid{ grid-template-columns:repeat(3,1fr); } }
+    .card-link{ display:block; text-decoration:none; color:inherit; }
     .faction-card{
-      position:relative; overflow:hidden;
-      background: var(--card);
-      border: 1px solid var(--line-2);
-      border-radius: 14px;
+      background: var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden;
       transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-      box-shadow: 0 0 16px rgba(255,215,0,0.06);
-      text-decoration: none; color: inherit;
+      box-shadow: 0 0 16px rgba(255,215,0,.06);
     }
-    .faction-card:hover{
-      transform: translateY(-6px) rotateX(.5deg);
-      border-color: rgba(255,215,0,.35);
-      box-shadow: 0 0 26px rgba(255,215,0,0.16);
-    }
-    .img-cover{ width:100%; height:180px; object-fit:cover; display:block; filter:saturate(.95); transition: transform .35s ease, filter .35s ease; }
-    .faction-card:hover .img-cover{ transform: scale(1.03); filter:saturate(1); }
+    .faction-card:hover{ transform: translateY(-6px); border-color:rgba(255,215,0,.35); box-shadow:0 0 26px rgba(255,215,0,.16); }
+    .img-cover{ width:100%; height:180px; object-fit:cover; display:block; filter:saturate(.95); }
     .pad{ padding:16px; }
-    .subtitle{ color: var(--muted); margin-top:6px; }
+    .subtitle{ color:var(--muted); margin-top:6px; }
+    .footer{border-top:1px solid var(--line-2);padding:24px 0;color:var(--muted);text-align:center}
   </style>
 </head>
 <body>
-  <!-- NAV -->
   <div class="nav"><div class="container nav-inner">
     <div class="brand">ASHES OF UNITY</div>
     <nav>
@@ -41,65 +45,54 @@
     </nav>
   </div></div>
 
-  <!-- HERO -->
-  <header class="banner hero">
-    <div class="container title-wrap">
+  <header class="hero">
+    <div class="title-wrap">
       <h1>Choose Your Path</h1>
       <p class="muted">Faith, discipline, shadow, knowledge.</p>
     </div>
   </header>
 
-  <!-- GRID -->
   <main class="page">
     <div class="container grid">
-      <!-- Overview -->
-      <a class="faction-card reveal" href="./overview.html">
-        <img class="img-cover" src="../assets/images/factions/AoU-GoodvEvil.png" alt="Factions Overview">
-        <div class="pad">
-          <h3>Factions Overview</h3>
-          <p class="subtitle">Philosophy, world role, archetypes & balance.</p>
-        </div>
+      <a class="card-link" href="./overview.html">
+        <article class="faction-card">
+          <img class="img-cover" src="../assets/images/factions/AoU-GoodvEvil.png" alt="Factions Overview">
+          <div class="pad">
+            <h3>Factions Overview</h3><p class="subtitle">Philosophy, world role, archetypes & balance.</p>
+          </div>
+        </article>
       </a>
 
-      <!-- Holy Empire -->
-      <a class="faction-card reveal" href="./holy-empire.html">
-        <img class="img-cover" src="../assets/images/factions/holy-empire.png" alt="Holy Empire">
-        <div class="pad">
-          <h3>Holy Empire</h3>
-          <p class="subtitle">Radiance, order, and divine zeal.</p>
-        </div>
+      <a class="card-link" href="./holy-empire.html">
+        <article class="faction-card">
+          <img class="img-cover" src="../assets/images/factions/holy-empire.png" alt="Holy Empire">
+          <div class="pad"><h3>Holy Empire</h3><p class="subtitle">Radiance, order, and divine zeal.</p></div>
+        </article>
       </a>
 
-      <!-- Knights Order -->
-      <a class="faction-card reveal" href="./knights-order.html">
-        <img class="img-cover" src="../assets/images/factions/knights-order.png" alt="Knights Order">
-        <div class="pad">
-          <h3>Knights Order</h3>
-          <p class="subtitle">Discipline, formations & magitek supremacy.</p>
-        </div>
+      <a class="card-link" href="./knights-order.html">
+        <article class="faction-card">
+          <img class="img-cover" src="../assets/images/factions/knights-order.png" alt="Knights Order">
+          <div class="pad"><h3>Knights Order</h3><p class="subtitle">Discipline, formations & magitek supremacy.</p></div>
+        </article>
       </a>
 
-      <!-- Shadowborn -->
-      <a class="faction-card reveal" href="./shadowborn.html">
-        <img class="img-cover" src="../assets/images/factions/shadowborn.png" alt="Shadowborn">
-        <div class="pad">
-          <h3>Shadowborn</h3>
-          <p class="subtitle">Corruption, stealth, and survival.</p>
-        </div>
+      <a class="card-link" href="./shadowborn.html">
+        <article class="faction-card">
+          <img class="img-cover" src="../assets/images/factions/shadowborn.png" alt="Shadowborn">
+          <div class="pad"><h3>Shadowborn</h3><p class="subtitle">Corruption, stealth, and survival.</p></div>
+        </article>
       </a>
 
-      <!-- Arcane Order -->
-      <a class="faction-card reveal" href="./arcane-order.html">
-        <img class="img-cover" src="../assets/images/factions/arcane-order.png" alt="Arcane Order">
-        <div class="pad">
-          <h3>Arcane Order</h3>
-          <p class="subtitle">Knowledge, power, and elemental chaos.</p>
-        </div>
+      <a class="card-link" href="./arcane-order.html">
+        <article class="faction-card">
+          <img class="img-cover" src="../assets/images/factions/arcane-order.png" alt="Arcane Order">
+          <div class="pad"><h3>Arcane Order</h3><p class="subtitle">Knowledge, power, and elemental chaos.</p></div>
+        </article>
       </a>
     </div>
   </main>
 
   <footer class="footer"><div class="container">© Ashes of Unity</div></footer>
-  <script src="../script.js"></script>
 </body>
 </html>

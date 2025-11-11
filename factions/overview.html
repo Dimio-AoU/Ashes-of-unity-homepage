@@ -5,6 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Factions Overview — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Page-scoped styles for TOC + jump buttons -->
+  <style>
+    /* Layout: sidebar TOC + main content */
+    .overview-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+    @media (min-width: 1024px) {
+      .overview-wrap {
+        grid-template-columns: 280px 1fr;
+      }
+    }
+
+    /* Sidebar TOC */
+    .toc {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--line-2);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    @media (min-width: 1024px) {
+      .toc {
+        position: sticky;
+        top: 92px;
+        height: max-content;
+      }
+    }
+    .toc h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--gold);
+    }
+    .toc p { color: var(--ink-4); margin-bottom: 10px; }
+    .toc ul { list-style: none; }
+    .toc li { margin: 6px 0; }
+    .toc a {
+      color: #dfe3ea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .toc a:hover { color: var(--gold); }
+    .toc .sub { margin-left: 12px; }
+    .toc .active {
+      color: var(--gold);
+      text-shadow: 0 0 16px rgba(255,210,63,.2);
+    }
+
+    /* Jump buttons row */
+    .jump-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 700px) {
+      .jump-row {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .jump-btn {
+      display: inline-block;
+      text-align: center;
+      padding: 10px 12px;
+      border: 1px solid #2b2e3f;
+      border-radius: 10px;
+      color: #e9edf6;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .jump-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Compact section dividers */
+    .hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 24px 0;
+    }
+
+    /* Fine-tune lists */
+    .page ul { padding-left: 18px; }
+    .page li { margin-bottom: 8px; }
+    .muted-note { color: var(--ink-4); font-size: .95rem; }
+
+    /* Anchor offset for sticky nav */
+    .anchor {
+      position: relative;
+      scroll-margin-top: 90px; /* keeps heading visible below sticky nav */
+    }
+
+    /* Class link style (inline deep link) */
+    .class-link {
+      font-weight: 800;
+      color: var(--ink-1);
+      text-decoration: none;
+      border-bottom: 1px dashed #353a4b;
+    }
+    .class-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  </style>
 </head>
 <body>
 
@@ -31,142 +132,288 @@
 
   <!-- CONTENT -->
   <main class="page container">
+    <div class="overview-wrap">
 
-    <!-- Intro -->
-    <section class="reveal">
-      <h2>What This Page Covers</h2>
-      <p>The Factions Overview defines the four core powers of <em>Ashes of Unity</em>: <strong>Holy Empire</strong>, <strong>Knights Order</strong>, <strong>Shadowborn</strong>, and <strong>Arcane Order</strong>. Each faction includes iconic classes, unique attributes, and a legendary hidden questline that reinforces its identity.</p>
-    </section>
+      <!-- SIDEBAR TOC -->
+      <aside class="toc reveal" id="toc">
+        <h3>Contents</h3>
+        <p class="muted">Jump anywhere:</p>
+        <ul>
+          <li><a href="#intro" class="toc-link">Overview</a></li>
+          <li><a href="#philosophy" class="toc-link">Faction Philosophy</a></li>
+          <li><a href="#world-role" class="toc-link">World Role</a></li>
+          <li><a href="#category-focus" class="toc-link">Category Focus</a></li>
+          <li><a href="#classes" class="toc-link">Class Overview</a>
+            <ul class="sub">
+              <li><a href="#holy-empire" class="toc-link">Holy Empire</a></li>
+              <li><a href="#knights-order" class="toc-link">Knights Order</a></li>
+              <li><a href="#shadowborn" class="toc-link">Shadowborn</a></li>
+              <li><a href="#arcane-order" class="toc-link">Arcane Order</a></li>
+            </ul>
+          </li>
+          <li><a href="#design-summary" class="toc-link">Design Summary</a></li>
+          <li><a href="#balance" class="toc-link">Balance Philosophy</a></li>
+        </ul>
+      </aside>
 
-    <!-- Faction Philosophy -->
-    <section class="reveal">
-      <h2>Faction Philosophy</h2>
-      <p><strong>Good Factions</strong> (Holy Empire, Knights Order): emphasize defense, healing, formation control, and order — slower to start, but strong sustain and counterplay.</p>
-      <p><strong>Evil Factions</strong> (Shadowborn, Arcane Order): emphasize offense, corruption, burst, and chaos — fast, powerful, but fragile if misplayed.</p>
-      <p class="muted">Prestige paths can hybridize identities, but the core fantasy remains intact for each faction.</p>
-    </section>
+      <!-- MAIN COLUMN -->
+      <div>
 
-    <!-- World Role -->
-    <section class="reveal">
-      <h2>World Role</h2>
-      <p>Factions fight not just for land, but for the right to define the meaning of <strong>Unity Shards</strong> — divine relic, weapon of order, cursed poison, or cosmic engine. Every conflict, raid, and war is ultimately a battle for the Core’s legacy.</p>
-    </section>
+        <!-- Jump Buttons -->
+        <div class="jump-row reveal">
+          <a class="jump-btn" href="#holy-empire">😇 Holy Empire</a>
+          <a class="jump-btn" href="#knights-order">🔆 Knights Order</a>
+          <a class="jump-btn" href="#shadowborn">👿 Shadowborn</a>
+          <a class="jump-btn" href="#arcane-order">🦹🏽 Arcane Order</a>
+        </div>
 
-    <!-- Category Feature Blocks -->
-    <section class="reveal">
-      <h2>Category Focus (Good vs Evil)</h2>
+        <!-- Intro -->
+        <section id="intro" class="anchor reveal">
+          <h2>What This Page Covers</h2>
+          <p>The Factions Overview defines the four core powers of <em>Ashes of Unity</em>: <strong>Holy Empire</strong>, <strong>Knights Order</strong>, <strong>Shadowborn</strong>, and <strong>Arcane Order</strong>. Each faction includes iconic classes, unique attributes, and a legendary hidden questline that reinforces its identity.</p>
+        </section>
 
-      <h3>😇 Good</h3>
-      <ul>
-        <li><strong>Combat Focus:</strong> Defense, Sustain</li>
-        <li><strong>PvP/War Role:</strong> Buffs, Protection, Tactics</li>
-        <li><strong>PvE/Dungeon Role:</strong> Raid Tanks, Healers</li>
-        <li><strong>Soloing:</strong> Self-healing, Defense</li>
-        <li><strong>Hybrid/Utility:</strong> Blacksmithing, Forging</li>
-      </ul>
-      <p class="muted">Holy Empire — Defense, Healing, Radiance (Blacksmithing, Blessings)<br/>Knights Order — Tactical Unity, Arcane Defense (Engineering, Forging, Magitek)</p>
+        <hr class="hr">
 
-      <div style="height:10px"></div>
+        <!-- Faction Philosophy -->
+        <section id="philosophy" class="anchor reveal">
+          <h2>Faction Philosophy</h2>
+          <p><strong>Good Factions</strong> (Holy Empire, Knights Order): emphasize defense, healing, formation control, and order — slower to start, but strong sustain and counterplay.</p>
+          <p><strong>Evil Factions</strong> (Shadowborn, Arcane Order): emphasize offense, corruption, burst, and chaos — fast, powerful, but fragile if misplayed.</p>
+          <p class="muted-note">Prestige paths can hybridize identities, but the core fantasy remains intact for each faction.</p>
+        </section>
 
-      <h3>👿 Evil</h3>
-      <ul>
-        <li><strong>Combat Focus:</strong> Offense, Burst</li>
-        <li><strong>PvP/War Role:</strong> Nukes, Debuffs, Ambush</li>
-        <li><strong>PvE/Dungeon Role:</strong> DPS, Controllers</li>
-        <li><strong>Soloing:</strong> Lifesteal, Burst</li>
-        <li><strong>Hybrid/Utility:</strong> Enchanting, Alchemy</li>
-      </ul>
-      <p class="muted">Shadowborn — Offense, Lifesteal, Stealth (Alchemy, Poisons, Enchanting)<br/>Arcane Order — Damage, Chaos Magic (Runes, Hexcraft, Rituals)</p>
-    </section>
+        <hr class="hr">
 
-    <!-- CLASS OVERVIEW: HOLY EMPIRE -->
-    <section class="reveal">
-      <h2>⚔ ASHES OF UNITY — CLASS OVERVIEW</h2>
-      <h3>😇 Holy Empire</h3>
-      <p><strong>Theme:</strong> Radiance, Faith, Order<br/>
-         <strong>Strengths:</strong> Healing, Defense, AoE Blessings<br/>
-         <strong>Weaknesses:</strong> Slow mobility, vulnerable to poison/curse</p>
-      <ul>
-        <li><strong>Crusader</strong> — <em>Physical (Short Range)</em> — <strong>Stats:</strong> STR, VIT<br/>Holy greatsword knight who channels radiant fury to smite foes. Durable melee DPS with holy cleaves and stun combos.</li>
-        <li><strong>Templar</strong> — <em>Hybrid (Mid Range)</em> — <strong>Stats:</strong> VIT, WIS<br/>Tank-support hybrid using radiant wards to shield allies and punish enemies. Defensive fighter with protection and radiant bursts.</li>
-        <li><strong>Cleric</strong> — <em>Magic (Long Range)</em> — <strong>Stats:</strong> WIS, INT<br/>Pure healer/light caster who sustains allies and purges curses. Primary group healer/support.</li>
-        <li><strong>Sunstrider</strong> — <em>Physical (Long Range)</em> — <strong>Stats:</strong> DEX, WIS<br/>Faith-driven archer firing blessed bolts and radiant AoEs. Ranged DPS with precision shots.</li>
-      </ul>
-    </section>
+        <!-- World Role -->
+        <section id="world-role" class="anchor reveal">
+          <h2>World Role</h2>
+          <p>Factions fight not just for land, but for the right to define the meaning of <strong>Unity Shards</strong> — divine relic, weapon of order, cursed poison, or cosmic engine. Every conflict, raid, and war is ultimately a battle for the Core’s legacy.</p>
+        </section>
 
-    <!-- CLASS OVERVIEW: KNIGHTS ORDER -->
-    <section class="reveal">
-      <h3>🔆 Knights Order</h3>
-      <p><strong>Theme:</strong> Discipline, Strategy, Honor<br/>
-         <strong>Strengths:</strong> Defense, Group Buffs, Formation Control<br/>
-         <strong>Weaknesses:</strong> Low mobility, vulnerable to magic disruption</p>
-      <ul>
-        <li><strong>Steel Knight</strong> — <em>Physical (Short Range)</em> — <strong>Stats:</strong> STR, END<br/>Armored duelist mastering shield counters and stance mechanics. Frontline tank/defender focusing on mitigation and retaliation.</li>
-        <li><strong>Battle Mage</strong> — <em>Hybrid (Mid Range)</em> — <strong>Stats:</strong> STR, INT<br/>Enchants weapons with runes to blend melee precision and arcane shockwaves. Hybrid DPS controlling mid-range zones.</li>
-        <li><strong>Arcane Sentinel</strong> — <em>Magic (Long Range)</em> — <strong>Stats:</strong> INT, END<br/>Defensive caster creating barriers and reflecting enemy magic. Protective mage specializing in anti-magic and sustain.</li>
-        <li><strong>Arbalist</strong> — <em>Physical (Long Range)</em> — <strong>Stats:</strong> DEX, END<br/>Magitek crossbowman with traps and explosive bolts. Ranged physical DPS with control tools.</li>
-      </ul>
-    </section>
+        <hr class="hr">
 
-    <!-- CLASS OVERVIEW: SHADOWBORN -->
-    <section class="reveal">
-      <h3>👿 Shadowborn</h3>
-      <p><strong>Theme:</strong> Corruption, Deception, Survival<br/>
-         <strong>Strengths:</strong> Stealth, DoT, Mobility<br/>
-         <strong>Weaknesses:</strong> Low defense, Reliant on timing</p>
-      <ul>
-        <li><strong>Assassin</strong> — <em>Physical (Short Range)</em> — <strong>Stats:</strong> DEX, AGI<br/>Stealth duelist specializing in ambushes and poisons. High burst single-target DPS with repositioning.</li>
-        <li><strong>Hexblade</strong> — <em>Hybrid (Mid Range)</em> — <strong>Stats:</strong> STR, INT<br/>Curse-infused fighter weaving dark runes into blade combat. Mid-range DoT fighter with cursed weapon arts.</li>
-        <li><strong>Necromancer</strong> — <em>Magic (Long Range)</em> — <strong>Stats:</strong> INT, Corruption<br/>Caster commanding undead and decay magic. Summoner-style control and sustain.</li>
-        <li><strong>Wraithbow</strong> — <em>Physical (Long Range)</em> — <strong>Stats:</strong> DEX, Corruption<br/>Spectral archer whose ghostly arrows pierce armor and steal vitality. Ranged DPS with lifesteal and shadow traps.</li>
-      </ul>
-    </section>
+        <!-- Category Focus -->
+        <section id="category-focus" class="anchor reveal">
+          <h2>Category Focus (Good vs Evil)</h2>
 
-    <!-- CLASS OVERVIEW: ARCANE ORDER -->
-    <section class="reveal">
-      <h3>🦹🏽 Arcane Order</h3>
-      <p><strong>Theme:</strong> Knowledge, Power, Chaos<br/>
-         <strong>Strengths:</strong> Burst Damage, AoE Control, Mana Efficiency<br/>
-         <strong>Weaknesses:</strong> Low durability, Vulnerable to interrupts</p>
-      <ul>
-        <li><strong>Spellblade</strong> — <em>Physical (Short Range)</em> — <strong>Stats:</strong> STR, INT<br/>Arcane duelist channeling mana through blades for explosive strikes. Short-range DPS using mana-infused combos and counters.</li>
-        <li><strong>Elementalist</strong> — <em>Hybrid (Mid Range)</em> — <strong>Stats:</strong> INT, Affinity<br/>Mid-range fighter chaining fire, frost, and lightning. Hybrid AoE DPS balancing risk and power surges.</li>
-        <li><strong>Arcanist</strong> — <em>Magic (Long Range)</em> — <strong>Stats:</strong> INT, WIS<br/>Long-range mage manipulating sigils, seals, and focused spell geometry. Control DPS and caster support with runic amplification.</li>
-        <li><strong>Arcstrider</strong> — <em>Physical (Long Range)</em> — <strong>Stats:</strong> DEX, INT<br/>Arcane marksman channeling mana into energy projectiles. Long-range burst DPS with charged shots and explosive runes.</li>
-      </ul>
-    </section>
+          <h3>😇 Good</h3>
+          <ul>
+            <li><strong>Combat Focus:</strong> Defense, Sustain</li>
+            <li><strong>PvP/War Role:</strong> Buffs, Protection, Tactics</li>
+            <li><strong>PvE/Dungeon Role:</strong> Raid Tanks, Healers</li>
+            <li><strong>Soloing:</strong> Self-healing, Defense</li>
+            <li><strong>Hybrid/Utility:</strong> Blacksmithing, Forging</li>
+          </ul>
+          <p class="muted-note">Holy Empire — Defense, Healing, Radiance (Blacksmithing, Blessings)<br/>Knights Order — Tactical Unity, Arcane Defense (Engineering, Forging, Magitek)</p>
 
-    <!-- Design Summary -->
-    <section class="reveal">
-      <h2>⚙ Design Summary</h2>
-      <ul>
-        <li><strong>Physical (Short Range):</strong> frontline fighter emphasizing strength and defense.</li>
-        <li><strong>Hybrid (Mid Range):</strong> balanced combatant mixing weapon skill and spells.</li>
-        <li><strong>Magic (Long Range):</strong> traditional caster for ranged damage or support.</li>
-        <li><strong>Physical (Long Range):</strong> marksman using bows/crossbows/rifles for precision.</li>
-      </ul>
-      <p class="muted">Each faction follows the same archetype distribution for PvE/PvP parity. Range balance: 1 short, 1 mid, 2 long per faction.</p>
-    </section>
+          <div style="height:10px"></div>
 
-    <!-- Balance Philosophy -->
-    <section class="reveal">
-      <h2>⚖ Balance Philosophy</h2>
-      <p>Power in <em>Ashes of Unity</em> is never absolute — light and shadow, order and chaos, each thrive where the other falters. Victory depends on mastery, timing, composition, and terrain — not a rock-paper-scissors chart.</p>
-      <ul>
-        <li><strong>Holy Empire</strong> counters <strong>Shadowborn</strong> corruption and attrition with radiant purges and sustained healing.</li>
-        <li><strong>Knights Order</strong> blunts <strong>Arcane Order</strong> volatility with formations, magitek nullifiers, and anti-magic discipline.</li>
-        <li><strong>Shadowborn</strong> breaks static lines via ambush, toxins, and mobility; punishes slow responses.</li>
-        <li><strong>Arcane Order</strong> overwhelms clustered formations with elemental AoE, tempo, and control.</li>
-      </ul>
-      <p class="muted"><em>Balance web:</em> Holy ⚔ Shadowborn • Knights ⚔ Arcane. Cross-counters remain situational and skill-based.</p>
-    </section>
+          <h3>👿 Evil</h3>
+          <ul>
+            <li><strong>Combat Focus:</strong> Offense, Burst</li>
+            <li><strong>PvP/War Role:</strong> Nukes, Debuffs, Ambush</li>
+            <li><strong>PvE/Dungeon Role:</strong> DPS, Controllers</li>
+            <li><strong>Soloing:</strong> Lifesteal, Burst</li>
+            <li><strong>Hybrid/Utility:</strong> Enchanting, Alchemy</li>
+          </ul>
+          <p class="muted-note">Shadowborn — Offense, Lifesteal, Stealth (Alchemy, Poisons, Enchanting)<br/>Arcane Order — Damage, Chaos Magic (Runes, Hexcraft, Rituals)</p>
+        </section>
 
+        <hr class="hr">
+
+        <!-- Classes -->
+        <section id="classes" class="anchor reveal">
+          <h2>⚔ ASHES OF UNITY — CLASS OVERVIEW</h2>
+
+          <!-- Holy Empire -->
+          <section id="holy-empire" class="anchor" style="margin-top: 18px;">
+            <h3>😇 Holy Empire</h3>
+            <p><strong>Theme:</strong> Radiance, Faith, Order<br/>
+               <strong>Strengths:</strong> Healing, Defense, AoE Blessings<br/>
+               <strong>Weaknesses:</strong> Slow mobility, vulnerable to poison/curse</p>
+            <ul>
+              <li id="holy-crusader">
+                <a class="class-link" href="#holy-crusader">Crusader</a> — <em>Physical (Short Range)</em> — <strong>Stats:</strong> STR, VIT<br/>
+                Holy greatsword knight; durable melee DPS with holy cleaves and stun combos.
+              </li>
+              <li id="holy-templar">
+                <a class="class-link" href="#holy-templar">Templar</a> — <em>Hybrid (Mid Range)</em> — <strong>Stats:</strong> VIT, WIS<br/>
+                Tank-support hybrid using radiant wards and bursts.
+              </li>
+              <li id="holy-cleric">
+                <a class="class-link" href="#holy-cleric">Cleric</a> — <em>Magic (Long Range)</em> — <strong>Stats:</strong> WIS, INT<br/>
+                Primary healer/support; group sustain and purification.
+              </li>
+              <li id="holy-sunstrider">
+                <a class="class-link" href="#holy-sunstrider">Sunstrider</a> — <em>Physical (Long Range)</em> — <strong>Stats:</strong> DEX, WIS<br/>
+                Faith archer; precision shots and radiant AoEs.
+              </li>
+            </ul>
+          </section>
+
+          <hr class="hr">
+
+          <!-- Knights Order -->
+          <section id="knights-order" class="anchor" style="margin-top: 18px;">
+            <h3>🔆 Knights Order</h3>
+            <p><strong>Theme:</strong> Discipline, Strategy, Honor<br/>
+               <strong>Strengths:</strong> Defense, Group Buffs, Formation Control<br/>
+               <strong>Weaknesses:</strong> Low mobility, vulnerable to magic disruption</p>
+            <ul>
+              <li id="knights-steel-knight">
+                <a class="class-link" href="#knights-steel-knight">Steel Knight</a> — <em>Physical (Short Range)</em> — <strong>Stats:</strong> STR, END<br/>
+                Frontline tank/defender focusing on mitigation and retaliation.
+              </li>
+              <li id="knights-battle-mage">
+                <a class="class-link" href="#knights-battle-mage">Battle Mage</a> — <em>Hybrid (Mid Range)</em> — <strong>Stats:</strong> STR, INT<br/>
+                Hybrid DPS; runes + melee for controlled mid-range.
+              </li>
+              <li id="knights-arcane-sentinel">
+                <a class="class-link" href="#knights-arcane-sentinel">Arcane Sentinel</a> — <em>Magic (Long Range)</em> — <strong>Stats:</strong> INT, END<br/>
+                Anti-mage bulwarks and suppression wards.
+              </li>
+              <li id="knights-arbalist">
+                <a class="class-link" href="#knights-arbalist">Arbalist</a> — <em>Physical (Long Range)</em> — <strong>Stats:</strong> DEX, END<br/>
+                Magitek marksman; traps and explosive volleys.
+              </li>
+            </ul>
+          </section>
+
+          <hr class="hr">
+
+          <!-- Shadowborn -->
+          <section id="shadowborn" class="anchor" style="margin-top: 18px;">
+            <h3>👿 Shadowborn</h3>
+            <p><strong>Theme:</strong> Corruption, Deception, Survival<br/>
+               <strong>Strengths:</strong> Stealth, DoT, Mobility<br/>
+               <strong>Weaknesses:</strong> Low defense, reliant on timing</p>
+            <ul>
+              <li id="shadowborn-assassin">
+                <a class="class-link" href="#shadowborn-assassin">Assassin</a> — <em>Physical (Short Range)</em> — <strong>Stats:</strong> DEX, AGI<br/>
+                Stealth duelist; lethal bursts and poisons.
+              </li>
+              <li id="shadowborn-hexblade">
+                <a class="class-link" href="#shadowborn-hexblade">Hexblade</a> — <em>Hybrid (Mid Range)</em> — <strong>Stats:</strong> STR, INT<br/>
+                DoT fighter weaving dark runes into blade combat.
+              </li>
+              <li id="shadowborn-necromancer">
+                <a class="class-link" href="#shadowborn-necromancer">Necromancer</a> — <em>Magic (Long Range)</em> — <strong>Stats:</strong> INT, Corruption<br/>
+                Summoner/control; decay magic and sustain.
+              </li>
+              <li id="shadowborn-wraithbow">
+                <a class="class-link" href="#shadowborn-wraithbow">Wraithbow</a> — <em>Physical (Long Range)</em> — <strong>Stats:</strong> DEX, Corruption<br/>
+                Spectral archer; lifesteal and shadow traps.
+              </li>
+            </ul>
+          </section>
+
+          <hr class="hr">
+
+          <!-- Arcane Order -->
+          <section id="arcane-order" class="anchor" style="margin-top: 18px;">
+            <h3>🦹🏽 Arcane Order</h3>
+            <p><strong>Theme:</strong> Knowledge, Power, Chaos<br/>
+               <strong>Strengths:</strong> Burst Damage, AoE Control, Mana Efficiency<br/>
+               <strong>Weaknesses:</strong> Low durability, vulnerable to interrupts</p>
+            <ul>
+              <li id="arcane-spellblade">
+                <a class="class-link" href="#arcane-spellblade">Spellblade</a> — <em>Physical (Short Range)</em> — <strong>Stats:</strong> STR, INT<br/>
+                Arcane duelist; mana-infused combos and counters.
+              </li>
+              <li id="arcane-elementalist">
+                <a class="class-link" href="#arcane-elementalist">Elementalist</a> — <em>Hybrid (Mid Range)</em> — <strong>Stats:</strong> INT, Affinity<br/>
+                Chains fire, frost, lightning; hybrid AoE DPS.
+              </li>
+              <li id="arcane-arcanist">
+                <a class="class-link" href="#arcane-arcanist">Arcanist</a> — <em>Magic (Long Range)</em> — <strong>Stats:</strong> INT, WIS<br/>
+                Sigils/seals; control DPS and caster support.
+              </li>
+              <li id="arcane-arcstrider">
+                <a class="class-link" href="#arcane-arcstrider">Arcstrider</a> — <em>Physical (Long Range)</em> — <strong>Stats:</strong> DEX, INT<br/>
+                Energy marksman; charged shots and explosive runes.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <hr class="hr">
+
+        <!-- Design Summary -->
+        <section id="design-summary" class="anchor reveal">
+          <h2>⚙ Design Summary</h2>
+          <ul>
+            <li><strong>Physical (Short Range):</strong> frontline fighter emphasizing strength and defense.</li>
+            <li><strong>Hybrid (Mid Range):</strong> balanced combatant mixing weapon skill and spells.</li>
+            <li><strong>Magic (Long Range):</strong> traditional caster for ranged damage or support.</li>
+            <li><strong>Physical (Long Range):</strong> marksman using bows/crossbows/rifles for precision.</li>
+          </ul>
+          <p class="muted-note">Each faction follows the same archetype distribution for PvE/PvP parity. Range balance: 1 short, 1 mid, 2 long per faction.</p>
+        </section>
+
+        <hr class="hr">
+
+        <!-- Balance Philosophy -->
+        <section id="balance" class="anchor reveal">
+          <h2>⚖ Balance Philosophy</h2>
+          <p>Power in <em>Ashes of Unity</em> is never absolute — light and shadow, order and chaos, each thrive where the other falters. Victory depends on mastery, timing, composition, and terrain — not a rock-paper-scissors chart.</p>
+          <ul>
+            <li><strong>Holy Empire</strong> counters <strong>Shadowborn</strong> corruption and attrition with radiant purges and sustained healing.</li>
+            <li><strong>Knights Order</strong> blunts <strong>Arcane Order</strong> volatility with formations, magitek nullifiers, and anti-magic discipline.</li>
+            <li><strong>Shadowborn</strong> breaks static lines via ambush, toxins, and mobility; punishes slow responses.</li>
+            <li><strong>Arcane Order</strong> overwhelms clustered formations with elemental AoE, tempo, and control.</li>
+          </ul>
+          <p class="muted-note"><em>Balance web:</em> Holy ⚔ Shadowborn • Knights ⚔ Arcane. Cross-counters remain situational and skill-based.</p>
+        </section>
+
+        <p class="muted-note reveal">Tip: these class links are deep-linked to this page for now. If/when you create dedicated class pages (e.g., <code>/classes/holy-empire/crusader.html</code>), swap each <em>href</em> to the new page URL — the rest of the site won’t need changes.</p>
+
+      </div><!-- /main column -->
+    </div><!-- /overview-wrap -->
   </main>
 
   <footer class="footer">
     <div class="container">© Ashes of Unity</div>
   </footer>
 
+  <!-- Page-scoped script: smooth scroll + active TOC highlight -->
+  <script>
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', id);
+        }
+      });
+    });
+
+    // Active TOC highlight on scroll
+    const tocLinks = Array.from(document.querySelectorAll('.toc-link'));
+    const anchors = tocLinks
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = '#' + entry.target.id;
+        const link = tocLinks.find(a => a.getAttribute('href') === id);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          tocLinks.forEach(a => a.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    anchors.forEach(el => io.observe(el));
+  </script>
+
+  <!-- Global reveal/scroll logic from site -->
   <script src="../script.js"></script>
 </body>
 </html>

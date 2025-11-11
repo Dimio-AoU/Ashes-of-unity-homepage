@@ -13,14 +13,14 @@
       <div class="brand">ASHES OF UNITY</div>
       <nav>
         <a href="../index.html">Home</a>
-        <a href="index.html">Factions</a>
+        <a href="index.html" class="active">Factions</a>
         <a href="../balance.html">Balance</a>
         <a href="../systems.html">Systems</a>
       </nav>
     </div>
   </div>
 
-  <header class="banner" style="background-image:url('../assets/images/AoU-GoodvEvil.png')">
+  <header class="banner" style="background-image:url('../assets/images/factions/AoU-GoodvEvil.png')">
     <div class="container title-wrap">
       <h1>Factions</h1>
       <p class="muted">Faith, Discipline, Shadow, Knowledge.</p>
@@ -29,28 +29,31 @@
 
   <main class="page container">
     <div class="grid">
-      <a class="card" href="holy-empire.html">
+      <a class="card reveal" href="holy-empire.html" style="--i:0;">
         <img src="../assets/images/factions/holy-empire.png" alt="Holy Empire">
         <div class="card-body">
           <h3>Holy Empire</h3>
           <p>Radiant order and divine zeal.</p>
         </div>
       </a>
-      <a class="card" href="knights-order.html">
+
+      <a class="card reveal" href="knights-order.html" style="--i:1;">
         <img src="../assets/images/factions/knights-order.png" alt="Knights Order">
         <div class="card-body">
           <h3>Knights Order</h3>
           <p>Discipline and magitek supremacy.</p>
         </div>
       </a>
-      <a class="card" href="shadowborn.html">
+
+      <a class="card reveal" href="shadowborn.html" style="--i:2;">
         <img src="../assets/images/factions/shadowborn.png" alt="Shadowborn">
         <div class="card-body">
           <h3>Shadowborn</h3>
           <p>Corruption, stealth, and survival.</p>
         </div>
       </a>
-      <a class="card" href="arcane-order.html">
+
+      <a class="card reveal" href="arcane-order.html" style="--i:3;">
         <img src="../assets/images/factions/arcane-order.png" alt="Arcane Order">
         <div class="card-body">
           <h3>Arcane Order</h3>
@@ -63,5 +66,7 @@
   <footer class="footer">
     <div class="container">© Ashes of Unity</div>
   </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

@@ -7,24 +7,23 @@
 
 /* ---------- Theme Tokens ---------- */
 :root{
-  --bg: #0b0c10;               /* page background */
-  --bg-2: #0f1117;             /* panels / nav */
-  --card: #12141b;             /* card base */
+  --bg: #0b0c10;
+  --bg-2: #0f1117;
+  --card: #12141b;
   --line-1: rgba(255,255,255,.06);
   --line-2: rgba(255,255,255,.10);
   --text: #EAEAEA;
   --muted: #b9bdcc;
-  --gold: #efd381;             /* accent gold */
+  --gold: #efd381;
   --gold-2: rgba(255,215,0,.22);
   --brand: #F5F3E8;
 
   /* Role chips */
-  --chip-phys: #c9a24b;        /* physical */
-  --chip-hybrid: #6ab3ff;      /* hybrid */
-  --chip-magic: #b586ff;       /* magic */
-  --chip-phys-long: #7ddc8f;   /* ranged physical */
+  --chip-phys: #c9a24b;
+  --chip-hybrid: #6ab3ff;
+  --chip-magic: #b586ff;
+  --chip-phys-long: #7ddc8f;
 
-  /* Shadows / Glows */
   --glow-soft: 0 0 22px rgba(255,215,0,.12);
   --glow-strong: 0 0 32px rgba(255,215,0,.22);
 }
@@ -53,10 +52,7 @@ a{ color: var(--gold); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
 /* ---------- Layout ---------- */
-.container{
-  width: min(1200px, 92vw);
-  margin: 0 auto;
-}
+.container{ width: min(1200px, 92vw); margin: 0 auto; }
 .page{ padding: 28px 0 48px; }
 
 /* ---------- Navbar ---------- */
@@ -101,14 +97,8 @@ a:hover{ text-decoration: underline; }
   content:""; position:absolute; inset:0;
   background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.65) 65%, rgba(0,0,0,.85) 100%);
 }
-.title-wrap{
-  position: relative; z-index: 1;
-  padding: 42px 0 30px;
-}
-.section-title{
-  text-align:left;
-  margin: 18px 0 12px;
-}
+.title-wrap{ position: relative; z-index: 1; padding: 42px 0 30px; }
+.section-title{ text-align:left; margin: 18px 0 12px; }
 
 /* ---------- Cards ---------- */
 .card{
@@ -152,15 +142,11 @@ a:hover{ text-decoration: underline; }
 .btn:hover{ transform: translateY(-2px); box-shadow: var(--glow-soft); border-color: var(--gold-2); }
 .btn-primary{ border-color: rgba(255,215,0,.28); }
 
-/* ==================================================
-   ENHANCEMENTS FOR FACTION PAGES — CLASS GRID TILES
-   (no underlines, hover glow, role chips, subtle tilt)
-   ================================================== */
-
+/* ---------- Grid utilities ---------- */
 .grid{ display:grid; gap:20px; grid-template-columns:1fr; }
 @media (min-width:900px){ .grid{ grid-template-columns:1fr 1fr; } }
 
-/* The anchor is the card */
+/* ---------- Class tiles (anchors with no underline) ---------- */
 a.class-card{ text-decoration:none !important; color:inherit; }
 .class-card{
   position:relative; overflow:hidden;
@@ -178,7 +164,7 @@ a.class-card{ text-decoration:none !important; color:inherit; }
 .class-card .pad{ padding:16px; }
 .class-card h3{ margin:0 0 6px 0; }
 
-/* Role chip (small pill) */
+/* Role chips */
 .role-chip{
   display:inline-flex; align-items:center; gap:8px;
   font-size: .85rem;
@@ -188,24 +174,43 @@ a.class-card{ text-decoration:none !important; color:inherit; }
   background: rgba(10,10,15,.55);
   color: #e8e4d7;
 }
-.role-chip .dot{
-  width:10px; height:10px; border-radius:50%;
-  background: #aaa;
-}
+.role-chip .dot{ width:10px; height:10px; border-radius:50%; background: #aaa; }
 .role-phys .dot{ background: var(--chip-phys); }
 .role-hybrid .dot{ background: var(--chip-hybrid); }
 .role-magic .dot{ background: var(--chip-magic); }
 .role-phys-long .dot{ background: var(--chip-phys-long); }
 
-/* Optional subtext inside cards */
-.card-sub{ color: var(--muted); margin-top:6px; }
-
-/* ==================================================
-   IMAGE UTILS
-   ================================================== */
+/* Image utils */
 .img-cover{ width:100%; height:200px; object-fit:cover; display:block; filter:saturate(.95); transition: transform .35s ease, filter .35s ease; }
 .class-card:hover .img-cover{ transform: scale(1.03); filter:saturate(1); }
 
-/* ==================================================
-   JS HOOK — minimal scroll reveal
-   ================================================== */
+/* ---------- Home cards ---------- */
+.cards{ display:grid; gap:18px; grid-template-columns:1fr; }
+@media(min-width:900px){ .cards{ grid-template-columns:repeat(3,1fr); } }
+.card-link{ display:block; text-decoration:none; color:inherit; }
+.home-card{
+  background: var(--card); border:1px solid var(--line-2); border-radius:16px; overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; box-shadow:0 0 16px rgba(240,195,91,.06)
+}
+.home-card:hover{ transform:translateY(-6px); box-shadow:0 0 26px rgba(240,195,91,.16); border-color:rgba(240,195,91,.3) }
+.card-img{ height:180px; width:100%; object-fit:cover; display:block; filter:saturate(.95) }
+.card-body{ padding:16px 18px 18px }
+.home-card h3{ margin:0 0 6px; font-size:22px; letter-spacing:.03em }
+.sub{ color: var(--muted); line-height: 1.4; }
+
+/* ---------- Overlay/link safety & nav fade ---------- */
+.vignette,
+.hero::before,
+.hero::after,
+.card::before,
+.card::after,
+.bg-glow,
+.fx-overlay { pointer-events: none; }
+
+a, .nav a, .card a, .button { pointer-events: auto; cursor: pointer; }
+
+.nav { position: relative; z-index: 10; }
+.cards, main, .content { position: relative; z-index: 5; }
+.hero, .hero * { position: relative; z-index: 1; }
+
+body.page-fade { opacity: 0; transition: opacity .25s ease; }

@@ -1,88 +1,38 @@
-/* =======================================================
-   Ashes of Unity — Frontend Interactions
-   - Music toggle (with localStorage remember)
-   - Scroll reveal (IntersectionObserver)
-   ======================================================= */
+/* ============================================
+   ASHES OF UNITY — SCRIPT.JS (Safe Version)
+   ============================================
+   • Never intercepts link clicks.
+   • Only passive UI: reveal-on-scroll + optional fade-out.
+   ============================================ */
 
-// ---------- Music Toggle ----------
-(function () {
-  const audio = document.getElementById('aou-theme');
-  const btn = document.getElementById('musicToggle');
-  if (!audio || !btn) return;
-
-  // Restore last state
-  const saved = localStorage.getItem('aou_music') || 'off';
-  if (saved === 'on') {
-    // Browsers require a user gesture for autoplay; we try play() on first interaction.
-    // Pre-set UI so user sees intended state.
-    btn.classList.add('is-playing');
-    btn.textContent = '♪ Music: On';
-    btn.setAttribute('aria-pressed', 'true');
+document.addEventListener("DOMContentLoaded", () => {
+  // Reveal on scroll
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-in");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
+    );
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add("reveal-in"));
   }
+});
 
-  // One-time user gesture hook to allow autoplay after click
-  const ensurePlay = async () => {
-    try {
-      if (btn.classList.contains('is-playing') && audio.paused) {
-        await audio.play();
-      }
-    } catch (e) {
-      // Autoplay blocked — will play next button click
-    }
-    window.removeEventListener('click', ensurePlay);
-  };
-  window.addEventListener('click', ensurePlay, { once: true });
-
-  btn.addEventListener('click', async () => {
-    const playing = btn.classList.toggle('is-playing');
-    if (playing) {
-      btn.textContent = '♪ Music: On';
-      btn.setAttribute('aria-pressed', 'true');
-      localStorage.setItem('aou_music', 'on');
-      try { await audio.play(); } catch (e) { /* ignore */ }
-    } else {
-      btn.textContent = '♪ Music: Off';
-      btn.setAttribute('aria-pressed', 'false');
-      localStorage.setItem('aou_music', 'off');
-      audio.pause();
-    }
-  });
-})();
-
-// ---------- Scroll Reveal ----------
-(function () {
-  const els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window) || !els.length) {
-    // No IO support — show everything
-    els.forEach(el => el.classList.add('in'));
-    return;
-  }
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  els.forEach(el => io.observe(el));
-})();
-// Minimal scroll reveal for .reveal elements
-(function(){
-  const els = Array.from(document.querySelectorAll('.reveal'));
-  if (!('IntersectionObserver' in window) || !els.length) {
-    els.forEach(el => el.classList.add('reveal-in'));
-    return;
-  }
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('reveal-in');
-        io.unobserve(e.target);
-      }
-    });
-  }, {threshold: .2});
-  els.forEach(el=>io.observe(el));
-})();
+// Optional: subtle page fade when navigating (non-blocking)
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a");
+  if (!a) return;
+  if (a.target === "_blank" || a.hasAttribute("download")) return;
+  const url = new URL(a.href, location.href);
+  if (url.origin !== location.origin) return;
+  if (url.hash && url.pathname === location.pathname) return; // in-page anchor
+  document.body.classList.add("page-fade");
+});

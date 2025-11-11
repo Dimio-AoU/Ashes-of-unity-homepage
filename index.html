@@ -23,20 +23,20 @@
 
   <!-- HERO -->
   <header class="hero">
-    <div class="inner container">
+    <div class="inner container reveal">
       <h1>The World Reforged in Light and Shadow</h1>
-      <p>Four factions battle for the fragments of the World Core — each bound by fate, faith, or fury.</p>
+      <p>Four factions battle for fragments of the World Core — each bound by fate, faith, or fury.</p>
       <a class="btn-primary" href="factions/index.html">Choose a Faction</a>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- FACTIONS -->
   <main class="section container">
-    <h2 style="text-align:center; margin-bottom: 28px;">The Four Factions</h2>
+    <h2 style="text-align:center; margin-bottom: 28px;" class="reveal">The Four Factions</h2>
 
     <div class="grid">
       <!-- Holy Empire -->
-      <div class="card">
+      <div class="card reveal" style="--i:0;">
         <img src="assets/images/factions/holy-empire.png" alt="Holy Empire">
         <div class="card-body">
           <h3>😇 Holy Empire</h3>
@@ -46,7 +46,7 @@
       </div>
 
       <!-- Knights Order -->
-      <div class="card">
+      <div class="card reveal" style="--i:1;">
         <img src="assets/images/factions/knights-order.png" alt="Knights Order">
         <div class="card-body">
           <h3>🔆 Knights Order</h3>
@@ -56,7 +56,7 @@
       </div>
 
       <!-- Arcane Order -->
-      <div class="card">
+      <div class="card reveal" style="--i:2;">
         <img src="assets/images/factions/arcane-order.png" alt="Arcane Order">
         <div class="card-body">
           <h3>🦹🏽 Arcane Order</h3>
@@ -66,7 +66,7 @@
       </div>
 
       <!-- Shadowborn -->
-      <div class="card">
+      <div class="card reveal" style="--i:3;">
         <img src="assets/images/factions/shadowborn.png" alt="Shadowborn">
         <div class="card-body">
           <h3>👿 Shadowborn</h3>
@@ -77,9 +77,43 @@
     </div>
   </main>
 
+  <!-- NEWS / UPDATES -->
+  <section class="news">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center; margin-bottom: 18px;">News & Updates</h2>
+      <p class="muted reveal" style="text-align:center; margin-bottom: 24px;">Patch notes, lore journals, and development progress.</p>
+
+      <div class="news-grid">
+        <article class="news-card reveal" style="--i:0;">
+          <span class="news-date">2025-01-10</span>
+          <h3>Faction Pages Completed</h3>
+          <p>Holy Empire, Knights Order, Shadowborn, and Arcane Order pages now live with class overviews and banners.</p>
+        </article>
+
+        <article class="news-card reveal" style="--i:1;">
+          <span class="news-date">2025-01-07</span>
+          <h3>Balance Philosophy</h3>
+          <p>Established our equilibrium: Holy ⚔ Shadowborn • Knights ⚔ Arcane. No hard counters — strategy defines victory.</p>
+        </article>
+
+        <article class="news-card reveal" style="--i:2;">
+          <span class="news-date">2025-01-02</span>
+          <h3>Homepage Visual Pass</h3>
+          <p>New hero, premium typography, and faction grid polish inspired by ESO / BDO visual direction.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">© Ashes of Unity</div>
   </footer>
+
+  <!-- MUSIC: Hidden audio + toggle -->
+  <audio id="aou-theme" src="assets/audio/aou-theme.mp3" preload="auto" loop></audio>
+  <button class="music-toggle" id="musicToggle" aria-pressed="false" title="Toggle Music">♪ Music: Off</button>
+
+  <script src="script.js"></script>
 </body>
 </html>

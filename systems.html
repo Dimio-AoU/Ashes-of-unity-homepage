@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Systems — Ashes of Unity</title>
+  <base href="/" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    :root{ --bg:#0b0e12; --line-2:#262a33; --text:#e9ecf1; --muted:#a7b0bf; }
+    body{margin:0;background:var(--bg);color:var(--text);font-family:ui-serif,Georgia,serif}
+    .nav{background:#0e1218;border-bottom:1px solid var(--line-2)}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+    nav a{color:var(--muted);margin-left:18px;text-decoration:none}
+    nav a.active, nav a:hover{color:var(--text)}
+    header{padding:44px 0;border-bottom:1px solid var(--line-2)}
+    h1{margin:0 0 6px}
+    .muted{color:var(--muted)}
+    section{padding:28px 0;border-bottom:1px solid var(--line-2)}
+    h2{margin:0 0 8px}
+    p{color:var(--muted)}
+    .footer{padding:24px 0;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">ASHES OF UNITY</div>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/factions/index.html">Factions</a>
+        <a href="/balance.html">Balance</a>
+        <a class="active" href="/systems.html">Systems</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <h1>Game Systems</h1>
+      <p class="muted">Leveling • Stats • Skills • Prestige</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Leveling</h2>
+      <p>Players begin at level 1 and can reach level 200. Progression unlocks stat points, skill points, and prestige paths.</p>
+    </section>
+
+    <section>
+      <h2>Stats & Stat Points</h2>
+      <p>Core: STR, DEX, INT, VIT, END. Hidden stats emerge through quests and rare events: Luck, Perception, Radiance, Corruption, Affinity, Leadership, etc.</p>
+    </section>
+
+    <section>
+      <h2>Skills & Skill Points</h2>
+      <p>Skill lines (Class, Weapon, Armor, Faction, Universal) level independently. Skills can morph, awaken, or succeed into stronger variants.</p>
+    </section>
+
+    <section>
+      <h2>Prestige</h2>
+      <p>At cap thresholds, characters re-emerge into prestige paths, retain growth, and unlock legendary questlines unique to each faction.</p>
+    </section>
+  </main>
+
+  <footer class="footer">© Ashes of Unity</footer>
+</body>
+</html>

@@ -4,7 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashes of Unity — Home</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <!-- Make all links resolve from the site root -->
+  <base href="/" />
+  <link rel="stylesheet" href="/styles.css" />
   <style>
     :root{ --bg:#0b0e12; --card:#12151c; --line-2:#262a33; --text:#e9ecf1; --muted:#a7b0bf; --gold:#f0c35b; }
     body{margin:0;background:var(--bg);color:var(--text);font-family:ui-serif,Georgia,serif}
@@ -15,7 +17,7 @@
     nav a{color:var(--muted);margin-left:18px;text-decoration:none}
     nav a.active, nav a:hover{color:var(--text)}
     .hero{position:relative;min-height:56vh;display:grid;place-items:center;background:radial-gradient(80% 60% at 50% 30%, #1a1f28 0%, #0b0e12 70%);overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:url('./assets/images/factions/AoU-GoodvEvil.png') center/cover no-repeat;opacity:.28;filter:saturate(.9) contrast(1.05) blur(1px)}
+    .hero::before{content:"";position:absolute;inset:0;background:url('/assets/images/factions/AoU-GoodvEvil.png') center/cover no-repeat;opacity:.28;filter:saturate(.9) contrast(1.05) blur(1px)}
     .title-wrap{position:relative;text-align:center;padding:70px 20px}
     h1{font-size:clamp(36px,4.5vw,64px);margin:0 0 8px;letter-spacing:.06em}
     .lead{color:var(--muted);font-size:clamp(16px,2vw,19px)}
@@ -39,10 +41,10 @@
     <div class="container nav-inner">
       <div class="brand">ASHES OF UNITY</div>
       <nav>
-        <a class="active" href="./index.html">Home</a>
-        <a href="./factions/index.html">Factions</a>
-        <a href="./balance.html">Balance</a>
-        <a href="./systems.html">Systems</a>
+        <a class="active" href="/index.html">Home</a>
+        <a href="/factions/index.html">Factions</a>
+        <a href="/balance.html">Balance</a>
+        <a href="/systems.html">Systems</a>
       </nav>
     </div>
   </div>
@@ -56,9 +58,9 @@
 
   <section class="section">
     <div class="container cards">
-      <a class="card-link reveal" href="./factions/index.html">
+      <a class="card-link reveal" href="/factions/index.html">
         <article class="card">
-          <img class="card-img" src="./assets/images/factions/AoU-GoodvEvil.png" alt="Explore Factions">
+          <img class="card-img" src="/assets/images/factions/AoU-GoodvEvil.png" alt="Explore Factions">
           <div class="card-body">
             <h3>Explore Factions</h3>
             <p class="sub">Holy Empire • Knights Order • Shadowborn • Arcane Order</p>
@@ -66,9 +68,9 @@
         </article>
       </a>
 
-      <a class="card-link reveal" href="./systems.html">
+      <a class="card-link reveal" href="/systems.html">
         <article class="card">
-          <img class="card-img" src="./assets/images/factions/holy-empire.png" alt="Game Systems">
+          <img class="card-img" src="/assets/images/factions/holy-empire.png" alt="Game Systems">
           <div class="card-body">
             <h3>Game Systems</h3>
             <p class="sub">Leveling • Stats • Skills • Prestige</p>
@@ -76,9 +78,9 @@
         </article>
       </a>
 
-      <a class="card-link reveal" href="./balance.html">
+      <a class="card-link reveal" href="/balance.html">
         <article class="card">
-          <img class="card-img" src="./assets/images/factions/knights-order.png" alt="Balance Philosophy">
+          <img class="card-img" src="/assets/images/factions/knights-order.png" alt="Balance Philosophy">
           <div class="card-body">
             <h3>Balance Philosophy</h3>
             <p class="sub">Holy ⚔ Shadow • Knights ⚔ Arcane — circular parity, no hard winners.</p>

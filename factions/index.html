@@ -5,6 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Factions — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    /* Remove underline from all faction cards */
+    .card {
+      text-decoration: none;
+      color: inherit;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #2e2e3f;
+      background: linear-gradient(180deg, rgba(10,10,15,0.9), rgba(10,10,15,0.7));
+      box-shadow: 0 0 15px rgba(255,215,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #222;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(255,215,0,0.15);
+      border-color: rgba(255,215,0,0.3);
+    }
+
+    .card * {
+      text-decoration: none !important;
+    }
+
+    .card-body {
+      padding: 15px;
+      background: rgba(10,10,15,0.7);
+    }
+
+    .card-body h3 {
+      font-family: "Cinzel", serif;
+      font-size: 1.1rem;
+      color: #f8f6e7;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .card-body p {
+      font-size: 0.9rem;
+      color: #b0b3c0;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      justify-items: center;
+      margin-bottom: 40px;
+    }
+
+    .page h2 {
+      font-family: "Cinzel", serif;
+      color: #f8f6e7;
+      text-shadow: 0 0 12px rgba(255,215,0,0.2);
+    }
+  </style>
 </head>
 <body>
 
@@ -14,7 +79,7 @@
       <div class="brand">ASHES OF UNITY</div>
       <nav>
         <a href="../index.html">Home</a>
-        <a href="index.html" class="active">Factions</a>
+        <a href="./index.html" class="active">Factions</a>
         <a href="../balance.html">Balance</a>
         <a href="../systems.html">Systems</a>
       </nav>
@@ -31,11 +96,12 @@
 
   <!-- CONTENT -->
   <main class="page container">
-    <h2 class="reveal" style="text-align:center; margin-bottom: 22px;">Choose Your Path</h2>
+    <h2 class="reveal" style="text-align:center; margin-bottom: 30px;">Choose Your Path</h2>
 
     <div class="grid">
+
       <!-- Overview -->
-      <a class="card reveal" href="overview.html" style="--i:0;">
+      <a class="card reveal" href="./overview.html" style="--i:0;">
         <img src="../assets/images/factions/AoU-GoodvEvil.png" alt="Factions Overview">
         <div class="card-body">
           <h3>🛡 Factions Overview</h3>
@@ -44,7 +110,7 @@
       </a>
 
       <!-- Holy Empire -->
-      <a class="card reveal" href="holy-empire.html" style="--i:1;">
+      <a class="card reveal" href="./holy-empire.html" style="--i:1;">
         <img src="../assets/images/factions/holy-empire.png" alt="Holy Empire">
         <div class="card-body">
           <h3>😇 Holy Empire</h3>
@@ -53,7 +119,7 @@
       </a>
 
       <!-- Knights Order -->
-      <a class="card reveal" href="knights-order.html" style="--i:2;">
+      <a class="card reveal" href="./knights-order.html" style="--i:2;">
         <img src="../assets/images/factions/knights-order.png" alt="Knights Order">
         <div class="card-body">
           <h3>🔆 Knights Order</h3>
@@ -62,7 +128,7 @@
       </a>
 
       <!-- Shadowborn -->
-      <a class="card reveal" href="shadowborn.html" style="--i:3;">
+      <a class="card reveal" href="./shadowborn.html" style="--i:3;">
         <img src="../assets/images/factions/shadowborn.png" alt="Shadowborn">
         <div class="card-body">
           <h3>👿 Shadowborn</h3>
@@ -71,7 +137,7 @@
       </a>
 
       <!-- Arcane Order -->
-      <a class="card reveal" href="arcane-order.html" style="--i:4;">
+      <a class="card reveal" href="./arcane-order.html" style="--i:4;">
         <img src="../assets/images/factions/arcane-order.png" alt="Arcane Order">
         <div class="card-body">
           <h3>🦹🏽 Arcane Order</h3>

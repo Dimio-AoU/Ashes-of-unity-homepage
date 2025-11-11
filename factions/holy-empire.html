@@ -5,73 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Holy Empire — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .hero { background-image:url('../assets/images/factions/holy-empire.png'); }
+    .gold-hr { border:0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,215,0,.55), transparent); margin:22px 0; }
+    .lead { color:#cfd3e6; font-size:1.05rem; }
+    .facts { display:grid; gap:14px; grid-template-columns:1fr; }
+    @media (min-width: 900px){ .facts{ grid-template-columns:1fr 1fr; } }
+    .fact { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:14px; }
+    .kicker { color:var(--gold); font-weight:800; letter-spacing:.04em; font-size:.85rem; text-transform:uppercase; }
+    .class-grid { display:grid; gap:18px; grid-template-columns:1fr; }
+    @media (min-width: 750px){ .class-grid{ grid-template-columns:repeat(2,1fr); } }
+    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:16px; }
+    .class-card h4{ margin:2px 0 6px; }
+    .tag{ font-size:.8rem; color:#b8bdd0; }
+  </style>
 </head>
 <body>
-
   <!-- NAV -->
   <div class="nav">
     <div class="container nav-inner">
       <div class="brand">ASHES OF UNITY</div>
       <nav>
         <a href="../index.html">Home</a>
-        <a href="index.html">Factions</a>
+        <a href="./index.html">Factions</a>
         <a href="../balance.html">Balance</a>
         <a href="../systems.html">Systems</a>
       </nav>
     </div>
   </div>
 
-  <!-- BANNER -->
-  <header class="banner" style="background-image:url('../assets/images/factions/holy-empire.png')">
+  <!-- HERO -->
+  <header class="banner hero">
     <div class="container title-wrap">
       <h1>😇 Holy Empire</h1>
-      <p class="muted">Radiance, order, and divine zeal.</p>
+      <p class="muted">Radiance, order, and divine zealotry.</p>
     </div>
   </header>
 
   <!-- CONTENT -->
   <main class="page container">
-    <section class="reveal">
-      <h2>Lore</h2>
-      <p>The Holy Empire believes the World Core’s fragments are divine relics scattered by their god of Light. They see themselves as chosen stewards — destined to purify the world of corruption and bring eternal order. Their society is ruled by a zealous theocracy where temples double as both sanctuaries and military barracks.</p>
-    </section>
+    <p class="lead reveal">
+      The Holy Empire believes the World Core’s fragments are <em>divine relics</em> scattered by the god of Light.
+      Ruled by a zealous theocracy, their temples serve as sanctuaries and barracks, and their crusades sanctify
+      corrupted lands in blinding radiance.
+    </p>
 
-    <section class="reveal">
-      <h2>Culture</h2>
-      <p>Their radiant cities gleam with golden spires and ever-burning braziers. Citizens greet one another with blessings, and laws are enforced with unwavering conviction. To outsiders, the Empire is seen as fanatical and oppressive — but to its people, their devotion is sacred duty.</p>
-    </section>
+    <hr class="gold-hr">
 
-    <section class="reveal">
-      <h2>Goals</h2>
-      <p>Reclaim every Unity Shard, sanctify corrupted lands, and convert or destroy unbelievers.</p>
-    </section>
+    <div class="facts">
+      <div class="fact reveal">
+        <div class="kicker">Lore</div>
+        <p>Covenant stewards of the Light, sworn to purify corruption and restore eternal order.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Culture</div>
+        <p>Golden spires, ever-burning braziers, strict law, and blessings on every tongue.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Goals</div>
+        <p>Reclaim Unity Shards, sanctify blighted realms, convert—or crush—unbelievers.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Relations</div>
+        <p><strong>Allies:</strong> Knights Order. <strong>Rivals:</strong> Shadowborn, Arcane Order.</p>
+      </div>
+    </div>
 
-    <section class="reveal">
-      <h2>Rivals & Allies</h2>
-      <p><strong>Rivals:</strong> 👿 Shadowborn — heretical vermin that spread corruption; 🦹🏽 Arcane Order — heretics who defy the divine.</p>
-      <p><strong>Allies:</strong> 🔆 Knights Order — both fight for “order,” though faith and pragmatism often clash.</p>
-    </section>
+    <h2 class="reveal" style="margin-top:24px;">Classes</h2>
+    <p class="muted reveal">One short-range physical, one mid-range hybrid, one long-range magic, one long-range physical.</p>
 
-    <section class="reveal">
-      <h2>Player Fantasy</h2>
-      <p>You are the radiant crusader — the last bastion of light, fighting with divine conviction and holy fury.</p>
-    </section>
+    <div class="class-grid">
+      <div class="class-card reveal">
+        <div class="kicker">Physical • Short Range</div>
+        <h4>Crusader</h4>
+        <p>Radiant greatsword knight. Durable melee DPS with holy cleaves and stun combos.</p>
+        <div class="tag">Stats: STR, VIT</div>
+      </div>
 
-    <section class="reveal">
-      <h2>Classes</h2>
-      <ul>
-        <li><strong>Crusader</strong> (Physical, Short Range) — Radiant greatsword knight; divine melee offense.</li>
-        <li><strong>Templar</strong> (Hybrid, Mid Range) — Shield-bearer of faith; defense and radiant bursts.</li>
-        <li><strong>Cleric</strong> (Magic, Long Range) — Healer and purifier; AoE blessings and light control.</li>
-        <li><strong>Sunstrider</strong> (Physical, Long Range) — Holy archer; delivers divine judgment from afar.</li>
-      </ul>
-    </section>
+      <div class="class-card reveal">
+        <div class="kicker">Hybrid • Mid Range</div>
+        <h4>Templar</h4>
+        <p>Shield-bearer of faith. Tank-support hybrid projecting wards and radiant bursts.</p>
+        <div class="tag">Stats: VIT, WIS</div>
+      </div>
+
+      <div class="class-card reveal">
+        <div class="kicker">Magic • Long Range</div>
+        <h4>Cleric</h4>
+        <p>Healer and purifier. AoE blessings, cleanse curses, and sustain the line from afar.</p>
+        <div class="tag">Stats: WIS, INT</div>
+      </div>
+
+      <div class="class-card reveal">
+        <div class="kicker">Physical • Long Range</div>
+        <h4>Sunstrider</h4>
+        <p>Holy archer. Blessed bolts and radiant arrow barrages that punish corruption.</p>
+        <div class="tag">Stats: DEX, WIS</div>
+      </div>
+    </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">© Ashes of Unity</div>
-  </footer>
-
+  <footer class="footer"><div class="container">© Ashes of Unity</div></footer>
   <script src="../script.js"></script>
 </body>
 </html>

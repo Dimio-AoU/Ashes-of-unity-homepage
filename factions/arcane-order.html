@@ -5,24 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arcane Order — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .hero { background-image:url('../assets/images/factions/arcane-order.png'); }
+    .gold-hr { border:0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,215,0,.55), transparent); margin:22px 0; }
+    .lead { color:#cfd3e6; font-size:1.05rem; }
+    .facts { display:grid; gap:14px; grid-template-columns:1fr; }
+    @media (min-width: 900px){ .facts{ grid-template-columns:1fr 1fr; } }
+    .fact { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:14px; }
+    .kicker { color:var(--gold); font-weight:800; letter-spacing:.04em; font-size:.85rem; text-transform:uppercase; }
+    .class-grid { display:grid; gap:18px; grid-template-columns:1fr; }
+    @media (min-width: 750px){ .class-grid{ grid-template-columns:repeat(2,1fr); } }
+    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:16px; }
+    .class-card h4{ margin:2px 0 6px; }
+    .tag{ font-size:.8rem; color:#b8bdd0; }
+  </style>
 </head>
 <body>
-
   <!-- NAV -->
   <div class="nav">
     <div class="container nav-inner">
       <div class="brand">ASHES OF UNITY</div>
       <nav>
         <a href="../index.html">Home</a>
-        <a href="index.html">Factions</a>
+        <a href="./index.html">Factions</a>
         <a href="../balance.html">Balance</a>
         <a href="../systems.html">Systems</a>
       </nav>
     </div>
   </div>
 
-  <!-- BANNER -->
-  <header class="banner" style="background-image:url('../assets/images/factions/arcane-order.png')">
+  <!-- HERO -->
+  <header class="banner hero">
     <div class="container title-wrap">
       <h1>🦹🏽 Arcane Order</h1>
       <p class="muted">Knowledge, power, and controlled chaos.</p>
@@ -31,47 +44,67 @@
 
   <!-- CONTENT -->
   <main class="page container">
-    <section class="reveal">
-      <h2>Lore</h2>
-      <p>The Arcane Order rejects divinity and worships knowledge itself. They believe the World Core was not divine but a cosmic engine — the key to transcending mortality. They wield its fragments to command fire, lightning, and void alike, unconcerned with moral limits.</p>
-    </section>
+    <p class="lead reveal">
+      Heretics to some, visionaries to others—the Arcane Order treat the World Core as a cosmic engine.
+      Glyph-etched towers and floating citadels hum with mana as they bend elements to their will.
+    </p>
 
-    <section class="reveal">
-      <h2>Culture</h2>
-      <p>Their lands shimmer with unstable energy and floating citadels. Glyph-etched towers hum with mana, and laboratories glow with chaotic experiments. Scholars whisper of inevitability and seek perfection through forbidden study.</p>
-    </section>
+    <hr class="gold-hr">
 
-    <section class="reveal">
-      <h2>Goals</h2>
-      <p>Unlock the Core’s true purpose, manipulate the fabric of existence, and ascend beyond mortal form.</p>
-    </section>
+    <div class="facts">
+      <div class="fact reveal">
+        <div class="kicker">Lore</div>
+        <p>Wielders of fire, frost, lightning, and void who reject divinity for truth.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Culture</div>
+        <p>Robes inscribed with wards, laboratories glowing with unstable experiments.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Goals</div>
+        <p>Unlock the Core’s purpose, manipulate reality, and ascend beyond mortal limits.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Relations</div>
+        <p><strong>Allies:</strong> Shadowborn (uneasy). <strong>Rivals:</strong> Knights Order, Holy Empire.</p>
+      </div>
+    </div>
 
-    <section class="reveal">
-      <h2>Rivals & Allies</h2>
-      <p><strong>Rivals:</strong> 🔆 Knights Order — narrow-minded enforcers of order; 😇 Holy Empire — zealots who burn truth in the name of faith.</p>
-      <p><strong>Allies:</strong> 👿 Shadowborn — bound by shared heresy and pursuit of forbidden power.</p>
-    </section>
+    <h2 class="reveal" style="margin-top:24px;">Classes</h2>
+    <p class="muted reveal">One short-range physical, one mid-range hybrid, one long-range magic, one long-range physical.</p>
 
-    <section class="reveal">
-      <h2>Player Fantasy</h2>
-      <p>You are the mage who defies gods — a wielder of raw chaos, bending the world’s laws to your will.</p>
-    </section>
+    <div class="class-grid">
+      <div class="class-card reveal">
+        <div class="kicker">Physical • Short Range</div>
+        <h4>Spellblade</h4>
+        <p>Arcane duelist channeling mana through blades for explosive counters and finishers.</p>
+        <div class="tag">Stats: STR, INT</div>
+      </div>
 
-    <section class="reveal">
-      <h2>Classes</h2>
-      <ul>
-        <li><strong>Spellblade</strong> (Physical, Short Range) — Arcane duelist; fuses weapon combat with mana bursts.</li>
-        <li><strong>Elementalist</strong> (Hybrid, Mid Range) — Elemental controller; wields fire, frost, and lightning.</li>
-        <li><strong>Arcanist</strong> (Magic, Long Range) — Ranged caster; master of sigils, wards, and runes.</li>
-        <li><strong>Arcstrider</strong> (Physical, Long Range) — Energy marksman; channels condensed mana into devastating projectiles.</li>
-      </ul>
-    </section>
+      <div class="class-card reveal">
+        <div class="kicker">Hybrid • Mid Range</div>
+        <h4>Elementalist</h4>
+        <p>Chains fire, frost, and lightning; hybrid AoE DPS that shapes chaos into control.</p>
+        <div class="tag">Stats: INT, Affinity</div>
+      </div>
+
+      <div class="class-card reveal">
+        <div class="kicker">Magic • Long Range</div>
+        <h4>Arcanist</h4>
+        <p>Runic geometry and sigil fields amplify allies and lock down enemy space.</p>
+        <div class="tag">Stats: INT, WIS</div>
+      </div>
+
+      <div class="class-card reveal">
+        <div class="kicker">Physical • Long Range</div>
+        <h4>Arcstrider</h4>
+        <p>Energy marksman who condenses raw mana into charged shots and explosive runes.</p>
+        <div class="tag">Stats: DEX, INT</div>
+      </div>
+    </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">© Ashes of Unity</div>
-  </footer>
-
+  <footer class="footer"><div class="container">© Ashes of Unity</div></footer>
   <script src="../script.js"></script>
 </body>
 </html>

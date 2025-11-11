@@ -5,73 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shadowborn — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .hero { background-image:url('../assets/images/factions/shadowborn.png'); }
+    .gold-hr { border:0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,215,0,.55), transparent); margin:22px 0; }
+    .lead { color:#cfd3e6; font-size:1.05rem; }
+    .facts { display:grid; gap:14px; grid-template-columns:1fr; }
+    @media (min-width: 900px){ .facts{ grid-template-columns:1fr 1fr; } }
+    .fact { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:14px; }
+    .kicker { color:var(--gold); font-weight:800; letter-spacing:.04em; font-size:.85rem; text-transform:uppercase; }
+    .class-grid { display:grid; gap:18px; grid-template-columns:1fr; }
+    @media (min-width: 750px){ .class-grid{ grid-template-columns:repeat(2,1fr); } }
+    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:12px; padding:16px; }
+    .class-card h4{ margin:2px 0 6px; }
+    .tag{ font-size:.8rem; color:#b8bdd0; }
+  </style>
 </head>
 <body>
-
   <!-- NAV -->
   <div class="nav">
     <div class="container nav-inner">
       <div class="brand">ASHES OF UNITY</div>
       <nav>
         <a href="../index.html">Home</a>
-        <a href="index.html">Factions</a>
+        <a href="./index.html">Factions</a>
         <a href="../balance.html">Balance</a>
         <a href="../systems.html">Systems</a>
       </nav>
     </div>
   </div>
 
-  <!-- BANNER -->
-  <header class="banner" style="background-image:url('../assets/images/factions/shadowborn.png')">
+  <!-- HERO -->
+  <header class="banner hero">
     <div class="container title-wrap">
       <h1>👿 Shadowborn</h1>
-      <p class="muted">Darkness, secrecy, ruthless survival.</p>
+      <p class="muted">Corruption, deception, survival.</p>
     </div>
   </header>
 
   <!-- CONTENT -->
   <main class="page container">
-    <section class="reveal">
-      <h2>Lore</h2>
-      <p>Exiled and hunted, the Shadowborn forged survival in darkness. They are assassins, necromancers, and outcasts who see the Core’s fragments as cursed gifts — tools of rebellion and vengeance. Their creed values cunning, adaptability, and ruthless survival over honor or law.</p>
-    </section>
+    <p class="lead reveal">
+      Exiled and hunted, the Shadowborn thrive in twilight—assassins, necromancers, and cursed bloodlines
+      who turn poison and darkness into freedom. They fight dirty, vanish clean, and outlast the righteous.
+    </p>
 
-    <section class="reveal">
-      <h2>Culture</h2>
-      <p>Hidden encampments, poisoned ruins, and cursed forests form their domain. The air hums with whispers, masks hide faces, and every blade drips with venom. What outsiders see as monstrous, the Shadowborn call liberation — freedom bought in blood.</p>
-    </section>
+    <hr class="gold-hr">
 
-    <section class="reveal">
-      <h2>Goals</h2>
-      <p>Tear down empires, spread fear and plague into strongholds, and claim shards for forbidden rituals.</p>
-    </section>
+    <div class="facts">
+      <div class="fact reveal">
+        <div class="kicker">Lore</div>
+        <p>Outcasts who wield the Core’s fragments as cursed gifts to reclaim power.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Culture</div>
+        <p>Hidden camps, masked traders, bone charms, and shadowflame torches.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Goals</div>
+        <p>Tear down empires, spread fear and plague, and seize shards for outlaw rites.</p>
+      </div>
+      <div class="fact reveal">
+        <div class="kicker">Relations</div>
+        <p><strong>Allies:</strong> Arcane Order (fragile trust). <strong>Rivals:</strong> Holy Empire, Knights Order.</p>
+      </div>
+    </div>
 
-    <section class="reveal">
-      <h2>Rivals & Allies</h2>
-      <p><strong>Rivals:</strong> 😇 Holy Empire — zealots who seek their extinction; 🔆 Knights Order — oppressors who once enslaved their kin.</p>
-      <p><strong>Allies:</strong> 🦹🏽 Arcane Order — united by forbidden knowledge, though trust remains thin.</p>
-    </section>
+    <h2 class="reveal" style="margin-top:24px;">Classes</h2>
+    <p class="muted reveal">One short-range physical, one mid-range hybrid, one long-range magic, one long-range physical.</p>
 
-    <section class="reveal">
-      <h2>Player Fantasy</h2>
-      <p>You are the assassin in the shadows — the cursed survivor who turns corruption into strength.</p>
-    </section>
+    <div class="class-grid">
+      <div class="class-card reveal">
+        <div class="kicker">Physical • Short Range</div>
+        <h4>Assassin</h4>
+        <p>Stealth duelist with lethal bursts and venoms; the whisper before death.</p>
+        <div class="tag">Stats: DEX, AGI</div>
+      </div>
 
-    <section class="reveal">
-      <h2>Classes</h2>
-      <ul>
-        <li><strong>Assassin</strong> (Physical, Short Range) — Stealth duelist; lethal bursts and poisons.</li>
-        <li><strong>Hexblade</strong> (Hybrid, Mid Range) — Curse-bound fighter; bleeds enemies with dark runes.</li>
-        <li><strong>Necromancer</strong> (Magic, Long Range) — Death’s scholar; commands rot and the dead.</li>
-        <li><strong>Wraithbow</strong> (Physical, Long Range) — Shadow archer; fires spectral arrows that drain life.</li>
-      </ul>
-    </section>
+      <div class="class-card reveal">
+        <div class="kicker">Hybrid • Mid Range</div>
+        <h4>Hexblade</h4>
+        <p>Curse-infused fighter whose runes bleed foes and empower forbidden strikes.</p>
+        <div class="tag">Stats: STR, INT</div>
+      </div>
+
+      <div class="class-card reveal">
+        <div class="kicker">Magic • Long Range</div>
+        <h4>Necromancer</h4>
+        <p>Death’s scholar. Rot, lifesteal, bone minions, and battlefield decay.</p>
+        <div class="tag">Stats: INT, Corruption</div>
+      </div>
+
+      <div class="class-card reveal">
+        <div class="kicker">Physical • Long Range</div>
+        <h4>Wraithbow</h4>
+        <p>Spectral archer whose ghostly arrows pierce armor and drain vitality.</p>
+        <div class="tag">Stats: DEX, Corruption</div>
+      </div>
+    </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">© Ashes of Unity</div>
-  </footer>
-
+  <footer class="footer"><div class="container">© Ashes of Unity</div></footer>
   <script src="../script.js"></script>
 </body>
 </html>

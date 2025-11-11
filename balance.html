@@ -5,8 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Balance — Ashes of Unity</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Premium MMO-style fonts (headings + body) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page-scoped polish so other pages aren’t affected -->
+  <style>
+    /* Typography refresh for this page only */
+    .page-balance, .page-balance p, .page-balance li { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .page-balance h1, .page-balance h2, .page-balance h3 { font-family: "Cinzel", serif; letter-spacing: .3px; }
+
+    /* Hero with cinematic overlay */
+    .balance-hero {
+      position: relative;
+      min-height: 64vh;
+      display: grid;
+      place-items: end;
+      background: #0b0b0f url('assets/images/AoU-GoodvEvil.png') center/cover no-repeat;
+      border-bottom: 1px solid #1c2030;
+      overflow: hidden;
+    }
+    .balance-hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(90rem 45rem at 50% 0%, rgba(255,210,63,.20), rgba(11,11,15,0) 40%),
+        linear-gradient(180deg, rgba(11,11,15,.15), rgba(11,11,15,.96) 70%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    .balance-hero .wrap{
+      position:relative; z-index:1; width:min(1200px,92%); margin:0 auto; padding:56px 0 40px;
+      text-align:center;
+    }
+    .balance-hero h1{
+      color:#ffd23f; /* gold */
+      font-size: clamp(2.1rem, 3.6vw, 3.6rem);
+      text-shadow: 0 10px 40px rgba(255,210,63,.28);
+      margin-bottom: 6px;
+    }
+    .balance-hero p{
+      color:#dfe3ea;
+      opacity:.9;
+    }
+
+    /* Section framing */
+    .balance-section { padding: 48px 0 64px; }
+    .balance-section .lead { color:#bfc3cc; margin-bottom: 18px; }
+
+    /* VS grid */
+    .vs-grid{
+      display:grid; gap:22px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 960px){
+      .vs-grid{ grid-template-columns: 1fr 120px 1fr; align-items: stretch; }
+    }
+
+    /* Faction card */
+    .faction-card{
+      background: linear-gradient(180deg, #121219, #0e0e15);
+      border:1px solid #222435;
+      border-radius: 14px;
+      overflow: hidden;
+      display:grid;
+      grid-template-rows: 180px auto;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .faction-card:hover{
+      transform: translateY(-2px);
+      border-color:#2c2f45;
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    }
+    .faction-art{
+      background: center/cover no-repeat;
+      border-bottom:1px solid #1f2232;
+      position: relative;
+    }
+    .faction-art::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(8,9,12,.10), rgba(8,9,12,.92));
+    }
+    .faction-body{ padding:18px 18px 20px; }
+    .faction-title{
+      display:flex; align-items:center; justify-content:space-between;
+      margin-bottom:8px;
+    }
+    .faction-title h3{ color:#f4f6fb; font-size:1.25rem; }
+    .pill{
+      font-family: Inter, system-ui, sans-serif;
+      font-size:.78rem; font-weight:700; letter-spacing:.2px;
+      display:inline-flex; align-items:center; gap:6px;
+      padding:6px 10px; border-radius: 999px;
+      color:#0b0b0f; background:#ffd23f;
+      border:1px solid #d7b643;
+    }
+    .pill.blue{ background:#4fb3ff; border-color:#3a8ed1; color:#08121e; }
+    .pill.violet{ background:#b17cff; border-color:#8c62cc; color:#0e061b; }
+    .pill.red{ background:#ff5a6a; border-color:#d34957; color:#1a0406; }
+    .faction-body p{ color:#cfd3db; margin-bottom:10px; }
+    .subtle{ color:#a9acb1; font-size:.95rem; }
+
+    /* VS badge column */
+    .vs-col{
+      display:grid; place-items:center;
+    }
+    .vs-badge{
+      display:grid; place-items:center;
+      width:100px; height:100px; border-radius:50%;
+      background: radial-gradient(circle at 35% 30%, #ffd23f 0%, #8c5c00 45%, #121219 75%);
+      box-shadow: 0 12px 40px rgba(255,210,63,.25), inset 0 0 24px rgba(255,210,63,.25);
+      border:1px solid #2d2617;
+      color:#0b0b0f; font-weight:900; letter-spacing:.5px;
+      text-transform: uppercase;
+    }
+    .vs-badge span{ transform: translateY(1px); }
+
+    /* Divider */
+    .divider{
+      margin: 28px 0 18px;
+      border-top: 1px solid #1d2030;
+    }
+  </style>
 </head>
-<body>
+
+<body class="page-balance">
   <!-- NAVBAR -->
   <div class="nav">
     <div class="container nav-inner">
@@ -20,25 +145,97 @@
     </div>
   </div>
 
-  <!-- HERO BANNER -->
-  <header class="banner" style="background-image:url('assets/images/AoU-GoodvEvil.png')">
-    <div class="container title-wrap">
-      <h1>How Balance Works</h1>
-      <p class="muted">Light vs Shadow • Order vs Chaos • The World Hangs in Equilibrium</p>
+  <!-- CINEMATIC HERO -->
+  <header class="balance-hero">
+    <div class="wrap">
+      <h1>Balance of the Four</h1>
+      <p>Light vs Shadow • Order vs Chaos — equilibrium forged by mastery, timing, and terrain.</p>
     </div>
   </header>
 
   <!-- MAIN CONTENT -->
   <main class="page container">
-    <h2>Faction Balance</h2>
-    <p><strong>Holy Empire</strong> counters Shadowborn corruption and withstands Arcane chaos through faith and resilience.</p>
-    <p><strong>Knights Order</strong> shields against Arcane onslaughts and uses discipline to outmaneuver Shadowborn ambushes.</p>
-    <p><strong>Shadowborn</strong> break holy lines with poisons, stealth, and speed — but struggle against Knightly defenses.</p>
-    <p><strong>Arcane Order</strong> overwhelms with elemental destruction and mana control, yet falters against Knightly precision.</p>
 
-    <h2>Equilibrium</h2>
-    <p><em>Holy ⚔ Shadowborn  •  Knights ⚔ Arcane  •  All stand equal beneath the World Core.</em></p>
-    <p>No faction dominates — victory belongs to strategy, terrain, and player mastery.</p>
+    <!-- Pair 1: Holy vs Shadowborn -->
+    <section class="balance-section">
+      <p class="lead">Each faction excels in its identity and faces natural counters — not hard rock-paper-scissors, but strategic edges that reward skill.</p>
+
+      <div class="vs-grid">
+        <!-- Holy Empire -->
+        <article class="faction-card">
+          <div class="faction-art" style="background-image:url('assets/images/factions/holy-empire.png')"></div>
+          <div class="faction-body">
+            <div class="faction-title">
+              <h3>Holy Empire</h3>
+              <span class="pill">Radiance</span>
+            </div>
+            <p>Resilient lines, radiant shields, disciplined pushes. Cleanses corruption and stabilizes fights with superior sustain.</p>
+            <p class="subtle"><strong>Edge:</strong> counters Shadowborn attrition and outlasts burst with mitigation and healing.</p>
+          </div>
+        </article>
+
+        <!-- VS badge -->
+        <div class="vs-col">
+          <div class="vs-badge"><span>VS</span></div>
+        </div>
+
+        <!-- Shadowborn -->
+        <article class="faction-card">
+          <div class="faction-art" style="background-image:url('assets/images/factions/shadowborn.png')"></div>
+          <div class="faction-body">
+            <div class="faction-title">
+              <h3>Shadowborn</h3>
+              <span class="pill violet">Corruption</span>
+            </div>
+            <p>Ambush, poison, and cursecraft. Break formations, drain resources, and punish mistakes with lethal precision.</p>
+            <p class="subtle"><strong>Edge:</strong> bypasses rigid lines and punishes slow responses with bursts and DoTs.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Pair 2: Knights vs Arcane -->
+      <div class="vs-grid">
+        <!-- Knights Order -->
+        <article class="faction-card">
+          <div class="faction-art" style="background-image:url('assets/images/factions/knights-order.png')"></div>
+          <div class="faction-body">
+            <div class="faction-title">
+              <h3>Knights Order</h3>
+              <span class="pill blue">Discipline</span>
+            </div>
+            <p>Formations, anti-magic bulwarks, and battlefield control. Wins through positioning, leadership, and attrition.</p>
+            <p class="subtle"><strong>Edge:</strong> blunts Arcane volatility and forces clean, punishable trades.</p>
+          </div>
+        </article>
+
+        <!-- VS badge -->
+        <div class="vs-col">
+          <div class="vs-badge"><span>VS</span></div>
+        </div>
+
+        <!-- Arcane Order -->
+        <article class="faction-card">
+          <div class="faction-art" style="background-image:url('assets/images/factions/arcane-order.png')"></div>
+          <div class="faction-body">
+            <div class="faction-title">
+              <h3>Arcane Order</h3>
+              <span class="pill red">Anomaly</span>
+            </div>
+            <p>Elemental devastation, AoE tempos, and mana warfare. Breaks lines with overwhelming power and control.</p>
+            <p class="subtle"><strong>Edge:</strong> overwhelms static play and punishes clustered formations.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="balance-section" style="padding-top:0;">
+      <h2>Design Principle</h2>
+      <p>There is no absolute winner. Each matchup has tools and answers — mastery, comps, and terrain create the win condition.</p>
+      <p class="subtle">Result: <em>Holy ⚔ Shadowborn</em> • <em>Knights ⚔ Arcane</em> • Cross-counters remain situational and skill-based.</p>
+    </section>
+
   </main>
 
   <!-- FOOTER -->

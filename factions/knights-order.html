@@ -5,22 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Knights Order — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    .hero { background-image:url('../assets/images/factions/knights-order.png'); }
-    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
-    @media (min-width:900px){ .grid { grid-template-columns:1fr 1fr; } }
-    a.class-card { text-decoration:none; color:inherit; }
-    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden; }
-    .class-card h3 { margin:0 0 6px 0; }
-    .class-card .pad { padding:16px; }
-  </style>
+  <style>.hero{background-image:url('../assets/images/factions/knights-order.png');}</style>
 </head>
 <body>
   <div class="nav"><div class="container nav-inner">
     <div class="brand">ASHES OF UNITY</div>
     <nav>
       <a href="../index.html">Home</a>
-      <a href="./index.html">Factions</a>
+      <a href="./index.html" class="active">Factions</a>
       <a href="../balance.html">Balance</a>
       <a href="../systems.html">Systems</a>
     </nav>
@@ -29,44 +21,52 @@
   <header class="banner hero">
     <div class="container title-wrap">
       <h1>Knights Order</h1>
-      <p class="muted">Discipline, strategy, and magitek supremacy.</p>
+      <p class="muted">Discipline, formations, and magitek supremacy.</p>
     </div>
   </header>
 
   <main class="page container">
     <p class="reveal">
-      Forged after the Core’s fall, the Knights unite steel and spell to defend civilization with banners,
-      formations, and precise command.
+      Forged after the Core’s fall, the Knights unite steel and spell to defend civilization
+      with banners, formations, and precise command.
     </p>
 
     <h2 class="section-title reveal">Classes</h2>
 
     <section class="grid">
       <a class="class-card reveal" href="../classes/steel-knight.html">
+        <img class="img-cover" src="../assets/images/factions/knights-order.png" alt="Steel Knight">
         <div class="pad">
+          <div class="role-chip role-phys"><span class="dot"></span>Physical • Short Range</div>
           <h3>Steel Knight</h3>
-          <p class="muted">Physical • Short Range — Phalanx tank with counters.</p>
+          <div class="card-sub">Phalanx tank; stances, counters, and aura holds.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/battle-mage.html">
+        <img class="img-cover" src="../assets/images/factions/knights-order.png" alt="Battle Mage">
         <div class="pad">
+          <div class="role-chip role-hybrid"><span class="dot"></span>Hybrid • Mid Range</div>
           <h3>Battle Mage</h3>
-          <p class="muted">Hybrid • Mid Range — Rune slashes and zone control.</p>
+          <div class="card-sub">Rune slashes, mid-range zones, command fields.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/arcane-sentinel.html">
+        <img class="img-cover" src="../assets/images/factions/knights-order.png" alt="Arcane Sentinel">
         <div class="pad">
+          <div class="role-chip role-magic"><span class="dot"></span>Magic • Long Range</div>
           <h3>Arcane Sentinel</h3>
-          <p class="muted">Magic • Long Range — Wards, reflects, and anti-mage play.</p>
+          <div class="card-sub">Wards, reflects, and anti-mage suppression.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/arbalist.html">
+        <img class="img-cover" src="../assets/images/factions/knights-order.png" alt="Arbalist">
         <div class="pad">
+          <div class="role-chip role-phys-long"><span class="dot"></span>Physical • Long Range</div>
           <h3>Arbalist</h3>
-          <p class="muted">Physical • Long Range — Magitek traps and explosive bolts.</p>
+          <div class="card-sub">Magitek traps, detonator bolts, siege synergy.</div>
         </div>
       </a>
     </section>

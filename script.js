@@ -69,3 +69,20 @@
 
   els.forEach(el => io.observe(el));
 })();
+// Minimal scroll reveal for .reveal elements
+(function(){
+  const els = Array.from(document.querySelectorAll('.reveal'));
+  if (!('IntersectionObserver' in window) || !els.length) {
+    els.forEach(el => el.classList.add('reveal-in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('reveal-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: .2});
+  els.forEach(el=>io.observe(el));
+})();

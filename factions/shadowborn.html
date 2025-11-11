@@ -5,22 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shadowborn — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    .hero { background-image:url('../assets/images/factions/shadowborn.png'); }
-    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
-    @media (min-width:900px){ .grid { grid-template-columns:1fr 1fr; } }
-    a.class-card { text-decoration:none; color:inherit; }
-    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden; }
-    .class-card h3 { margin:0 0 6px 0; }
-    .class-card .pad { padding:16px; }
-  </style>
+  <style>.hero{background-image:url('../assets/images/factions/shadowborn.png');}</style>
 </head>
 <body>
   <div class="nav"><div class="container nav-inner">
     <div class="brand">ASHES OF UNITY</div>
     <nav>
       <a href="../index.html">Home</a>
-      <a href="./index.html">Factions</a>
+      <a href="./index.html" class="active">Factions</a>
       <a href="../balance.html">Balance</a>
       <a href="../systems.html">Systems</a>
     </nav>
@@ -35,37 +27,46 @@
 
   <main class="page container">
     <p class="reveal">
-      Exiled clans thriving in twilight. Poisons, curses, and ruthless precision turn darkness into power.
+      Exiled clans thriving in twilight. Poisons, curses, and ruthless precision
+      turn darkness into power.
     </p>
 
     <h2 class="section-title reveal">Classes</h2>
 
     <section class="grid">
       <a class="class-card reveal" href="../classes/assassin.html">
+        <img class="img-cover" src="../assets/images/factions/shadowborn.png" alt="Assassin">
         <div class="pad">
+          <div class="role-chip role-phys"><span class="dot"></span>Physical • Short Range</div>
           <h3>Assassin</h3>
-          <p class="muted">Physical • Short Range — Stealth burst and ambush picks.</p>
+          <div class="card-sub">Stealth burst; ambush picks and poisons.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/hexblade.html">
+        <img class="img-cover" src="../assets/images/factions/shadowborn.png" alt="Hexblade">
         <div class="pad">
+          <div class="role-chip role-hybrid"><span class="dot"></span>Hybrid • Mid Range</div>
           <h3>Hexblade</h3>
-          <p class="muted">Hybrid • Mid Range — Cursed blade arts and bleeds.</p>
+          <div class="card-sub">Cursed weapon arts; bleed detonations.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/necromancer.html">
+        <img class="img-cover" src="../assets/images/factions/shadowborn.png" alt="Necromancer">
         <div class="pad">
+          <div class="role-chip role-magic"><span class="dot"></span>Magic • Long Range</div>
           <h3>Necromancer</h3>
-          <p class="muted">Magic • Long Range — Rot fields, summons, and siphons.</p>
+          <div class="card-sub">Rot fields, summons, siphon sustain.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/wraithbow.html">
+        <img class="img-cover" src="../assets/images/factions/shadowborn.png" alt="Wraithbow">
         <div class="pad">
+          <div class="role-chip role-phys-long"><span class="dot"></span>Physical • Long Range</div>
           <h3>Wraithbow</h3>
-          <p class="muted">Physical • Long Range — Spectral arrows and lifesteal traps.</p>
+          <div class="card-sub">Spectral arrows; lifesteal traps & kites.</div>
         </div>
       </a>
     </section>

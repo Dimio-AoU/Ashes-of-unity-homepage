@@ -1,235 +1,211 @@
-/* -------------------------------------------------------
-   Ashes of Unity — Global Theme (MMORPG Style, Premium)
-   Fonts, color tokens, layout, nav, hero, cards, content,
-   ambient animations, glowing borders, scroll reveals
-   ------------------------------------------------------- */
+/* =========================================
+   ASHES OF UNITY — GLOBAL THEME / UTILITIES
+   Fonts: Cinzel (display), Inter (ui/body)
+   ========================================= */
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-/* Reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-img { max-width: 100%; display: block; }
-
-/* Base Tokens */
+/* ---------- Theme Tokens ---------- */
 :root{
-  --gold:#ffd23f;
-  --gold-2:#d7b643;
-  --blue:#4fb3ff;
-  --violet:#b17cff;
-  --red:#ff5a6a;
+  --bg: #0b0c10;               /* page background */
+  --bg-2: #0f1117;             /* panels / nav */
+  --card: #12141b;             /* card base */
+  --line-1: rgba(255,255,255,.06);
+  --line-2: rgba(255,255,255,.10);
+  --text: #EAEAEA;
+  --muted: #b9bdcc;
+  --gold: #efd381;             /* accent gold */
+  --gold-2: rgba(255,215,0,.22);
+  --brand: #F5F3E8;
 
-  --bg:#0b0b0f;
-  --bg-2:#0d0f13;
-  --card:#121219;
-  --ink-1:#f4f6fb;
-  --ink-2:#e6e6ea;
-  --ink-3:#cfd3db;
-  --ink-4:#a9acb1;
-  --line:#1f2230;
-  --line-2:#232331;
+  /* Role chips */
+  --chip-phys: #c9a24b;        /* physical */
+  --chip-hybrid: #6ab3ff;      /* hybrid */
+  --chip-magic: #b586ff;       /* magic */
+  --chip-phys-long: #7ddc8f;   /* ranged physical */
 
-  --shadow-lg:0 18px 48px rgba(0,0,0,.40);
-  --shadow-md:0 12px 32px rgba(0,0,0,.28);
-
-  --glow-gold: 0 0 22px rgba(255,210,63,.20), 0 0 44px rgba(255,210,63,.16);
+  /* Shadows / Glows */
+  --glow-soft: 0 0 22px rgba(255,215,0,.12);
+  --glow-strong: 0 0 32px rgba(255,215,0,.22);
 }
 
-/* Typography */
+/* ---------- Reset-ish ---------- */
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+img { max-width:100%; display:block; }
+
+/* ---------- Base Typography ---------- */
 body{
-  background:var(--bg);
-  color:var(--ink-2);
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
 }
-h1,h2,h3{
-  font-family:"Cinzel",serif;
-  letter-spacing:.3px;
-  color:var(--ink-1);
+h1,h2,h3,h4{
+  font-family: "Cinzel", serif;
+  color: var(--brand);
+  letter-spacing: .02em;
+  margin: 0 0 10px;
 }
-h1{font-size:clamp(1.9rem,3.6vw,3.2rem);}
-h2{font-size:clamp(1.3rem,2.2vw,1.8rem);}
-h3{font-size:1.2rem;}
-.muted{color:var(--ink-4);}
-.container{width:min(1200px,92%);margin:0 auto;}
-.section{padding:56px 0;}
+p{ margin: 0 0 14px; }
+.muted{ color: var(--muted); }
+a{ color: var(--gold); text-decoration: none; }
+a:hover{ text-decoration: underline; }
 
-/* Navbar */
+/* ---------- Layout ---------- */
+.container{
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+.page{ padding: 28px 0 48px; }
+
+/* ---------- Navbar ---------- */
 .nav{
-  position:sticky;top:0;z-index:50;
-  backdrop-filter:blur(8px);
-  background:rgba(10,10,14,.65);
-  border-bottom:1px solid var(--line);
+  position: sticky; top:0; z-index: 50;
+  background: rgba(10,10,15,.65);
+  border-bottom: 1px solid var(--line-1);
+  backdrop-filter: blur(6px);
 }
 .nav-inner{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 0;
+  display:flex; align-items:center; justify-content:space-between;
+  height: 64px;
 }
-.brand{color:var(--gold);font-weight:800;letter-spacing:.5px;text-shadow:var(--glow-gold);}
+.brand{
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
 .nav nav a{
-  color:#dfe3ea;text-decoration:none;margin-left:18px;font-weight:600;
+  color:#e7e4d7;
+  margin-left: 18px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: .2s ease;
 }
 .nav nav a:hover,
-.nav nav a.active{color:var(--gold);}
-
-/* ===== Ambient Animations ===== */
-@keyframes shimmerSweep {
-  0%   {opacity:.0; transform: translateX(-60%) skewX(-12deg);}
-  50%  {opacity:.18;}
-  100% {opacity:0;  transform: translateX(160%) skewX(-12deg);}
-}
-@keyframes glowPulse {
-  0%,100% { box-shadow: 0 0 0 rgba(255,210,63,0); }
-  60%     { box-shadow: var(--glow-gold); }
+.nav nav a.active{
+  border-color: var(--line-2);
+  background: linear-gradient(180deg, rgba(20,20,26,.6), rgba(20,20,26,.4));
 }
 
-/* Hero (Homepage) */
-.hero{
-  position:relative;min-height:62vh;
-  display:grid;place-items:center;text-align:center;
-  background:var(--bg-2) url('assets/images/factions/AoU-GoodvEvil.png') center/cover no-repeat;
-  border-bottom:1px solid var(--line);overflow:hidden;
-}
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(90rem 45rem at 50% 0%,rgba(255,210,63,.20),rgba(11,11,15,0)40%),
-    linear-gradient(180deg,rgba(11,11,15,.15),rgba(11,11,15,.96)70%);
-  pointer-events:none;
-}
-.hero::before{
-  /* faint angled shimmer line slowly passes across */
-  content:""; position:absolute; inset:-20% -50%;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 45%, rgba(255,255,255,.2) 50%, rgba(255,255,255,0) 55%);
-  filter: blur(2px); opacity:0;
-  animation: shimmerSweep 9s linear infinite;
-}
-.hero>.inner{position:relative;z-index:1;padding:80px 0;}
-.hero h1{
-  color:var(--gold);
-  text-shadow:0 10px 40px rgba(255,210,63,.28);
-}
-.hero p{margin-top:10px;color:#d9dde5;}
-.btn-primary{
-  display:inline-block;margin-top:18px;padding:12px 16px;
-  background:transparent;color:var(--ink-2);
-  border:1px solid #2b2e3f;border-radius:10px;
-  font-weight:700;text-decoration:none;
-  transition: box-shadow .3s ease;
-}
-.btn-primary:hover{border-color:var(--gold);color:var(--gold); box-shadow: var(--glow-gold);}
-
-/* Music Toggle (fixed) */
-.music-toggle{
-  position:fixed; right:18px; bottom:18px; z-index:60;
-  background:rgba(18,18,25,.85);
-  border:1px solid var(--line-2); color:#e9edf6;
-  padding:10px 14px; border-radius:12px;
-  font-weight:700; cursor:pointer;
-  transition: transform .12s ease, border-color .2s ease, box-shadow .2s ease;
-}
-.music-toggle:hover{ transform: translateY(-2px); border-color:#323247; box-shadow:var(--shadow-md); }
-.music-toggle.is-playing{ border-color: var(--gold-2); color: var(--gold); box-shadow: var(--glow-gold); }
-
-/* Cards Grid + Glowing Border Pulse */
-.grid{
-  display:grid;gap:22px;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--line-2);
-  border-radius:12px;overflow:hidden;
-  transition:transform .15s ease,border-color .2s ease,box-shadow .2s ease;
-  animation: glowPulse 6.5s ease-in-out infinite;
-  animation-delay: calc(var(--i, 0) * 0.3s); /* stagger glow */
-}
-.card:hover{
-  transform:translateY(-2px);
-  border-color:#323247;
-  box-shadow:var(--shadow-md);
-}
-.card img{width:100%;height:180px;object-fit:cover;}
-.card-body{padding:16px;}
-.card h3{color:var(--ink-1);margin-bottom:6px;}
-.card p{color:var(--ink-3);font-size:.95rem;}
-.btn{
-  display:inline-block;margin-top:12px;padding:10px 14px;
-  border:1px solid #2b2e3f;border-radius:8px;text-decoration:none;
-  color:#e9edf6;font-weight:700;
-}
-.btn:hover{border-color:var(--gold);color:var(--gold);}
-
-/* Content Pages (banners, article layout) */
+/* ---------- Banner / Hero ---------- */
 .banner{
-  position:relative;min-height:44vh;display:grid;place-items:end;
-  background:var(--bg-2)center/cover no-repeat;
-  border-bottom:1px solid var(--line);overflow:hidden;
+  min-height: 44vh;
+  display: grid; place-items: end;
+  background-size: cover; background-position: center;
+  border-bottom: 1px solid var(--line-2);
+  position: relative; overflow: hidden;
 }
-.banner::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(8,9,12,.10),rgba(8,9,12,.96));
+.banner::before{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.65) 65%, rgba(0,0,0,.85) 100%);
 }
-.banner .title-wrap{
-  position:relative;z-index:1;padding:40px 0;width:100%;text-align:center;
+.title-wrap{
+  position: relative; z-index: 1;
+  padding: 42px 0 30px;
 }
-.page{padding:28px 0 60px;}
-.page h1{color:var(--gold);margin-bottom:10px;}
-.page h2{color:#f0f2f9;margin-top:22px;margin-bottom:8px;}
-.page p{color:var(--ink-3);margin-bottom:10px;}
-.kv{display:grid;grid-template-columns:1fr;gap:20px;}
-@media(min-width:900px){ .kv{grid-template-columns:1.2fr .8fr;} .banner{min-height:46vh;} }
+.section-title{
+  text-align:left;
+  margin: 18px 0 12px;
+}
 
-/* Pills (used on Balance etc.) */
-.pill{
-  font-size:.78rem;font-weight:700;letter-spacing:.2px;
-  display:inline-flex;align-items:center;gap:6px;
-  padding:6px 10px;border-radius:999px;
-  color:#0b0b0f;background:var(--gold);
-  border:1px solid var(--gold-2);
-}
-.pill.blue{background:var(--blue);border-color:#3a8ed1;color:#061121;}
-.pill.violet{background:var(--violet);border-color:#8c62cc;color:#0e061b;}
-.pill.red{background:var(--red);border-color:#d34957;color:#1a0406;}
-
-/* ===== Scroll Reveal ===== */
-.reveal{ opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in{ opacity: 1; transform: translateY(0); }
-
-/* ===== News Section ===== */
-.news{
-  background: linear-gradient(180deg, #0d0f13, #0b0b0f);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding: 56px 0;
-}
-.news-grid{
-  display:grid; gap:22px;
-  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
-}
-.news-card{
-  background:var(--card);
-  border:1px solid var(--line-2);
+/* ---------- Cards ---------- */
+.card{
+  background: var(--card);
+  border: 1px solid var(--line-2);
   border-radius: 12px;
-  padding:16px;
-  transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease;
+  padding: 16px;
+  box-shadow: var(--glow-soft);
 }
-.news-card:hover{ transform: translateY(-2px); border-color:#323247; box-shadow: var(--shadow-md);}
-.news-date{
-  display:inline-block;
-  font-weight:800; letter-spacing:.3px;
-  font-size:.9rem; color:#0b0b0f;
-  background: var(--gold); border:1px solid var(--gold-2);
-  border-radius:999px; padding:4px 10px; margin-bottom:10px;
-}
-.news-card h3{ margin-bottom:6px; }
-.news-card p{ color: var(--ink-3); }
 
-/* Footer */
-.footer{
-  padding:28px 0; color:#9aa0aa;
-  border-top:1px solid var(--line);
-  background:#0d0f13;
+/* ---------- Dividers ---------- */
+.gold-hr{
+  border:0; height:1px;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,.55), transparent);
+  margin: 22px 0;
 }
+
+/* ---------- Footer ---------- */
+.footer{
+  border-top: 1px solid var(--line-1);
+  background: var(--bg-2);
+  padding: 18px 0;
+  color: #cfcbb7;
+  text-align: center;
+}
+
+/* ---------- Reveal (fade-up) ---------- */
+.reveal{ opacity:0; transform: translateY(10px); transition: .5s ease; }
+.reveal.reveal-in{ opacity:1; transform: translateY(0); }
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(18,18,24,.85), rgba(18,18,24,.6));
+  color: #f3f1e6;
+  transition: .25s ease;
+}
+.btn:hover{ transform: translateY(-2px); box-shadow: var(--glow-soft); border-color: var(--gold-2); }
+.btn-primary{ border-color: rgba(255,215,0,.28); }
+
+/* ==================================================
+   ENHANCEMENTS FOR FACTION PAGES — CLASS GRID TILES
+   (no underlines, hover glow, role chips, subtle tilt)
+   ================================================== */
+
+.grid{ display:grid; gap:20px; grid-template-columns:1fr; }
+@media (min-width:900px){ .grid{ grid-template-columns:1fr 1fr; } }
+
+/* The anchor is the card */
+a.class-card{ text-decoration:none !important; color:inherit; }
+.class-card{
+  position:relative; overflow:hidden;
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-radius: 14px;
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+  box-shadow: 0 0 16px rgba(255,215,0,0.06);
+}
+.class-card:hover{
+  transform: translateY(-6px) rotateX(.5deg);
+  border-color: rgba(255,215,0,.35);
+  box-shadow: 0 0 26px rgba(255,215,0,0.16);
+}
+.class-card .pad{ padding:16px; }
+.class-card h3{ margin:0 0 6px 0; }
+
+/* Role chip (small pill) */
+.role-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size: .85rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: rgba(10,10,15,.55);
+  color: #e8e4d7;
+}
+.role-chip .dot{
+  width:10px; height:10px; border-radius:50%;
+  background: #aaa;
+}
+.role-phys .dot{ background: var(--chip-phys); }
+.role-hybrid .dot{ background: var(--chip-hybrid); }
+.role-magic .dot{ background: var(--chip-magic); }
+.role-phys-long .dot{ background: var(--chip-phys-long); }
+
+/* Optional subtext inside cards */
+.card-sub{ color: var(--muted); margin-top:6px; }
+
+/* ==================================================
+   IMAGE UTILS
+   ================================================== */
+.img-cover{ width:100%; height:200px; object-fit:cover; display:block; filter:saturate(.95); transition: transform .35s ease, filter .35s ease; }
+.class-card:hover .img-cover{ transform: scale(1.03); filter:saturate(1); }
+
+/* ==================================================
+   JS HOOK — minimal scroll reveal
+   ================================================== */

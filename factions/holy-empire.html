@@ -7,12 +7,6 @@
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .hero { background-image:url('../assets/images/factions/holy-empire.png'); }
-    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
-    @media (min-width:900px){ .grid { grid-template-columns:1fr 1fr; } }
-    a.class-card { text-decoration:none; color:inherit; }
-    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden; }
-    .class-card h3 { margin:0 0 6px 0; }
-    .class-card .pad { padding:16px; }
   </style>
 </head>
 <body>
@@ -20,7 +14,7 @@
     <div class="brand">ASHES OF UNITY</div>
     <nav>
       <a href="../index.html">Home</a>
-      <a href="./index.html">Factions</a>
+      <a href="./index.html" class="active">Factions</a>
       <a href="../balance.html">Balance</a>
       <a href="../systems.html">Systems</a>
     </nav>
@@ -35,38 +29,46 @@
 
   <main class="page container">
     <p class="reveal">
-      The Holy Empire are zealous stewards of the World Core’s relics. Radiant cities, golden spires,
-      and unbreakable conviction define their rule.
+      The Holy Empire are zealous stewards of the World Core’s relics—radiant cities,
+      golden spires, and unbreakable conviction define their rule.
     </p>
 
     <h2 class="section-title reveal">Classes</h2>
 
     <section class="grid">
       <a class="class-card reveal" href="../classes/crusader.html">
+        <img class="img-cover" src="../assets/images/factions/holy-empire.png" alt="Crusader">
         <div class="pad">
+          <div class="role-chip role-phys"><span class="dot"></span>Physical • Short Range</div>
           <h3>Crusader</h3>
-          <p class="muted">Physical • Short Range — Radiant greatsword zealot.</p>
+          <div class="card-sub">Radiant greatsword zealot with stuns and cleaves.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/templar.html">
+        <img class="img-cover" src="../assets/images/factions/holy-empire.png" alt="Templar">
         <div class="pad">
+          <div class="role-chip role-hybrid"><span class="dot"></span>Hybrid • Mid Range</div>
           <h3>Templar</h3>
-          <p class="muted">Hybrid • Mid Range — Shield-bearer with wards and smites.</p>
+          <div class="card-sub">Shield-bearer; wards, taunts, and radiant punishes.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/cleric.html">
+        <img class="img-cover" src="../assets/images/factions/holy-empire.png" alt="Cleric">
         <div class="pad">
+          <div class="role-chip role-magic"><span class="dot"></span>Magic • Long Range</div>
           <h3>Cleric</h3>
-          <p class="muted">Magic • Long Range — Heals, cleanses, and radiant control.</p>
+          <div class="card-sub">Healer/purifier; AoE blessings and cleanses.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/sunstrider.html">
+        <img class="img-cover" src="../assets/images/factions/holy-empire.png" alt="Sunstrider">
         <div class="pad">
+          <div class="role-chip role-phys-long"><span class="dot"></span>Physical • Long Range</div>
           <h3>Sunstrider</h3>
-          <p class="muted">Physical • Long Range — Holy archer with anti-shadow marks.</p>
+          <div class="card-sub">Holy archer; radiant marks, anti-stealth tools.</div>
         </div>
       </a>
     </section>

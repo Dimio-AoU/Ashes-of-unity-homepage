@@ -5,22 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arcane Order — Ashes of Unity</title>
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    .hero { background-image:url('../assets/images/factions/arcane-order.png'); }
-    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
-    @media (min-width:900px){ .grid { grid-template-columns:1fr 1fr; } }
-    a.class-card { text-decoration:none; color:inherit; }
-    .class-card { background:var(--card); border:1px solid var(--line-2); border-radius:14px; overflow:hidden; }
-    .class-card h3 { margin:0 0 6px 0; }
-    .class-card .pad { padding:16px; }
-  </style>
+  <style>.hero{background-image:url('../assets/images/factions/arcane-order.png');}</style>
 </head>
 <body>
   <div class="nav"><div class="container nav-inner">
     <div class="brand">ASHES OF UNITY</div>
     <nav>
       <a href="../index.html">Home</a>
-      <a href="./index.html">Factions</a>
+      <a href="./index.html" class="active">Factions</a>
       <a href="../balance.html">Balance</a>
       <a href="../systems.html">Systems</a>
     </nav>
@@ -42,30 +34,38 @@
 
     <section class="grid">
       <a class="class-card reveal" href="../classes/spellblade.html">
+        <img class="img-cover" src="../assets/images/factions/arcane-order.png" alt="Spellblade">
         <div class="pad">
+          <div class="role-chip role-phys"><span class="dot"></span>Physical • Short Range</div>
           <h3>Spellblade</h3>
-          <p class="muted">Physical • Short Range — Arcane duelist and counter artist.</p>
+          <div class="card-sub">Arcane duelist; parries, charges, and finishers.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/elementalist.html">
+        <img class="img-cover" src="../assets/images/factions/arcane-order.png" alt="Elementalist">
         <div class="pad">
+          <div class="role-chip role-hybrid"><span class="dot"></span>Hybrid • Mid Range</div>
           <h3>Elementalist</h3>
-          <p class="muted">Hybrid • Mid Range — Fire, frost, and lightning chains.</p>
+          <div class="card-sub">Fire • Frost • Lightning chains; AoE control.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/arcanist.html">
+        <img class="img-cover" src="../assets/images/factions/arcane-order.png" alt="Arcanist">
         <div class="pad">
+          <div class="role-chip role-magic"><span class="dot"></span>Magic • Long Range</div>
           <h3>Arcanist</h3>
-          <p class="muted">Magic • Long Range — Sigils, runes, and battlefield wards.</p>
+          <div class="card-sub">Sigils & wards; remote control and amplifiers.</div>
         </div>
       </a>
 
       <a class="class-card reveal" href="../classes/arcstrider.html">
+        <img class="img-cover" src="../assets/images/factions/arcane-order.png" alt="Arcstrider">
         <div class="pad">
+          <div class="role-chip role-phys-long"><span class="dot"></span>Physical • Long Range</div>
           <h3>Arcstrider</h3>
-          <p class="muted">Physical • Long Range — Energy marksman with charged shots.</p>
+          <div class="card-sub">Energy marksman; charged shots & rune mines.</div>
         </div>
       </a>
     </section>
